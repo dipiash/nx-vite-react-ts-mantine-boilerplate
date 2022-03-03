@@ -1,0 +1,6 @@
+{
+  "name": "data-access",
+  "dependencies": {
+    "react": "^17.0.2"
+  }
+}

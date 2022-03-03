@@ -1,0 +1,61 @@
+{
+  "root": "packages/react-app",
+  "projectType": "application",
+  "sourceRoot": "packages/react-app/src",
+  "tags": [],
+  "targets": {
+    "serve": {
+      "executor": "nx-plugin-vite:serve",
+      "options": {
+        "configFile": "packages/react-app/vite.config.ts",
+        "port": 3000,
+        "host": false,
+        "https": false
+      }
+    },
+    "preview": {
+      "executor": "nx-plugin-vite:preview",
+      "options": {
+        "configFile": "packages/react-app/vite.config.ts"
+      }
+    },
+    "build": {
+      "executor": "nx-plugin-vite:build",
+      "options": {
+        "cwd": "./packages/react-app",
+        "outDir": "dist",
+        "configFile": "packages/react-app/vite.config.ts",
+        "watch": false,
+        "write": true,
+        "emitAtRootLevel": false,
+        "manifest": true
+      }
+    },
+    "build-serve": {
+      "executor": "@nrwl/workspace:run-commands",
+      "options": {
+        "cwd": "./packages/react-app",
+        "commands": [
+          {
+            "command": "npx http-server dist"
+          }
+        ]
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["packages/react-app/**/*.{ts,tsx,js,jsx}"]
+      }
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/packages/react-app"],
+      "options": {
+        "jestConfig": "packages/react-app/jest.config.js",
+        "passWithNoTests": true
+      }
+    }
+  }
+}

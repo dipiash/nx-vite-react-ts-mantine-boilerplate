@@ -1,0 +1,26 @@
+{
+  "root": "packages/data-access",
+  "sourceRoot": "packages/data-access/src",
+  "projectType": "library",
+  "tags": [],
+  "targets": {
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["packages/data-access/**/*.graphql"]
+      }
+    },
+    "generate": {
+      "builder": "@nrwl/workspace:run-commands",
+      "options": {
+        "cwd": "./packages/data-access",
+        "commands": [
+          {
+            "command": "graphql-codegen --config ./codegen.yml"
+          }
+        ]
+      }
+    }
+  }
+}

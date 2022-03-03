@@ -1,0 +1,112 @@
+{
+  "root": true,
+  "parser": "@typescript-eslint/parser",
+  "ignorePatterns": ["**/*", "node_modules"],
+  "plugins": ["@nrwl/nx"],
+  "settings": {
+    "react": {
+      "pragma": "React",
+      "fragment": "Fragment",
+      "version": "detect"
+    },
+    "import/resolver": {
+      "typescript": {
+        "alwaysTryTypes": true,
+        // use a glob pattern
+        "project": "packages/*/tsconfig.json"
+      }
+    }
+  },
+  "overrides": [
+    {
+      "files": ["*.ts", "*.tsx", "*.js", "*.jsx"],
+      "rules": {
+        "@nrwl/nx/enforce-module-boundaries": [
+          "error",
+          {
+            "enforceBuildableLibDependency": true,
+            "allow": [],
+            "depConstraints": [
+              {
+                "sourceTag": "*",
+                "onlyDependOnLibsWithTags": ["*"]
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "files": ["*.ts", "*.tsx"],
+      "extends": [
+        "eslint:recommended",
+        "plugin:@nrwl/nx/typescript",
+        "prettier",
+        "plugin:prettier/recommended",
+        "plugin:jsx-a11y/recommended",
+        "plugin:promise/recommended",
+        "plugin:react/recommended",
+        "plugin:react-hooks/recommended",
+        "plugin:sonarjs/recommended",
+        "plugin:unicorn/recommended"
+      ],
+      "plugins": ["react", "react-hooks", "simple-import-sort", "jest", "sonarjs", "unicorn", "@typescript-eslint", "prettier", "promise", "import"],
+      "rules": {
+        "padding-line-between-statements": [
+          "error",
+          { "blankLine": "always", "prev": ["const", "let", "var"], "next": "*" },
+          { "blankLine": "any", "prev": ["const", "let", "var"], "next": ["const", "let", "var"] },
+          { "blankLine": "always", "prev": "*", "next": "return" }
+        ],
+        "no-multiple-empty-lines": ["error"],
+        "prettier/prettier": "error",
+        "arrow-body-style": "off",
+        "prefer-arrow-callback": "off",
+        "import/prefer-default-export": "off",
+        "import/no-anonymous-default-export": [
+          "error",
+          {
+            "allowArray": false,
+            "allowArrowFunction": false,
+            "allowAnonymousClass": false,
+            "allowAnonymousFunction": false,
+            "allowCallExpression": true,
+            "allowLiteral": false,
+            "allowObject": true
+          }
+        ],
+        "no-console": ["error", { "allow": ["warn", "info", "error"] }],
+        "@typescript-eslint/no-use-before-define": ["error"],
+        "promise/prefer-await-to-then": "error",
+        "no-underscore-dangle": [
+          "error",
+          {
+            "allow": ["_id", "__typename", "__schema", "__dirname"],
+            "allowAfterThis": true
+          }
+        ],
+        "unicorn/prefer-module": "off",
+        "unicorn/filename-case": [
+          "error",
+          {
+            "case": "pascalCase",
+            "ignore": ["vite.config.ts", "vite-environment.d.ts", "\\.spec.tsx", "\\.stories.tsx"]
+          }
+        ]
+      }
+    },
+    {
+      "files": ["*.graphql"],
+      "extends": "plugin:@graphql-eslint/operations-all",
+      "rules": {
+        "@graphql-eslint/match-document-filename": ["error", { "query": "PascalCase" }]
+      }
+    }
+  ],
+  "env": {
+    "es6": true,
+    "browser": true,
+    "node": true,
+    "jest": true
+  }
+}

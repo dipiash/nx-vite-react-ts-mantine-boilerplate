@@ -1,0 +1,29 @@
+query ListRepositories($cursorAfter: String!, $cursorBefore: String, $first: Int, $last: Int, $queryString: String!) {
+  search(after: $cursorAfter, before: $cursorBefore, first: $first, last: $last, query: $queryString, type: REPOSITORY) {
+    edges {
+      cursor
+      node {
+        ... on Repository {
+          createdAt
+          id
+          licenseInfo {
+            id
+            name
+          }
+          name
+          stargazers {
+            totalCount
+          }
+          updatedAt
+        }
+      }
+    }
+    pageInfo {
+      endCursor
+      hasNextPage
+      hasPreviousPage
+      startCursor
+    }
+    repositoryCount
+  }
+}
