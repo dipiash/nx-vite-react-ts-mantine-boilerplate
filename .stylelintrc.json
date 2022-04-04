@@ -1,0 +1,70 @@
+{
+  "extends": [
+    "stylelint-config-rational-order"
+  ],
+  "plugins": [
+    "stylelint-prettier",
+    "stylelint-no-nested-media",
+    "stylelint-max-lines",
+    "stylelint-high-performance-animation",
+    "stylelint-no-unsupported-browser-features"
+  ],
+  "overrides": [
+    {
+      "files": ["**/*.{ts,tsx,js,jsx}"],
+      "customSyntax": "@stylelint/postcss-css-in-js"
+    }
+  ],
+  "ignoreFiles": [
+    "./packages/**/build/**",
+    "./node_modules/**",
+    "./**/node_modules/**"
+  ],
+  "rules": {
+    "pitcher/no-nested-media": true,
+    "pitcher/max-lines": 300,
+    "prettier/prettier": true,
+    "plugin/no-low-performance-animation-properties": true,
+    "plugin/no-unsupported-browser-features": [true, {
+      "severity": "warning"
+    }],
+    "plugin/rational-order": [true, {
+      "border-in-box-model": false,
+      "empty-line-between-groups": true
+    }],
+    "property-no-unknown": [true, {"ignoreProperties": ["box-orient"]}],
+    "number-leading-zero": "always",
+    "string-quotes": "single",
+    "selector-attribute-quotes": "always",
+    "selector-combinator-space-after": "always",
+    "declaration-block-trailing-semicolon": "always",
+    "selector-max-id": 0,
+    "selector-list-comma-newline-after": "always",
+    "comment-empty-line-before": [
+      "always",
+      { "except": [
+        "first-nested"
+      ] }
+    ],
+    "block-opening-brace-space-before": "always",
+    "declaration-colon-space-after": "always",
+    "declaration-colon-space-before": "never",
+    "declaration-block-single-line-max-declarations": 1,
+    "function-url-quotes": "always",
+    "at-rule-empty-line-before": [
+      "always",
+      { "ignore": [
+        "after-comment"
+      ], "except": [
+        "first-nested"
+      ] }
+    ],
+    "max-nesting-depth": 10,
+    "media-feature-colon-space-after": "always",
+    "media-feature-colon-space-before": "never",
+    "media-feature-parentheses-space-inside": "never",
+    "color-hex-case": "lower",
+    "color-hex-length": "short",
+    "no-missing-end-of-source-newline": null
+  }
+}

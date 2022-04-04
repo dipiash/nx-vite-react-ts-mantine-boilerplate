@@ -17,5 +17,9 @@
     "noEmit": true,
     "jsx": "react"
   },
-  "include": ["./src"]
+  "include": ["./src"],
+  "files": [
+    "../../node_modules/@nrwl/react/typings/cssmodule.d.ts",
+    "../../node_modules/@nrwl/react/typings/image.d.ts"
+  ]
 }

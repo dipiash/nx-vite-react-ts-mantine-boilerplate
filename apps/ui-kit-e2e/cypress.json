@@ -1,0 +1,16 @@
+{
+  "fileServerFolder": ".",
+  "fixturesFolder": "./src/fixtures",
+  "integrationFolder": "./src/integration",
+  "modifyObstructiveCode": false,
+  "supportFile": "./src/support/index.ts",
+  "pluginsFile": "./src/plugins/index.ts",
+  "video": false,
+  "videosFolder": "../../dist/cypress/apps/ui-kit-e2e/videos",
+  "screenshotsFolder": "../../dist/cypress/apps/ui-kit-e2e/screenshots",
+  "chromeWebSecurity": false,
+  "env": {
+    "ALLOW_SCREENSHOT": true,
+    "updateSnapshots": true
+  }
+}

@@ -21,13 +21,20 @@
         "cwd": "./packages/ui-kit",
         "commands": [
           {
-            "command": "vite build"
+            "command": "vite build --emptyOutDir"
           }
         ]
       }
     },
     "lint": {
       "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["packages/ui-kit/**/*.{ts,tsx,js,jsx}"]
+      }
+    },
+    "stylelint": {
+      "executor": "nx-stylelint:lint",
       "outputs": ["{options.outputFile}"],
       "options": {
         "lintFilePatterns": ["packages/ui-kit/**/*.{ts,tsx,js,jsx}"]

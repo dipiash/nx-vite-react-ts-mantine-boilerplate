@@ -14,11 +14,13 @@
     "skipLibCheck": true,
     "skipDefaultLibCheck": true,
     "allowSyntheticDefaultImports": true,
+    "resolveJsonModule": true,
     "baseUrl": "./packages",
     "paths": {
-      "@nx-ts-vite-react-graphql-styled-monorepo-example/data-access": ["data-access/src/index.ts"],
-      "@nx-ts-vite-react-graphql-styled-monorepo-example/ui-kit": ["ui-kit/src/index.ts"]
-    }
+      "@nx-ts-vite-react-graphql-styled-monorepo-example/data-access": ["data-access/src"],
+      "@nx-ts-vite-react-graphql-styled-monorepo-example/ui-kit": ["ui-kit/src"]
+    },
+    "types": ["vite/client"]
   },
   "exclude": ["node_modules", "tmp"]
 }

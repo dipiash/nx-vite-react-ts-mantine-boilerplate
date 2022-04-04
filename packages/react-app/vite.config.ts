@@ -1,11 +1,12 @@
-import { defineConfig } from 'vite'
 import viteReact from '@vitejs/plugin-react'
-import tsconfigPaths from 'vite-tsconfig-paths'
-import visualizer from 'rollup-plugin-visualizer'
-import analyze from 'rollup-plugin-analyzer'
 import path from 'node:path'
+import analyze from 'rollup-plugin-analyzer'
+import visualizer from 'rollup-plugin-visualizer'
+import { defineConfig } from 'vite'
+import tsconfigPaths from 'vite-tsconfig-paths'
 
 import { dependencies } from '../../package.json'
+
 function renderChunks(deps: Record<string, string>) {
   const chunks = {}
 

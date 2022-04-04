@@ -48,20 +48,61 @@
         "plugin:react/recommended",
         "plugin:react-hooks/recommended",
         "plugin:sonarjs/recommended",
-        "plugin:unicorn/recommended"
+        "plugin:unicorn/recommended",
+        "plugin:@typescript-eslint/eslint-recommended",
+        "plugin:@typescript-eslint/recommended",
+        "plugin:testing-library/react",
+        "plugin:jest-dom/recommended"
       ],
-      "plugins": ["react", "react-hooks", "simple-import-sort", "jest", "sonarjs", "unicorn", "@typescript-eslint", "prettier", "promise", "import"],
+      "plugins": [
+        "react",
+        "react-hooks",
+        "simple-import-sort",
+        "jest",
+        "sonarjs",
+        "unicorn",
+        "@typescript-eslint",
+        "prettier",
+        "promise",
+        "import",
+        "simple-import-sort"
+      ],
       "rules": {
-        "padding-line-between-statements": [
-          "error",
-          { "blankLine": "always", "prev": ["const", "let", "var"], "next": "*" },
-          { "blankLine": "any", "prev": ["const", "let", "var"], "next": ["const", "let", "var"] },
-          { "blankLine": "always", "prev": "*", "next": "return" }
-        ],
-        "no-multiple-empty-lines": ["error"],
         "prettier/prettier": "error",
-        "arrow-body-style": "off",
-        "prefer-arrow-callback": "off",
+        "react/prop-types": "off",
+        "simple-import-sort/imports": [
+          "error",
+          {
+            "groups": [
+              // Builtins
+              [
+                "^(events|fs|buffer|assert|child_process|cluster|dgram|dns|domain|crypto|http|https|module|net|console|constants|os|path|punycode|url|util|vm|zlib|freelist|v8|process|async_hooks|http2|perf_hooks|querystring|readline|repl|stream|string_decoder|sys|timers|tls|tty)(/.*|$)"
+              ],
+              // React, Apollo, Other @**, Styled Components
+              ["^react", "^@apollo", "^@?\\w", "^styled"],
+              // Monorepo packages
+              ["^(@nx-ts-vite-react-graphql-styled-monorepo-example)(/.*|$)"],
+              // Types
+              ["^.+?[Tt]ype.+?"],
+              // Hooks
+              ["^.*use[A-Z].*$"],
+              // Side effect imports.
+              ["^\\u0000"],
+              // Parent imports
+              ["^\\.\\.(?!/?$)", "^\\.\\./?$"],
+              // Relative imports
+              ["^\\./(?=.*/)(?!/?$)", "^\\.(?!/?$)", "^\\./?$"],
+              // Style
+              ["^.*styled.index$", "^.*css$"],
+              // Icons
+              ["^.*svg$"]
+            ]
+          }
+        ],
+        "simple-import-sort/exports": "error",
+        "import/first": "error",
+        "import/newline-after-import": "error",
+        "import/no-duplicates": "error",
         "import/prefer-default-export": "off",
         "import/no-anonymous-default-export": [
           "error",
@@ -75,22 +116,34 @@
             "allowObject": true
           }
         ],
-        "no-console": ["error", { "allow": ["warn", "info", "error"] }],
-        "@typescript-eslint/no-use-before-define": ["error"],
-        "promise/prefer-await-to-then": "error",
-        "no-underscore-dangle": [
-          "error",
-          {
-            "allow": ["_id", "__typename", "__schema", "__dirname"],
-            "allowAfterThis": true
-          }
-        ],
         "unicorn/prefer-module": "off",
         "unicorn/filename-case": [
           "error",
           {
             "case": "pascalCase",
             "ignore": ["vite.config.ts", "vite-environment.d.ts", "\\.spec.tsx", "\\.stories.tsx"]
+          }
+        ],
+        "padding-line-between-statements": [
+          "error",
+          { "blankLine": "always", "prev": ["const", "let", "var"], "next": "*" },
+          { "blankLine": "any", "prev": ["const", "let", "var"], "next": ["const", "let", "var"] },
+          { "blankLine": "always", "prev": "*", "next": "return" }
+        ],
+        "no-multiple-empty-lines": ["error"],
+        "arrow-body-style": "off",
+        "prefer-arrow-callback": "off",
+        "no-console": ["error", { "allow": ["warn", "info", "error"] }],
+        "@typescript-eslint/no-use-before-define": ["error"],
+        "@typescript-eslint/no-unused-vars": [
+          "error"
+        ],
+        "promise/prefer-await-to-then": "error",
+        "no-underscore-dangle": [
+          "error",
+          {
+            "allow": ["_id", "__typename", "__schema", "__dirname"],
+            "allowAfterThis": true
           }
         ]
       }

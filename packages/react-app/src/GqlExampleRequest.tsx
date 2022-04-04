@@ -1,4 +1,5 @@
 import React from 'react'
+
 import { useGetListLicensesQuery } from '@nx-ts-vite-react-graphql-styled-monorepo-example/data-access'
 
 export const GqlExampleRequest = () => {

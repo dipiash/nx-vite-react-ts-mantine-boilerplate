@@ -1,12 +1,16 @@
 import React, { useState } from 'react'
-import logo from './logo.svg'
-import './App.css'
-import { UiKit } from '@nx-ts-vite-react-graphql-styled-monorepo-example/ui-kit'
-import styled from 'styled-components'
-import { ApolloClient, InMemoryCache, createHttpLink, from, ApolloProvider } from '@apollo/client'
+import { ApolloClient, ApolloProvider, createHttpLink, from, InMemoryCache } from '@apollo/client'
 import { setContext } from '@apollo/client/link/context'
-import { GqlExampleRequest } from './GqlExampleRequest'
+import styled from 'styled-components'
+
 import { introspectionResult } from '@nx-ts-vite-react-graphql-styled-monorepo-example/data-access'
+import { UiKit } from '@nx-ts-vite-react-graphql-styled-monorepo-example/ui-kit'
+
+import { GqlExampleRequest } from './GqlExampleRequest'
+
+import './App.css'
+
+import logo from './logo.svg'
 
 const httpLink = createHttpLink({
   uri: 'https://api.github.com/graphql',
@@ -32,9 +36,10 @@ const gqlClient = new ApolloClient({
 })
 
 const Button = styled.button`
-  border: none;
   padding: 15px;
+
   background: red;
+  border: none;
 `
 
 function App() {

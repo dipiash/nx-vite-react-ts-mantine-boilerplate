@@ -12,6 +12,9 @@ export interface UiKitProperties {
 
 const StyledUiKit = styled.div<UiKitProperties>`
   color: pink;
+  font-family: -apple-system, serif;
+
+  border: none;
 `
 
 export const UiKit: FC<UiKitProperties> = ({ id, title, color }) => (
@@ -24,3 +27,5 @@ UiKit.defaultProps = {
   title: 'Welcome to UiKit!',
   color: 'pink',
 }
+
+export const Button: FC = () => <div>123</div>

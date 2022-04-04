@@ -1,15 +1,11 @@
-import { defineConfig } from 'vite'
-
-import path from 'node:path'
-import dts from 'vite-dts'
 import viteReact from '@vitejs/plugin-react'
+import path from 'node:path'
+import { defineConfig } from 'vite'
+import dts from 'vite-dts'
 
 const isExternal = (id: string) => !id.startsWith('.') && !path.isAbsolute(id)
 
 export default defineConfig({
-  esbuild: {
-    jsxInject: "import React from 'react'",
-  },
   build: {
     lib: {
       entry: path.resolve(__dirname, 'src/index.ts'),

@@ -1,5 +1,6 @@
 import React from 'react'
-import { Story, Meta } from '@storybook/react'
+import { Meta, Story } from '@storybook/react'
+
 import { UiKit, UiKitProperties } from './UiKit'
 
 export default {
