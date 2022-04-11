@@ -1,0 +1,14 @@
+// Vitest Snapshot v1
+
+exports[`UiKit > should render successfully 1`] = `
+<div>
+  <div
+    class="sc-bdvvtL gAzFMf"
+    style="color: pink;"
+  >
+    <h1>
+      Welcome to UiKit!
+    </h1>
+  </div>
+</div>
+`;

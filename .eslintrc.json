@@ -51,14 +51,12 @@
         "plugin:unicorn/recommended",
         "plugin:@typescript-eslint/eslint-recommended",
         "plugin:@typescript-eslint/recommended",
-        "plugin:testing-library/react",
-        "plugin:jest-dom/recommended"
+        "plugin:testing-library/react"
       ],
       "plugins": [
         "react",
         "react-hooks",
         "simple-import-sort",
-        "jest",
         "sonarjs",
         "unicorn",
         "@typescript-eslint",
@@ -121,7 +119,7 @@
           "error",
           {
             "case": "pascalCase",
-            "ignore": ["vite.config.ts", "vite-environment.d.ts", "\\.spec.tsx", "\\.stories.tsx"]
+            "ignore": ["vite(st)?.config.ts", "vite-environment.d.ts", "\\.spec.tsx", "\\.stories.tsx"]
           }
         ],
         "padding-line-between-statements": [
@@ -159,7 +157,6 @@
   "env": {
     "es6": true,
     "browser": true,
-    "node": true,
-    "jest": true
+    "node": true
   }
 }

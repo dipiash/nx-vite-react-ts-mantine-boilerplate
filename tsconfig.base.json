@@ -1,6 +1,7 @@
 {
   "compileOnSave": false,
   "compilerOptions": {
+    "jsx": "react",
     "rootDir": ".",
     "sourceMap": true,
     "declaration": false,
@@ -19,8 +20,8 @@
     "paths": {
       "@nx-ts-vite-react-graphql-styled-monorepo-example/data-access": ["data-access/src"],
       "@nx-ts-vite-react-graphql-styled-monorepo-example/ui-kit": ["ui-kit/src"]
-    },
-    "types": ["vite/client"]
+    }
   },
+  "include": ["**/*.js", "**/*.jsx", "**/*.ts", "**/*.tsx", "global.d.ts", "node_modules/vitest/dist/index.d.ts"],
   "exclude": ["node_modules", "tmp"]
 }

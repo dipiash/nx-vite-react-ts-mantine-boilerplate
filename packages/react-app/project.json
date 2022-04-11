@@ -4,6 +4,17 @@
   "sourceRoot": "packages/react-app/src",
   "tags": [],
   "targets": {
+    "type-check": {
+      "executor": "@nrwl/workspace:run-commands",
+      "options": {
+        "cwd": "./packages/react-app",
+        "commands": [
+          {
+            "command": "tsc --project tsconfig.app.json --noEmit"
+          }
+        ]
+      }
+    },
     "serve": {
       "executor": "nx-plugin-vite:serve",
       "options": {
@@ -57,11 +68,14 @@
       }
     },
     "test": {
-      "executor": "@nrwl/jest:jest",
-      "outputs": ["coverage/packages/react-app"],
+      "executor": "@nrwl/workspace:run-commands",
       "options": {
-        "jestConfig": "packages/react-app/jest.config.js",
-        "passWithNoTests": true
+        "cwd": "./packages/react-app",
+        "commands": [
+          {
+            "command": "vitest run --config ./vitest.config.ts --coverage --passWithNoTests"
+          }
+        ]
       }
     }
   }

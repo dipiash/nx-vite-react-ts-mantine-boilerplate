@@ -40,3 +40,4 @@ Thumbs.db
 stats.html
 .vscode
 node_modules
+coverage

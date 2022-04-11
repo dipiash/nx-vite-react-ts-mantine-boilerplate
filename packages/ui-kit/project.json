@@ -41,11 +41,14 @@
       }
     },
     "test": {
-      "executor": "@nrwl/jest:jest",
-      "outputs": ["coverage/packages/ui-kit"],
+      "executor": "@nrwl/workspace:run-commands",
       "options": {
-        "jestConfig": "packages/ui-kit/jest.config.js",
-        "passWithNoTests": true
+        "cwd": "./packages/ui-kit",
+        "commands": [
+          {
+            "command": "vitest run --config ./vitest.config.ts --coverage --passWithNoTests"
+          }
+        ]
       }
     },
     "storybook": {
