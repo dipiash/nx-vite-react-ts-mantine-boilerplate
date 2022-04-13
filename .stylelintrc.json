@@ -16,9 +16,10 @@
     }
   ],
   "ignoreFiles": [
-    "./packages/**/build/**",
     "./node_modules/**",
-    "./**/node_modules/**"
+    "./**/node_modules/**",
+    "./**/dist/**",
+    "./**/coverage/**"
   ],
   "rules": {
     "pitcher/no-nested-media": true,

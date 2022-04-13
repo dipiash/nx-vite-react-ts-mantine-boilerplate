@@ -119,7 +119,7 @@
           "error",
           {
             "case": "pascalCase",
-            "ignore": ["vite(st)?.config.ts", "vite-environment.d.ts", "\\.spec.tsx", "\\.stories.tsx"]
+            "ignore": ["vite(st)?.config.ts", "vite-environment.d.ts", "\\.spec.ts(x)?", "\\.stories.ts(x)?", "/ui-kit-e2e/i"]
           }
         ],
         "padding-line-between-statements": [

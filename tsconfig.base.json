@@ -22,6 +22,6 @@
       "@nx-ts-vite-react-graphql-styled-monorepo-example/ui-kit": ["ui-kit/src"]
     }
   },
-  "include": ["**/*.js", "**/*.jsx", "**/*.ts", "**/*.tsx", "global.d.ts", "node_modules/vitest/dist/index.d.ts"],
+  "include": ["**/*.js", "**/*.jsx", "**/*.ts", "**/*.tsx", "global.d.ts"],
   "exclude": ["node_modules", "tmp"]
 }

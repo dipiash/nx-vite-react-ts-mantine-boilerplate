@@ -1,4 +1,10 @@
 {
   "extends": ["plugin:cypress/recommended", "../../.eslintrc.json"],
-  "ignorePatterns": ["!**/*"]
+  "ignorePatterns": ["!**/*"],
+  "overrides": [{
+    "files": ["*.ts", "*.tsx"],
+    "rules": {
+      "unicorn/filename-case": "off"
+    }
+  }]
 }
