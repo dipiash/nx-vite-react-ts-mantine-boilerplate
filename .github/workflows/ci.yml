@@ -51,4 +51,4 @@ jobs:
 
       - uses: nrwl/nx-set-shas@v2
 
-      - run: npx nx affected --target=type-check --all
+      - run: npx nx affected --target=type-check --base=main --head=HEAD
