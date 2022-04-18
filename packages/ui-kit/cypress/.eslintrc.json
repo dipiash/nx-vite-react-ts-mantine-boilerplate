@@ -1,0 +1,15 @@
+{
+  "extends": ["../.eslintrc.json"],
+  "ignorePatterns": ["!**/*", "node_modules/**"],
+  "overrides": [
+    {
+      "files": ["*.ts", "*.tsx"],
+      "rules": {
+        "unicorn/filename-case": "off"
+      },
+      "parserOptions": {
+        "project": ["tsconfig.*?.json"]
+      }
+    }
+  ]
+}

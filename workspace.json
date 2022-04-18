@@ -3,7 +3,6 @@
   "projects": {
     "data-access": "packages/data-access",
     "react-app": "packages/react-app",
-    "ui-kit": "packages/ui-kit",
-    "ui-kit-e2e": "apps/ui-kit-e2e"
+    "ui-kit": "packages/ui-kit"
   }
 }

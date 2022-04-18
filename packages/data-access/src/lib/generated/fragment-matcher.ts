@@ -318,6 +318,7 @@
       "Discussion",
       "DiscussionCategory",
       "DiscussionComment",
+      "DraftIssue",
       "Enterprise",
       "EnterpriseAdministratorInvitation",
       "EnterpriseIdentityProvider",
@@ -399,8 +400,10 @@
       "ProjectCard",
       "ProjectColumn",
       "ProjectNext",
+      "ProjectNextField",
       "ProjectNextItem",
       "ProjectNextItemFieldValue",
+      "ProjectView",
       "PublicKey",
       "PullRequest",
       "PullRequestCommit",
@@ -641,7 +644,11 @@
       "Issue",
       "PullRequest"
     ],
+    "ProjectNextFieldCommon": [
+      "ProjectNextField"
+    ],
     "ProjectNextItemContent": [
+      "DraftIssue",
       "Issue",
       "PullRequest"
     ],
@@ -654,6 +661,12 @@
     "ProjectOwner": [
       "Organization",
       "Repository",
+      "User"
+    ],
+    "ProjectV2Owner": [
+      "Issue",
+      "Organization",
+      "PullRequest",
       "User"
     ],
     "PullRequestTimelineItem": [
@@ -821,6 +834,7 @@
     "RepositoryNode": [
       "CommitComment",
       "CommitCommentThread",
+      "DependabotUpdate",
       "Discussion",
       "DiscussionCategory",
       "Issue",

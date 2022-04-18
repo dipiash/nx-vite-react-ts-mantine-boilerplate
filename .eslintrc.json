@@ -1,6 +1,15 @@
 {
   "root": true,
   "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "ecmaVersion": 13,
+    "sourceType": "module",
+    "ecmaFeatures": {
+      "jsx": true,
+      "modules": true,
+      "experimentalObjectRestSpread": true
+    }
+  },
   "ignorePatterns": ["**/*", "node_modules"],
   "plugins": ["@nrwl/nx"],
   "settings": {
@@ -115,11 +124,19 @@
           }
         ],
         "unicorn/prefer-module": "off",
+        "unicorn/no-empty-file": "off",
         "unicorn/filename-case": [
           "error",
           {
             "case": "pascalCase",
-            "ignore": ["vite(st)?.config.ts", "vite-environment.d.ts", "\\.spec.ts(x)?", "\\.stories.ts(x)?", "/ui-kit-e2e/i"]
+            "ignore": [
+              "vite(st)?.config.ts",
+              "vite-environment.d.ts",
+              "\\.spec.ts(x)?",
+              "\\.types.ts(x)?",
+              "\\.stories.ts(x)?",
+              "\\.styled.ts(x)?"
+            ]
           }
         ],
         "padding-line-between-statements": [

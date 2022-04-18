@@ -1,1 +1,7 @@
-export * from './lib/UiKit'
+export { Button } from './lib/Button'
+export { Error } from './lib/Error'
+export { Input } from './lib/Input'
+export { Loader } from './lib/Loader'
+export { Pagination } from './lib/Pagination'
+export { Select } from './lib/Select'
+export { Table } from './lib/Table'

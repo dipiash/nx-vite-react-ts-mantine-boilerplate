@@ -11,7 +11,10 @@ function renderChunks(deps: Record<string, string>) {
   const chunks = {}
 
   for (const key of Object.keys(deps)) {
-    if (['react', 'react-router-dom', 'react-dom'].includes(key)) continue
+    if (['react', 'react-router-dom', 'react-dom'].includes(key)) {
+      continue
+    }
+
     // eslint-disable-next-line @typescript-eslint/ban-ts-comment
     // @ts-ignore
     chunks[key] = [key]
@@ -35,7 +38,7 @@ export default defineConfig({
   plugins: [
     visualizer({
       filename: path.join(__dirname, 'stats.html'),
-      open: true, // TODO: BANDLE_ANALYZER
+      open: import.meta.env?.DEV,
       gzipSize: true,
       brotliSize: true,
       projectRoot: path.join(__dirname),
@@ -51,8 +54,8 @@ export default defineConfig({
             {
               pure: true,
               ssr: true,
-              displayName: true, // TODO: Need to add production settings
-              fileName: true, // TODO: Need to add production settings
+              displayName: import.meta.env?.DEV,
+              fileName: import.meta.env?.DEV,
             },
           ],
         ],

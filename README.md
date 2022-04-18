@@ -1,9 +1,9 @@
-# HOW TO START
+# HOW TO START DEVELOPMENT
 1. Install `pnpm` - https://pnpm.io/installation
 2. `pnpm install`
-3. Change stub Github token `ENV_BEARER_TOKEN` in:
-   1. `packages/data-access/codegen.yml`
-   2. `packages/react-app/src/App.tsx`
+3. Add `env.local` to:
+   1. `packages/data-access/env.local` (see example `packages/data-access/env.example`)
+   2. `packages/react-app/.env.local` (see example `packages/react-app/.env.example`)
 4. Generate GQL helper files `nx r data-access:generate`
 5. `nx r ${packages-name:commands}` Use commands for packages from:
    1. packages/data-access/project.json

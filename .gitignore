@@ -41,3 +41,6 @@ stats.html
 .vscode
 node_modules
 coverage
+
+.env.*
+!.env.example

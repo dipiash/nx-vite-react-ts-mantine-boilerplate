@@ -12,8 +12,9 @@
     "noImplicitReturns": true,
     "noFallthroughCasesInSwitch": true
   },
-  "files": [],
-  "include": [],
+  "files": [
+    "../../node_modules/@nrwl/react/typings/image.d.ts"
+  ],
   "references": [
     {
       "path": "./tsconfig.lib.json"

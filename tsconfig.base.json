@@ -16,12 +16,25 @@
     "skipDefaultLibCheck": true,
     "allowSyntheticDefaultImports": true,
     "resolveJsonModule": true,
+    "strictNullChecks": true,
+    "strict": true,
     "baseUrl": "./packages",
     "paths": {
       "@nx-ts-vite-react-graphql-styled-monorepo-example/data-access": ["data-access/src"],
       "@nx-ts-vite-react-graphql-styled-monorepo-example/ui-kit": ["ui-kit/src"]
     }
   },
-  "include": ["**/*.js", "**/*.jsx", "**/*.ts", "**/*.tsx", "global.d.ts"],
-  "exclude": ["node_modules", "tmp"]
+  "include": [
+    "**/*.js",
+    "**/*.jsx",
+    "**/*.ts",
+    "**/*.tsx",
+    "global.d.ts"
+  ],
+  "exclude": [
+    "node_modules",
+    "tmp",
+    "dist",
+    "coverage"
+  ]
 }

@@ -1,8 +1,8 @@
 overwrite: true
 schema:
-  - https://api.github.com/graphql:
+  - ${GITHUB_API_ENDPOINT}:
       headers:
-        Authorization: bearer ENV_BEARER_TOKEN
+        Authorization: bearer ${GITHUB_TOKEN}
 documents: 'src/lib/graphql/**/*.graphql'
 generates:
   src/lib/generated/fragment-matcher.ts:
