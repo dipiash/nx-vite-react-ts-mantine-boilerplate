@@ -23,10 +23,12 @@ jobs:
           run_install: true
   type-check:
     runs-on: ubuntu-latest
+    needs:
+      - cache-and-install
     steps:
       - uses: actions/checkout@v2
         with:
           fetch-depth: 0
       - uses: nrwl/nx-set-shas@v2
 
-      - run: nx type-check ui-kit
+      - run: npx nx type-check ui-kit
