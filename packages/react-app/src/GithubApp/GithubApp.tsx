@@ -11,6 +11,7 @@ export const GithubApp = () => {
   const [repositoryNameValue, setRepositoryName] = useState<string | null>()
   const [repositoryName] = useDebouncedValue(repositoryNameValue, 300)
 
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const queryString = [
     getSortCondition('stars', 'desc'),
     getLanguageCondition('JavaScript'),
@@ -18,8 +19,6 @@ export const GithubApp = () => {
     getLicenseCondition(license),
     getRepositoryNameCondition(repositoryName),
   ].join(' ')
-
-  console.info('queryString', queryString)
 
   return (
     <ApolloProviderWrapper>
