@@ -55,7 +55,7 @@ jobs:
             cache-nx-${{ hashFiles('**/pnpm-lock.yaml') }}-type-check-
             cache-nx-${{ hashFiles('**/pnpm-lock.yaml') }}-
 
-      - run: npx nx affected --target=type-check --base=refs/heads/main --head=HEAD
+      - run: npx nx affected --target=type-check --base=origin/main --head=HEAD --with-deps
 
   lint:
     runs-on: ubuntu-latest
@@ -89,7 +89,7 @@ jobs:
             cache-nx-${{ hashFiles('**/pnpm-lock.yaml') }}-lint-
             cache-nx-${{ hashFiles('**/pnpm-lock.yaml') }}-
 
-      - run: npx nx affected --target=lint --base=refs/heads/main --head=HEAD
+      - run: npx nx affected --target=lint --base=origin/main --head=HEAD --with-deps
 
   stylelint:
     runs-on: ubuntu-latest
@@ -123,7 +123,7 @@ jobs:
             cache-nx-${{ hashFiles('**/pnpm-lock.yaml') }}-stylelint-
             cache-nx-${{ hashFiles('**/pnpm-lock.yaml') }}-
 
-      - run: npx nx affected --target=stylelint --base=refs/heads/main --head=HEAD
+      - run: npx nx affected --target=stylelint --base=origin/main --head=HEAD --with-deps
 
   test:
     runs-on: ubuntu-latest
@@ -157,4 +157,4 @@ jobs:
             cache-nx-${{ hashFiles('**/pnpm-lock.yaml') }}-test-
             cache-nx-${{ hashFiles('**/pnpm-lock.yaml') }}-
 
-      - run: npx nx affected --target=test --base=refs/heads/main --head=HEAD
+      - run: npx nx affected --target=test --base=origin/main --head=HEAD --with-deps
