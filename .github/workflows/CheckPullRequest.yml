@@ -51,6 +51,7 @@ jobs:
             cache-nx-${{ hashFiles('**/pnpm-lock.yaml') }}-type-check-
             cache-nx-${{ hashFiles('**/pnpm-lock.yaml') }}-
 
+      - run: git fetch --no-tags --prune --depth=5 origin master
       - run: npx nx affected --target=type-check --base=main --head=HEAD
 
   lint:
@@ -83,6 +84,7 @@ jobs:
             cache-nx-${{ hashFiles('**/pnpm-lock.yaml') }}-lint-
             cache-nx-${{ hashFiles('**/pnpm-lock.yaml') }}-
 
+      - run: git fetch --no-tags --prune --depth=5 origin master
       - run: npx nx affected --target=lint --base=main --head=HEAD
 
   stylelint:
@@ -115,6 +117,7 @@ jobs:
             cache-nx-${{ hashFiles('**/pnpm-lock.yaml') }}-stylelint-
             cache-nx-${{ hashFiles('**/pnpm-lock.yaml') }}-
 
+      - run: git fetch --no-tags --prune --depth=5 origin master
       - run: npx nx affected --target=stylelint --base=main --head=HEAD
 
   test:
@@ -147,4 +150,5 @@ jobs:
             cache-nx-${{ hashFiles('**/pnpm-lock.yaml') }}-test-
             cache-nx-${{ hashFiles('**/pnpm-lock.yaml') }}-
 
+      - run: git fetch --no-tags --prune --depth=5 origin master
       - run: npx nx affected --target=test --base=main --head=HEAD
