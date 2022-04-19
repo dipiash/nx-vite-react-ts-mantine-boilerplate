@@ -1,7 +1,7 @@
 name: Reusable Workflow for PNPM and NX
 
 on:
-  workflow_dispatch:
+  workflow_call:
 
 jobs:
   main:

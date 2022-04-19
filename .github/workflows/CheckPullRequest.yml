@@ -31,7 +31,7 @@ jobs:
     needs:
       - cache-and-install
     steps:
-      - uses: ./.github/workflows/reusableWorkflowForPnpmAndNx.yml@main
+      - uses: dipiash/nx-ts-vite-react-graphql-styled-monorepo-example/.github/workflows/reusableWorkflowForPnpmAndNx.yml@main
 
       - name: type-check PR
         if: github.ref != 'refs/heads/main'
