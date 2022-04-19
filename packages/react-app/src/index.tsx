@@ -1,14 +1,15 @@
-import React from 'react'
+import React, { FC } from 'react'
 import ReactDOM from 'react-dom'
 import { BrowserRouter } from 'react-router-dom'
 
 import App from './App'
 
-ReactDOM.render(
+const Renderer: FC = () => (
   <React.StrictMode>
     <BrowserRouter>
       <App />
     </BrowserRouter>
-  </React.StrictMode>,
-  document.querySelector('#root'),
+  </React.StrictMode>
 )
+
+ReactDOM.render(<Renderer />, document.querySelector('#root'))
