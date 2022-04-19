@@ -1,11 +1,11 @@
-import React, { FC } from 'react'
+import React, { FC, useMemo } from 'react'
 
 import { ITableProperties } from './Table.types'
 
 import { STable } from './Table.styled'
 
 export const Table: FC<ITableProperties> = ({ columns, data, error }) => {
-  const columnKeys = Object.keys(columns)
+  const columnKeys = useMemo(() => Object.keys(columns), [columns])
 
   return (
     <STable>

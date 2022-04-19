@@ -1,16 +1,12 @@
-name: CI
+name: Check Pull Request
 on:
-  push:
-    branches:
-      - main
   pull_request:
-
 jobs:
   cache-and-install:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - name: Cache pnpm modules
+      - name: Cache data for pnpm and node_modules
         uses: actions/cache@v3
         with:
           path: |
@@ -31,18 +27,13 @@ jobs:
       - cache-and-install
     steps:
       - uses: actions/checkout@v2
-        with:
-          fetch-depth: 0
-
-      - name: Restore pnpm modules
+      - name: Restore cache for pnpm and node_modules
         uses: actions/cache@v3
         with:
           path: |
             ~/.pnpm-store
             **/node_modules
           key: ${{ runner.os }}-${{ hashFiles('**/pnpm-lock.yaml') }}
-          restore-keys: |
-            ${{ runner.os }}-
 
       - uses: pnpm/action-setup@v2.1.0
         with:
@@ -50,6 +41,15 @@ jobs:
           run_install: false
 
       - uses: nrwl/nx-set-shas@v2
+
+      - name: Cache Nx
+        uses: actions/cache@v3
+        with:
+          path: node_modules/.cache/nx
+          key: cache-nx-${{ hashFiles('**/pnpm-lock.yaml') }}-type-check-${{ github.sha }}
+          restore-keys: |
+            cache-nx-${{ hashFiles('**/pnpm-lock.yaml') }}-type-check-
+            cache-nx-${{ hashFiles('**/pnpm-lock.yaml') }}-
 
       - run: npx nx affected --target=type-check --base=main --head=HEAD
 
@@ -59,18 +59,13 @@ jobs:
       - cache-and-install
     steps:
       - uses: actions/checkout@v2
-        with:
-          fetch-depth: 0
-
-      - name: Restore pnpm modules
+      - name: Restore cache for pnpm and node_modules
         uses: actions/cache@v3
         with:
           path: |
             ~/.pnpm-store
             **/node_modules
           key: ${{ runner.os }}-${{ hashFiles('**/pnpm-lock.yaml') }}
-          restore-keys: |
-            ${{ runner.os }}-
 
       - uses: pnpm/action-setup@v2.1.0
         with:
@@ -78,6 +73,15 @@ jobs:
           run_install: false
 
       - uses: nrwl/nx-set-shas@v2
+
+      - name: Cache Nx
+        uses: actions/cache@v3
+        with:
+          path: node_modules/.cache/nx
+          key: cache-nx-${{ hashFiles('**/pnpm-lock.yaml') }}-lint-${{ github.sha }}
+          restore-keys: |
+            cache-nx-${{ hashFiles('**/pnpm-lock.yaml') }}-lint-
+            cache-nx-${{ hashFiles('**/pnpm-lock.yaml') }}-
 
       - run: npx nx affected --target=lint --base=main --head=HEAD
 
@@ -87,18 +91,13 @@ jobs:
       - cache-and-install
     steps:
       - uses: actions/checkout@v2
-        with:
-          fetch-depth: 0
-
-      - name: Restore pnpm modules
+      - name: Restore cache for pnpm and node_modules
         uses: actions/cache@v3
         with:
           path: |
             ~/.pnpm-store
             **/node_modules
           key: ${{ runner.os }}-${{ hashFiles('**/pnpm-lock.yaml') }}
-          restore-keys: |
-            ${{ runner.os }}-
 
       - uses: pnpm/action-setup@v2.1.0
         with:
@@ -106,6 +105,15 @@ jobs:
           run_install: false
 
       - uses: nrwl/nx-set-shas@v2
+
+      - name: Cache Nx
+        uses: actions/cache@v3
+        with:
+          path: node_modules/.cache/nx
+          key: cache-nx-${{ hashFiles('**/pnpm-lock.yaml') }}-stylelint-${{ github.sha }}
+          restore-keys: |
+            cache-nx-${{ hashFiles('**/pnpm-lock.yaml') }}-stylelint-
+            cache-nx-${{ hashFiles('**/pnpm-lock.yaml') }}-
 
       - run: npx nx affected --target=stylelint --base=main --head=HEAD
 
@@ -115,18 +123,13 @@ jobs:
       - cache-and-install
     steps:
       - uses: actions/checkout@v2
-        with:
-          fetch-depth: 0
-
-      - name: Restore pnpm modules
+      - name: Restore cache for pnpm and node_modules
         uses: actions/cache@v3
         with:
           path: |
             ~/.pnpm-store
             **/node_modules
           key: ${{ runner.os }}-${{ hashFiles('**/pnpm-lock.yaml') }}
-          restore-keys: |
-            ${{ runner.os }}-
 
       - uses: pnpm/action-setup@v2.1.0
         with:
@@ -134,5 +137,14 @@ jobs:
           run_install: false
 
       - uses: nrwl/nx-set-shas@v2
+
+      - name: Cache Nx
+        uses: actions/cache@v3
+        with:
+          path: node_modules/.cache/nx
+          key: cache-nx-${{ hashFiles('**/pnpm-lock.yaml') }}-test-${{ github.sha }}
+          restore-keys: |
+            cache-nx-${{ hashFiles('**/pnpm-lock.yaml') }}-test-
+            cache-nx-${{ hashFiles('**/pnpm-lock.yaml') }}-
 
       - run: npx nx affected --target=test --base=main --head=HEAD
