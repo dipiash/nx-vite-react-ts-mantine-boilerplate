@@ -54,8 +54,8 @@ export default defineConfig({
             {
               pure: true,
               ssr: true,
-              displayName: import.meta.env?.DEV,
-              fileName: import.meta.env?.DEV,
+              displayName: Boolean(process.env.DEV),
+              fileName: Boolean(process.env.DEV),
             },
           ],
         ],

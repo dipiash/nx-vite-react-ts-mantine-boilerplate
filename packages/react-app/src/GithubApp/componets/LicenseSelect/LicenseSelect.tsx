@@ -6,24 +6,25 @@ import { Error, Loader, Select } from '@nx-ts-vite-react-graphql-styled-monorepo
 import { LicenseSelectProperties } from './LicenseSelect.types'
 import { SelectItem } from '@mantine/core/lib/components/Select/types'
 
-const firstEmptySelectItem = [{ value: 0, label: '--- Not Selected ---' }]
+const firstEmptySelectItem: SelectItem[] = [{ value: '', label: '--- Not Selected ---' }]
 
 export const LicenseSelect: FC<LicenseSelectProperties> = ({ onChange, ...rest }) => {
   const { data, loading, error } = useListLicensesQuery()
 
-  const preparedLicenses = useMemo(() => {
+  const preparedLicenses = useMemo<SelectItem[]>(() => {
     const preparedOriginalLicenses =
       data?.licenses
-        .map(
-          (license) =>
-            license && {
-              value: license.key,
-              label: license.name,
-            },
+        .map((license) =>
+          license
+            ? ({
+                value: license.key,
+                label: license.name,
+              } as SelectItem)
+            : undefined,
         )
-        .filter((license) => license !== undefined) || []
+        .filter((license): license is SelectItem => license !== undefined) || []
 
-    return [firstEmptySelectItem, ...preparedOriginalLicenses] as SelectItem[]
+    return [...firstEmptySelectItem, ...preparedOriginalLicenses]
   }, [data])
 
   if (error) {
@@ -39,6 +40,7 @@ export const LicenseSelect: FC<LicenseSelectProperties> = ({ onChange, ...rest }
         label="License type"
         data={preparedLicenses}
         onChange={onChange}
+        defaultValue="0"
         filter={(value, item) => Boolean(item?.label?.toLowerCase().includes(value.toLowerCase().trim()))}
         {...rest}
       />

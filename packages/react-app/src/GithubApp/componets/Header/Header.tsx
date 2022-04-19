@@ -11,7 +11,7 @@ import { SHeader } from './Header.styled'
 export const Header: FC<IHeaderProperties> = memo(({ setRepositoryName, setLicense }) => {
   return (
     <SHeader>
-      <div className="headerItem">
+      <div className="headerItem left">
         <Input
           label="Search by repo name"
           data-testid="search-by-name"
@@ -21,7 +21,7 @@ export const Header: FC<IHeaderProperties> = memo(({ setRepositoryName, setLicen
           onChange={(event) => setRepositoryName(event.target.value)}
         />
       </div>
-      <div className="headerItem">
+      <div className="headerItem right">
         <LicenseSelect className="headerField" onChange={(value) => setLicense(value)} />
       </div>
     </SHeader>

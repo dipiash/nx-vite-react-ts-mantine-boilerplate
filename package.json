@@ -4,6 +4,7 @@
   "license": "MIT",
   "scripts": {
     "@react-app": "",
+    "@react-app:serve": "NODE_ENV=development DEV=true nx serve react-app",
     "@react-app:build": "NODE_ENV=production nx build react-app",
     "@react-app:type-check": "NODE_ENV=production nx type-check react-app",
     "@react-app:lint": "NODE_ENV=production nx lint react-app",
