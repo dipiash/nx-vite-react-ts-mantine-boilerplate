@@ -5,7 +5,9 @@ jobs:
   cache-and-install:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
       - name: Cache data for pnpm and node_modules
         uses: actions/cache@v3
         with:
@@ -26,7 +28,9 @@ jobs:
     needs:
       - cache-and-install
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
       - name: Restore cache for pnpm and node_modules
         uses: actions/cache@v3
         with:
@@ -51,7 +55,6 @@ jobs:
             cache-nx-${{ hashFiles('**/pnpm-lock.yaml') }}-type-check-
             cache-nx-${{ hashFiles('**/pnpm-lock.yaml') }}-
 
-      - run: git fetch --no-tags --prune --depth=5 origin master
       - run: npx nx affected --target=type-check --base=main --head=HEAD
 
   lint:
@@ -59,7 +62,9 @@ jobs:
     needs:
       - cache-and-install
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
       - name: Restore cache for pnpm and node_modules
         uses: actions/cache@v3
         with:
@@ -84,7 +89,6 @@ jobs:
             cache-nx-${{ hashFiles('**/pnpm-lock.yaml') }}-lint-
             cache-nx-${{ hashFiles('**/pnpm-lock.yaml') }}-
 
-      - run: git fetch --no-tags --prune --depth=5 origin master
       - run: npx nx affected --target=lint --base=main --head=HEAD
 
   stylelint:
@@ -92,7 +96,9 @@ jobs:
     needs:
       - cache-and-install
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
       - name: Restore cache for pnpm and node_modules
         uses: actions/cache@v3
         with:
@@ -117,7 +123,6 @@ jobs:
             cache-nx-${{ hashFiles('**/pnpm-lock.yaml') }}-stylelint-
             cache-nx-${{ hashFiles('**/pnpm-lock.yaml') }}-
 
-      - run: git fetch --no-tags --prune --depth=5 origin master
       - run: npx nx affected --target=stylelint --base=main --head=HEAD
 
   test:
@@ -125,7 +130,9 @@ jobs:
     needs:
       - cache-and-install
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
       - name: Restore cache for pnpm and node_modules
         uses: actions/cache@v3
         with:
@@ -150,5 +157,4 @@ jobs:
             cache-nx-${{ hashFiles('**/pnpm-lock.yaml') }}-test-
             cache-nx-${{ hashFiles('**/pnpm-lock.yaml') }}-
 
-      - run: git fetch --no-tags --prune --depth=5 origin master
       - run: npx nx affected --target=test --base=main --head=HEAD
