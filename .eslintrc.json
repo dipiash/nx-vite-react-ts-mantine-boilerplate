@@ -128,7 +128,10 @@
         "unicorn/filename-case": [
           "error",
           {
-            "case": "pascalCase",
+            "cases": {
+              "pascalCase": true,
+              "camelCase": true
+            },
             "ignore": [
               "vite(st)?.config.ts",
               "vite-environment.d.ts",

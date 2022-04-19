@@ -3,3 +3,4 @@
 
 nx affected --target=lint
 nx affected --target=stylelint
+nx affected --target=type-check

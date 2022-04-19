@@ -1,8 +1,9 @@
 import React, { useState } from 'react'
 import { useDebouncedValue } from '@mantine/hooks'
 
+import { Header } from './componets/Header'
+import { RepositoriesTable } from './componets/RepositoriesTable'
 import { ApolloProviderWrapper } from './providers/ApolloProviderWrapper'
-import { Header } from './Header'
 import { getDateCondition, getLanguageCondition, getLicenseCondition, getRepositoryNameCondition, getSortCondition } from './utils'
 
 export const GithubApp = () => {
@@ -23,6 +24,7 @@ export const GithubApp = () => {
   return (
     <ApolloProviderWrapper>
       <Header setLicense={setLicense} setRepositoryName={setRepositoryName} />
+      <RepositoriesTable queryString={queryString} limit={10} />
     </ApolloProviderWrapper>
   )
 }
