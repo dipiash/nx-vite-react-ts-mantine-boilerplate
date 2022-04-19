@@ -58,10 +58,12 @@ jobs:
             cache-nx-${{ hashFiles('**/pnpm-lock.yaml') }}-type-check-
             cache-nx-${{ hashFiles('**/pnpm-lock.yaml') }}-
 
-      if: github.ref != 'refs/heads/main'
-      - run: npx nx affected --target=type-check --base=origin/main --head=HEAD --with-deps
-      if: github.ref == 'refs/heads/main'
-      - run: npx nx affected --target=type-check --base=origin/main~1 --head=origin/main --with-deps
+      - name: type-check PR
+        if: github.ref != 'refs/heads/main'
+        run: npx nx affected --target=type-check --base=origin/main --head=HEAD --with-deps
+      - name: type-check Main
+        if: github.ref == 'refs/heads/main'
+        run: npx nx affected --target=type-check --base=origin/main~1 --head=origin/main --with-deps
 
   lint:
     runs-on: ubuntu-latest
