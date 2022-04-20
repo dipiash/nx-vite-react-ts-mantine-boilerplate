@@ -17,7 +17,7 @@ jobs:
         uses: dipiash/pnpm-nx-reusable-action@v2
 
       - name: Install and Build 🔧
-        run: npx nx build react-app
+        run: nx build react-app
 
       - name: Deploy 🚀
         uses: JamesIves/github-pages-deploy-action@v4.3.0
