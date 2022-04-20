@@ -38,7 +38,7 @@ jobs:
       - run: ls -al .github/workflows
 
       - name: Reusable Action for PNPM and NX
-        uses: actions/pnpm-nx-reusable-action@main
+        uses: actions/pnpm-nx-reusable-action@v2
 
       - name: type-check PR
         if: github.ref != 'refs/heads/main'
