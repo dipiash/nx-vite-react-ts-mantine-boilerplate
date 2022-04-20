@@ -1,4 +1,4 @@
-![CI](https://github.com/dipiash/nx-ts-vite-react-graphql-styled-monorepo-example/actions/workflows/CheckPullRequest.yml/badge.svg)
+![CI](https://github.com/dipiash/nx-ts-vite-react-graphql-styled-monorepo-example/actions/workflows/CheckPullRequest.yml/badge.svg?branch=main)
 
 # HOW TO START DEVELOPMENT
 1. Install `pnpm` - https://pnpm.io/installation
