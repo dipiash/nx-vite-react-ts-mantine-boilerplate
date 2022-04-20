@@ -1,4 +1,4 @@
-name: Check Pull Request
+name: Code check
 on:
   push:
     branches:
@@ -40,10 +40,10 @@ jobs:
 
       - name: type-check PR
         if: github.ref != 'refs/heads/main'
-        run: npx nx affected --target=type-check --base=origin/main --head=HEAD --with-deps
+        run: npx nx affected --target=type-check --base=origin/main --head=HEAD
       - name: type-check Main
         if: github.ref == 'refs/heads/main'
-        run: npx nx affected --target=type-check --base=origin/main~1 --head=origin/main --with-deps
+        run: npx nx affected --target=type-check --base=origin/main~1 --head=origin/main
 
   lint:
     runs-on: ubuntu-latest
@@ -59,10 +59,10 @@ jobs:
 
       - name: lint PR
         if: github.ref != 'refs/heads/main'
-        run: npx nx affected --target=lint --base=origin/main --head=HEAD --with-deps
+        run: npx nx affected --target=lint --base=origin/main --head=HEAD
       - name: lint Main
         if: github.ref == 'refs/heads/main'
-        run: npx nx affected --target=lint --base=origin/main~1 --head=origin/main --with-deps
+        run: npx nx affected --target=lint --base=origin/main~1 --head=origin/main
 
   stylelint:
     runs-on: ubuntu-latest
@@ -78,10 +78,10 @@ jobs:
 
       - name: stylelint PR
         if: github.ref != 'refs/heads/main'
-        run: npx nx affected --target=stylelint --base=origin/main --head=HEAD --with-deps
+        run: npx nx affected --target=stylelint --base=origin/main --head=HEAD
       - name: stylelint Main
         if: github.ref == 'refs/heads/main'
-        run: npx nx affected --target=stylelint --base=origin/main~1 --head=origin/main --with-deps
+        run: npx nx affected --target=stylelint --base=origin/main~1 --head=origin/main
 
   test:
     runs-on: ubuntu-latest
@@ -97,7 +97,8 @@ jobs:
 
       - name: test PR
         if: github.ref != 'refs/heads/main'
-        run: npx nx affected --target=test --base=origin/main --head=HEAD --with-deps
+        run: npx nx affected --target=test --base=origin/main --head=HEAD
       - name: test Main
         if: github.ref == 'refs/heads/main'
-        run: npx nx affected --target=test --base=origin/main~1 --head=origin/main --with-deps
+        run: npx nx affected --target=test --base=origin/main~1 --head=origin/main
+
