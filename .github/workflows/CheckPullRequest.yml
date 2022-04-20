@@ -35,7 +35,7 @@ jobs:
         with:
           fetch-depth: 0
       - name: Reusable Workflow for PNPM and NX
-        uses: dipiash/nx-ts-vite-react-graphql-styled-monorepo-example/.github/workflows/reusableWorkflowForPnpmAndNx.yml@main
+        uses: ./.github/workflows/reusableWorkflowForPnpmAndNx.yml@main
 
       - name: type-check PR
         if: github.ref != 'refs/heads/main'
