@@ -36,7 +36,7 @@ jobs:
           fetch-depth: 0
 
       - name: Reusable Action for PNPM and NX
-        uses: dipiash/pnpm-nx-reusable-action@v2
+        uses: dipiash/pnpm-nx-reusable-action@main
 
       - name: type-check PR
         if: github.ref != 'refs/heads/main'
