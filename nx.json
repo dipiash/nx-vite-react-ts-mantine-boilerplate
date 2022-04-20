@@ -28,9 +28,11 @@
         "cacheableOperations": [
           "build",
           "lint",
+          "stylelint",
           "test",
           "e2e",
-          "build-storybook"
+          "build-storybook",
+          "type-check"
         ]
       }
     }

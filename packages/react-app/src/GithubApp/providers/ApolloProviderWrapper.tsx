@@ -1,4 +1,4 @@
-import React, { FC } from 'react'
+import React, { FC, PropsWithChildren } from 'react'
 import { ApolloClient, ApolloProvider, createHttpLink, from, InMemoryCache } from '@apollo/client'
 import { setContext } from '@apollo/client/link/context'
 
@@ -27,6 +27,6 @@ const gqlClient = new ApolloClient({
   link: from([authLink, httpLink]),
 })
 
-export const ApolloProviderWrapper: FC = ({ children }) => {
+export const ApolloProviderWrapper: FC<PropsWithChildren<Record<string, unknown>>> = ({ children }) => {
   return <ApolloProvider client={gqlClient}>{children}</ApolloProvider>
 }

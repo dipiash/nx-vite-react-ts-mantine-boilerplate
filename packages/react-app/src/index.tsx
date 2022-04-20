@@ -1,5 +1,5 @@
 import React, { FC } from 'react'
-import ReactDOM from 'react-dom'
+import { createRoot } from 'react-dom/client'
 import { BrowserRouter } from 'react-router-dom'
 
 import App from './App'
@@ -12,4 +12,7 @@ const Renderer: FC = () => (
   </React.StrictMode>
 )
 
-ReactDOM.render(<Renderer />, document.querySelector('#root'))
+const container = document.querySelector('#root')
+const root = createRoot(container as Element)
+
+root.render(<Renderer />)

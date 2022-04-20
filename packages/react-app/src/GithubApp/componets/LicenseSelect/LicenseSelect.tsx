@@ -40,7 +40,7 @@ export const LicenseSelect: FC<LicenseSelectProperties> = ({ onChange, ...rest }
         label="License type"
         data={preparedLicenses}
         onChange={onChange}
-        defaultValue="0"
+        defaultValue=""
         filter={(value, item) => Boolean(item?.label?.toLowerCase().includes(value.toLowerCase().trim()))}
         {...rest}
       />
