@@ -5,6 +5,8 @@ on:
     branches: [main]
     types:
       - completed
+env:
+  VITE_GITHUB_API_ENDPOINT: https://api.github.com/graphql
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
