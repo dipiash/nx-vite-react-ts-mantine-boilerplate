@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { ChangeEvent, useCallback, useState } from 'react'
 import { useDebouncedValue } from '@mantine/hooks'
 
 import { Button } from '@nx-ts-vite-react-graphql-styled-monorepo-example/ui-kit'
@@ -13,12 +13,11 @@ import { getDateCondition, getLanguageCondition, getLicenseCondition, getReposit
 export const GithubApp = () => {
   const { isTokenExist, handleUpdateToken } = useInputTokenForGraphql()
 
-  const [license, setLicense] = useState<string | null>()
+  const [license, setLicense] = useState<string>('')
 
-  const [repositoryNameValue, setRepositoryName] = useState<string | null>()
+  const [repositoryNameValue, setRepositoryName] = useState<string>('')
   const [repositoryName] = useDebouncedValue(repositoryNameValue, 300)
 
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const queryString = [
     getSortCondition('stars', 'desc'),
     getLanguageCondition('JavaScript'),
@@ -27,16 +26,26 @@ export const GithubApp = () => {
     getRepositoryNameCondition(repositoryName),
   ].join(' ')
 
+  const handleSetRepositoryName = useCallback((event_: ChangeEvent<HTMLInputElement>) => {
+    setRepositoryName(event_.target.value)
+  }, [])
+
+  const handleSetLicense = useCallback((license: string) => {
+    setLicense(license)
+  }, [])
+
   return (
     <ApolloProviderWrapper>
       <Button onClick={handleUpdateToken}>Enter personal-access-token</Button>
 
       {isTokenExist && (
         <>
-          <Header setLicense={setLicense} setRepositoryName={setRepositoryName} />
+          <Header handleSetLicense={handleSetLicense} handleSetRepositoryName={handleSetRepositoryName} />
           <RepositoriesTable queryString={queryString} limit={10} />
         </>
       )}
     </ApolloProviderWrapper>
   )
 }
+
+GithubApp.whyDidYouRender = true

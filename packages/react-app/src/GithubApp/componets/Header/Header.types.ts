@@ -1,4 +1,6 @@
+import { ChangeEvent } from 'react'
+
 export interface IHeaderProperties {
-  setRepositoryName: (value: string | null) => void
-  setLicense: (value: string | null) => void
+  handleSetRepositoryName: (event_: ChangeEvent<HTMLInputElement>) => void
+  handleSetLicense: (value: string) => void
 }

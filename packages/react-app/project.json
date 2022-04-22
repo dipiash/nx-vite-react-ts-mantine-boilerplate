@@ -16,30 +16,36 @@
       }
     },
     "serve": {
-      "executor": "nx-plugin-vite:serve",
+      "executor": "@nrwl/workspace:run-commands",
       "options": {
-        "configFile": "packages/react-app/vite.config.ts",
-        "port": 3000,
-        "host": false,
-        "https": false
+        "cwd": "./packages/react-app",
+        "commands": [
+          {
+            "command": "vite serve"
+          }
+        ]
       }
     },
     "preview": {
-      "executor": "nx-plugin-vite:preview",
+      "executor": "@nrwl/workspace:run-commands",
       "options": {
-        "configFile": "packages/react-app/vite.config.ts"
+        "cwd": "./packages/react-app",
+        "commands": [
+          {
+            "command": "vite preview"
+          }
+        ]
       }
     },
     "build": {
-      "executor": "nx-plugin-vite:build",
+      "executor": "@nrwl/workspace:run-commands",
       "options": {
         "cwd": "./packages/react-app",
-        "outDir": "dist",
-        "configFile": "packages/react-app/vite.config.ts",
-        "watch": false,
-        "write": true,
-        "emitAtRootLevel": false,
-        "manifest": true
+        "commands": [
+          {
+            "command": "vite build"
+          }
+        ]
       }
     },
     "build-serve": {

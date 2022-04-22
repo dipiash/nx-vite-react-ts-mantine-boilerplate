@@ -2,6 +2,7 @@
 /// <reference types="vite/client" />
 /// <reference types="react" />
 /// <reference types="react-dom" />
+/// <reference types="@welldone-software/why-did-you-render" />
 
 declare global {
   interface ImportMetaEnv {
