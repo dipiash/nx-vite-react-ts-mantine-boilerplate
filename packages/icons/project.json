@@ -1,0 +1,29 @@
+{
+  "root": "packages/icons",
+  "sourceRoot": "packages/icons/src",
+  "projectType": "library",
+  "tags": [],
+  "targets": {
+    "svgr": {
+      "executor": "@nrwl/workspace:run-commands",
+      "options": {
+        "cwd": "./packages/icons",
+        "command": "svgr --typescript -d ./src/components -- ./src/icons"
+      }
+    },
+    "tsc": {
+      "executor": "@nrwl/workspace:run-commands",
+      "options": {
+        "cwd": "./packages/icons",
+        "command": "tsc -p tsconfig.lib.json"
+      }
+    },
+    "build": {
+      "executor": "@nrwl/workspace:run-commands",
+      "options": {
+        "cwd": "./packages/icons",
+        "command": "rm -rf ./src/components && nx r icons:svgr"
+      }
+    }
+  }
+}

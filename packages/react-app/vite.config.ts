@@ -2,10 +2,15 @@ import viteReact from '@vitejs/plugin-react'
 import path from 'node:path'
 import analyze from 'rollup-plugin-analyzer'
 import visualizer from 'rollup-plugin-visualizer'
-import { defineConfig } from 'vite'
+import { defineConfig, splitVendorChunkPlugin } from 'vite'
 import tsconfigPaths from 'vite-tsconfig-paths'
 
 import { dependencies } from '../../package.json'
+
+const isDevelopment = Boolean(process.env.DEV)
+const isAnalyzeEnabled = Boolean(process.env.ANALYZE)
+const isNoMinify = Boolean(process.env.NO_MINIFY)
+const isSourceMapsEnabled = Boolean(process.env.SOURCE_MAPS)
 
 function renderChunks(deps: Record<string, string>) {
   const chunks = {}
@@ -23,10 +28,22 @@ function renderChunks(deps: Record<string, string>) {
   return chunks
 }
 
+const plugins = []
+
+if (!isDevelopment) {
+  plugins.push(splitVendorChunkPlugin())
+}
+
 // https://vitejs.dev/config/
 export default defineConfig({
   base: './',
+  server: {
+    port: 3000,
+    host: false,
+    https: false,
+  },
   build: {
+    sourcemap: isSourceMapsEnabled,
     rollupOptions: {
       output: {
         manualChunks: {
@@ -34,17 +51,23 @@ export default defineConfig({
           ...renderChunks(dependencies),
         },
       },
+      plugins: isAnalyzeEnabled
+        ? [
+            analyze(),
+            visualizer({
+              filename: path.join(__dirname, 'dist/stats/stats.html'),
+              open: isDevelopment,
+              gzipSize: true,
+              brotliSize: true,
+              projectRoot: path.join(__dirname),
+            }),
+          ]
+        : [],
     },
+    minify: isNoMinify ? false : 'esbuild',
   },
   plugins: [
-    visualizer({
-      filename: path.join(__dirname, 'stats.html'),
-      open: import.meta.env?.DEV,
-      gzipSize: true,
-      brotliSize: true,
-      projectRoot: path.join(__dirname),
-    }),
-    analyze(),
+    ...plugins,
     tsconfigPaths(),
     viteReact({
       babel: {
@@ -55,8 +78,8 @@ export default defineConfig({
             {
               pure: true,
               ssr: true,
-              displayName: Boolean(process.env.DEV),
-              fileName: Boolean(process.env.DEV),
+              displayName: isDevelopment,
+              fileName: isDevelopment,
             },
           ],
         ],

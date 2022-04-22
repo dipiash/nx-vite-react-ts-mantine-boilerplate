@@ -8,7 +8,7 @@ import { LicenseSelect } from '../LicenseSelect'
 
 import { SHeader } from './Header.styled'
 
-export const Header: FC<IHeaderProperties> = memo(({ setRepositoryName, setLicense }) => {
+export const Header: FC<IHeaderProperties> = memo(({ handleSetRepositoryName, handleSetLicense }) => {
   return (
     <SHeader>
       <div className="headerItem left">
@@ -18,11 +18,11 @@ export const Header: FC<IHeaderProperties> = memo(({ setRepositoryName, setLicen
           className="headerField"
           name="search"
           placeholder="Search by repository name"
-          onChange={(event) => setRepositoryName(event.target.value)}
+          onChange={handleSetRepositoryName}
         />
       </div>
       <div className="headerItem right">
-        <LicenseSelect className="headerField" onChange={(value) => setLicense(value)} />
+        <LicenseSelect className="headerField" onChange={handleSetLicense} />
       </div>
     </SHeader>
   )
