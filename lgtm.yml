@@ -1,0 +1,5 @@
+extraction:
+  javascript:
+    index:
+      typescript: full
+      xml_mode: all
