@@ -20,7 +20,7 @@ export const Table: FC<ITableProperties> = ({ columns, data, error }) => {
       </div>
       <div className="tbody">
         {error ? error : undefined}
-        {!error && (!data || (data && data.length === 0)) && <div className="empty">No data</div>}
+        {!error && (!data || data.length === 0) && <div className="empty">No data</div>}
         {data.map((item) => (
           <div className="tr" key={item.key}>
             {columnKeys.map((key) => (

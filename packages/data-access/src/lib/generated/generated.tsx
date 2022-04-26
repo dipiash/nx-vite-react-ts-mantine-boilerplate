@@ -4841,9 +4841,9 @@ export type DraftIssue = Node & {
   /** The actor who created this draft issue. */
   creator?: Maybe<Actor>;
   id: Scalars['ID'];
-  /** The project that contains this draft issue. */
+  /** The project (beta) that contains this draft issue. */
   project: ProjectNext;
-  /** The project item that wraps this draft issue. */
+  /** The project (beta) item that wraps this draft issue. */
   projectItem: ProjectNextItem;
   /** The title of the draft issue */
   title: Scalars['String'];
@@ -5100,22 +5100,12 @@ export type EnterpriseBillingInfo = {
   allLicensableUsersCount: Scalars['Int'];
   /** The number of data packs used by all organizations owned by the enterprise. */
   assetPacks: Scalars['Int'];
-  /**
-   * The number of available seats across all owned organizations based on the unique number of billable users.
-   * @deprecated `availableSeats` will be replaced with `totalAvailableLicenses` to provide more clarity on the value being returned Use EnterpriseBillingInfo.totalAvailableLicenses instead. Removal on 2020-01-01 UTC.
-   */
-  availableSeats: Scalars['Int'];
   /** The bandwidth quota in GB for all organizations owned by the enterprise. */
   bandwidthQuota: Scalars['Float'];
   /** The bandwidth usage in GB for all organizations owned by the enterprise. */
   bandwidthUsage: Scalars['Float'];
   /** The bandwidth usage as a percentage of the bandwidth quota. */
   bandwidthUsagePercentage: Scalars['Int'];
-  /**
-   * The total seats across all organizations owned by the enterprise.
-   * @deprecated `seats` will be replaced with `totalLicenses` to provide more clarity on the value being returned Use EnterpriseBillingInfo.totalLicenses instead. Removal on 2020-01-01 UTC.
-   */
-  seats: Scalars['Int'];
   /** The storage quota in GB for all organizations owned by the enterprise. */
   storageQuota: Scalars['Float'];
   /** The storage usage in GB for all organizations owned by the enterprise. */
@@ -5215,11 +5205,6 @@ export type EnterpriseMemberEdge = {
   __typename?: 'EnterpriseMemberEdge';
   /** A cursor for use in pagination. */
   cursor: Scalars['String'];
-  /**
-   * Whether the user does not have a license for the enterprise.
-   * @deprecated All members consume a license Removal on 2021-01-01 UTC.
-   */
-  isUnlicensed: Scalars['Boolean'];
   /** The item at the end of the edge. */
   node?: Maybe<EnterpriseMember>;
 };
@@ -5304,11 +5289,6 @@ export type EnterpriseOutsideCollaboratorEdge = {
   __typename?: 'EnterpriseOutsideCollaboratorEdge';
   /** A cursor for use in pagination. */
   cursor: Scalars['String'];
-  /**
-   * Whether the outside collaborator does not have a license for the enterprise.
-   * @deprecated All outside collaborators consume a license Removal on 2021-01-01 UTC.
-   */
-  isUnlicensed: Scalars['Boolean'];
   /** The item at the end of the edge. */
   node?: Maybe<User>;
   /** The enterprise organization repositories this user is a member of. */
@@ -5712,11 +5692,6 @@ export type EnterprisePendingMemberInvitationEdge = {
   __typename?: 'EnterprisePendingMemberInvitationEdge';
   /** A cursor for use in pagination. */
   cursor: Scalars['String'];
-  /**
-   * Whether the invitation has a license for the enterprise.
-   * @deprecated All pending members consume a license Removal on 2020-07-01 UTC.
-   */
-  isUnlicensed: Scalars['Boolean'];
   /** The item at the end of the edge. */
   node?: Maybe<OrganizationInvitation>;
 };
