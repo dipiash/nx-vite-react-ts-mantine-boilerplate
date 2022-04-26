@@ -6084,10 +6084,10 @@ type DraftIssue implements Node {
   creator: Actor
   id: ID!
 
-  """The project that contains this draft issue."""
+  """The project (beta) that contains this draft issue."""
   project: ProjectNext!
 
-  """The project item that wraps this draft issue."""
+  """The project (beta) item that wraps this draft issue."""
   projectItem: ProjectNextItem!
 
   """The title of the draft issue"""
@@ -6427,11 +6427,6 @@ type EnterpriseBillingInfo {
   assetPacks: Int!
 
   """
-  The number of available seats across all owned organizations based on the unique number of billable users.
-  """
-  availableSeats: Int! @deprecated(reason: "`availableSeats` will be replaced with `totalAvailableLicenses` to provide more clarity on the value being returned Use EnterpriseBillingInfo.totalAvailableLicenses instead. Removal on 2020-01-01 UTC.")
-
-  """
   The bandwidth quota in GB for all organizations owned by the enterprise.
   """
   bandwidthQuota: Float!
@@ -6443,9 +6438,6 @@ type EnterpriseBillingInfo {
 
   """The bandwidth usage as a percentage of the bandwidth quota."""
   bandwidthUsagePercentage: Int!
-
-  """The total seats across all organizations owned by the enterprise."""
-  seats: Int! @deprecated(reason: "`seats` will be replaced with `totalLicenses` to provide more clarity on the value being returned Use EnterpriseBillingInfo.totalLicenses instead. Removal on 2020-01-01 UTC.")
 
   """The storage quota in GB for all organizations owned by the enterprise."""
   storageQuota: Float!
@@ -6602,9 +6594,6 @@ type EnterpriseMemberEdge {
   """A cursor for use in pagination."""
   cursor: String!
 
-  """Whether the user does not have a license for the enterprise."""
-  isUnlicensed: Boolean! @deprecated(reason: "All members consume a license Removal on 2021-01-01 UTC.")
-
   """The item at the end of the edge."""
   node: EnterpriseMember
 }
@@ -6706,11 +6695,6 @@ A User who is an outside collaborator of an enterprise through one or more organ
 type EnterpriseOutsideCollaboratorEdge {
   """A cursor for use in pagination."""
   cursor: String!
-
-  """
-  Whether the outside collaborator does not have a license for the enterprise.
-  """
-  isUnlicensed: Boolean! @deprecated(reason: "All outside collaborators consume a license Removal on 2021-01-01 UTC.")
 
   """The item at the end of the edge."""
   node: User
@@ -7484,9 +7468,6 @@ type EnterprisePendingMemberInvitationConnection {
 type EnterprisePendingMemberInvitationEdge {
   """A cursor for use in pagination."""
   cursor: String!
-
-  """Whether the invitation has a license for the enterprise."""
-  isUnlicensed: Boolean! @deprecated(reason: "All pending members consume a license Removal on 2020-07-01 UTC.")
 
   """The item at the end of the edge."""
   node: OrganizationInvitation

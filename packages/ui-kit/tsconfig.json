@@ -13,7 +13,8 @@
     "noFallthroughCasesInSwitch": true
   },
   "files": [
-    "../../node_modules/@nrwl/react/typings/image.d.ts"
+    "../../node_modules/@nrwl/react/typings/image.d.ts",
+    "../../node_modules/cypress/types/cypress-global-vars.d.ts"
   ],
   "references": [
     {

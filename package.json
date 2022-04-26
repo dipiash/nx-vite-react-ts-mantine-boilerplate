@@ -3,6 +3,8 @@
   "version": "0.0.0",
   "license": "MIT",
   "scripts": {
+    "@data-access": "",
+    "@data-access:codegen": "nx codegen data-access",
     "@react-app": "",
     "@react-app:serve": "NODE_ENV=development DEV=true nx serve react-app",
     "@react-app:build": "NODE_ENV=production nx build react-app",
