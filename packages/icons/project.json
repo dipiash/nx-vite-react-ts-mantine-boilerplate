@@ -8,7 +8,7 @@
       "executor": "@nrwl/workspace:run-commands",
       "options": {
         "cwd": "./packages/icons",
-        "command": "@svgr/cli --typescript -d ./src/components -- ./src/icons"
+        "command": "npx @svgr/cli --typescript -d ./src/components -- ./src/icons"
       }
     },
     "tsc": {
