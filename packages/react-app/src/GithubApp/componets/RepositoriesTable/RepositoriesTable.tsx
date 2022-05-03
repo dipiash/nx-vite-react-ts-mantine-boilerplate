@@ -47,7 +47,7 @@ export const RepositoriesTable: FC<IRepositoriesTableProperties> = ({ queryStrin
   const paginationParameters = getPaginationParameters(data?.search.pageInfo)
 
   return (
-    <Loader loading={loading} data-testif="repositories-list-loading">
+    <Loader loading={loading} data-testid="repositories-list-loading">
       <Table columns={tableColumns} data={tableData} error={tableError} />
       <Space h={10} />
       <Pagination

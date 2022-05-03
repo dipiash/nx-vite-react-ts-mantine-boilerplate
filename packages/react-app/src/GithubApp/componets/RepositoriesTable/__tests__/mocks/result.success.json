@@ -1,0 +1,145 @@
+{
+  "search": {
+    "edges": [
+      {
+        "cursor": "Y3Vyc29yOjE=",
+        "node": {
+          "createdAt": "2022-05-03T12:25:10Z",
+          "id": "R_kgDOHRlXnw",
+          "licenseInfo": null,
+          "name": "DeathNote",
+          "stargazers": { "totalCount": 52, "__typename": "StargazerConnection" },
+          "updatedAt": "2022-05-03T17:21:29Z",
+          "__typename": "Repository"
+        },
+        "__typename": "SearchResultItemEdge"
+      },
+      {
+        "cursor": "Y3Vyc29yOjI=",
+        "node": {
+          "createdAt": "2022-05-01T23:03:39Z",
+          "id": "R_kgDOHREfig",
+          "licenseInfo": null,
+          "name": "nextjs-lit-token-gating",
+          "stargazers": { "totalCount": 13, "__typename": "StargazerConnection" },
+          "updatedAt": "2022-05-03T00:25:42Z",
+          "__typename": "Repository"
+        },
+        "__typename": "SearchResultItemEdge"
+      },
+      {
+        "cursor": "Y3Vyc29yOjM=",
+        "node": {
+          "createdAt": "2022-05-02T15:36:14Z",
+          "id": "R_kgDOHRS9Aw",
+          "licenseInfo": null,
+          "name": "codetv",
+          "stargazers": { "totalCount": 8, "__typename": "StargazerConnection" },
+          "updatedAt": "2022-05-03T13:09:54Z",
+          "__typename": "Repository"
+        },
+        "__typename": "SearchResultItemEdge"
+      },
+      {
+        "cursor": "Y3Vyc29yOjQ=",
+        "node": {
+          "createdAt": "2022-05-02T05:28:35Z",
+          "id": "R_kgDOHRIezg",
+          "licenseInfo": { "id": "MDc6TGljZW5zZTEz", "name": "MIT License", "__typename": "License" },
+          "name": "KeyboardOverlay",
+          "stargazers": { "totalCount": 7, "__typename": "StargazerConnection" },
+          "updatedAt": "2022-05-03T17:38:15Z",
+          "__typename": "Repository"
+        },
+        "__typename": "SearchResultItemEdge"
+      },
+      {
+        "cursor": "Y3Vyc29yOjU=",
+        "node": {
+          "createdAt": "2022-05-03T00:08:34Z",
+          "id": "R_kgDOHRa3QQ",
+          "licenseInfo": null,
+          "name": "lsp-bridge",
+          "stargazers": { "totalCount": 8, "__typename": "StargazerConnection" },
+          "updatedAt": "2022-05-03T16:54:04Z",
+          "__typename": "Repository"
+        },
+        "__typename": "SearchResultItemEdge"
+      },
+      {
+        "cursor": "Y3Vyc29yOjY=",
+        "node": {
+          "createdAt": "2022-05-03T06:19:03Z",
+          "id": "R_kgDOHRfKNg",
+          "licenseInfo": null,
+          "name": "42cabi_admin",
+          "stargazers": { "totalCount": 7, "__typename": "StargazerConnection" },
+          "updatedAt": "2022-05-03T13:26:20Z",
+          "__typename": "Repository"
+        },
+        "__typename": "SearchResultItemEdge"
+      },
+      {
+        "cursor": "Y3Vyc29yOjc=",
+        "node": {
+          "createdAt": "2022-05-02T08:27:15Z",
+          "id": "R_kgDOHRLHsg",
+          "licenseInfo": null,
+          "name": "dockery",
+          "stargazers": { "totalCount": 5, "__typename": "StargazerConnection" },
+          "updatedAt": "2022-05-03T03:17:17Z",
+          "__typename": "Repository"
+        },
+        "__typename": "SearchResultItemEdge"
+      },
+      {
+        "cursor": "Y3Vyc29yOjg=",
+        "node": {
+          "createdAt": "2022-05-01T21:31:30Z",
+          "id": "R_kgDOHRDnUQ",
+          "licenseInfo": null,
+          "name": "slack-run-code",
+          "stargazers": { "totalCount": 5, "__typename": "StargazerConnection" },
+          "updatedAt": "2022-05-02T05:51:34Z",
+          "__typename": "Repository"
+        },
+        "__typename": "SearchResultItemEdge"
+      },
+      {
+        "cursor": "Y3Vyc29yOjk=",
+        "node": {
+          "createdAt": "2022-05-01T03:11:07Z",
+          "id": "R_kgDOHQ2k8Q",
+          "licenseInfo": null,
+          "name": "fogex",
+          "stargazers": { "totalCount": 5, "__typename": "StargazerConnection" },
+          "updatedAt": "2022-05-03T10:08:09Z",
+          "__typename": "Repository"
+        },
+        "__typename": "SearchResultItemEdge"
+      },
+      {
+        "cursor": "Y3Vyc29yOjEw",
+        "node": {
+          "createdAt": "2022-05-02T02:16:44Z",
+          "id": "R_kgDOHRGYfA",
+          "licenseInfo": null,
+          "name": "commit-date-change",
+          "stargazers": { "totalCount": 4, "__typename": "StargazerConnection" },
+          "updatedAt": "2022-05-02T04:30:38Z",
+          "__typename": "Repository"
+        },
+        "__typename": "SearchResultItemEdge"
+      }
+    ],
+    "pageInfo": {
+      "endCursor": "Y3Vyc29yOjEw",
+      "hasNextPage": true,
+      "hasPreviousPage": false,
+      "startCursor": "Y3Vyc29yOjE=",
+      "__typename": "PageInfo"
+    },
+    "repositoryCount": 39120,
+    "__typename": "SearchResultItemConnection"
+  }
+}
