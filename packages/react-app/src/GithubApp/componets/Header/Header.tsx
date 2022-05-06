@@ -4,9 +4,8 @@ import { Input } from '@nx-ts-vite-react-graphql-styled-monorepo-example/ui-kit'
 
 import { IHeaderProperties } from './Header.types'
 
-import { LicenseSelect } from '../LicenseSelect'
-
 import { SHeader } from './Header.styled'
+import { LicenseSelect } from './LicenseSelect'
 
 export const Header: FC<IHeaderProperties> = memo(({ handleSetRepositoryName, handleSetLicense }) => {
   return (

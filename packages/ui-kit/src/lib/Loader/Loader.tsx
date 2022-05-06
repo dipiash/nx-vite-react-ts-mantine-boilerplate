@@ -9,6 +9,7 @@ export const Loader: FC<PropsWithChildren<ILoaderProperties>> = ({ children, loa
   return (
     <SLoaderWrapper {...rest}>
       <LoadingOverlay visible={loading} />
+      {loading && <span className="hiddenLoaderText">Loading...</span>}
       {children}
     </SLoaderWrapper>
   )
