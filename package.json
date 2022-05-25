@@ -35,7 +35,7 @@
   "private": true,
   "engines": {
     "node": "16.x",
-    "pnpm": "6.x"
+    "pnpm": "7.x"
   },
   "pnpm": {
     "neverBuiltDependencies": [
@@ -133,7 +133,6 @@
     "react-test-renderer": "17.0.2",
     "rollup-plugin-analyzer": "4.0.0",
     "rollup-plugin-visualizer": "5.5.4",
-    "storybook-builder-vite": "0.1.23",
     "stylelint": "14.6.1",
     "stylelint-config-rational-order": "0.1.2",
     "stylelint-config-recommended": "7.0.0",
@@ -150,7 +149,8 @@
     "vite-dts": "1.0.4",
     "vite-tsconfig-paths": "3.4.1",
     "vitest": "0.9.4",
-    "webpack": "5.72.0"
+    "webpack": "5.72.0",
+    "@storybook/builder-vite": "0.1.35"
   },
   "dependencies": {
     "@mantine/core": "4.1.3",

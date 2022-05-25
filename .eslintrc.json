@@ -65,7 +65,6 @@
       "plugins": [
         "react",
         "react-hooks",
-        "simple-import-sort",
         "sonarjs",
         "unicorn",
         "@typescript-eslint",
