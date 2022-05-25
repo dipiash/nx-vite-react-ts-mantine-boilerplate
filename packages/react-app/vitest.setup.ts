@@ -16,3 +16,13 @@ window.ResizeObserver =
       observe: vitest.fn(),
       unobserve: vitest.fn(),
     }))
+
+window.matchMedia =
+  global.matchMedia =
+  globalThis.matchMedia =
+    window.matchMedia ||
+    vitest.fn().mockImplementation(() => ({
+      matches: false,
+      addListener: vitest.fn(),
+      removeListener: vitest.fn(),
+    }))
