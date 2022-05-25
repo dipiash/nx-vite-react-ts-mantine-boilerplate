@@ -1,5 +1,4 @@
 {
-  "root": "packages/react-app",
   "projectType": "application",
   "sourceRoot": "packages/react-app/src",
   "tags": [],

@@ -1,5 +1,4 @@
 {
-  "root": "packages/ui-kit",
   "sourceRoot": "packages/ui-kit/src",
   "projectType": "library",
   "tags": [],
