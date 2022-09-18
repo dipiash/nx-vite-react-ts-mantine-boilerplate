@@ -52,7 +52,7 @@ export default defineConfig({
         },
       },
       plugins: isAnalyzeEnabled
-        ? [
+        ? ([
             analyze(),
             visualizer({
               filename: path.join(__dirname, 'dist/stats/stats.html'),
@@ -61,7 +61,7 @@ export default defineConfig({
               brotliSize: true,
               projectRoot: path.join(__dirname),
             }),
-          ]
+          ] as unknown as any) // eslint-disable-line @typescript-eslint/no-explicit-any
         : [],
     },
     minify: isNoMinify ? false : 'esbuild',

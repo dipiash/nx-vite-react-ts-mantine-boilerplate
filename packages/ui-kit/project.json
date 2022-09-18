@@ -18,15 +18,9 @@
       "executor": "@nrwl/cypress:cypress",
       "options": {
         "cypressConfig": "packages/ui-kit/cypress.json",
-        "devServerTarget": "ui-kit:storybook",
-        "exit": true,
-        "headed": false,
-        "baseUrl": "http://localhost:4400"
-      },
-      "configurations": {
-        "production": {
-          "devServerTarget": "ui-kit:storybook"
-        }
+        "exit": false,
+        "headed": true,
+        "testingType": "component"
       }
     },
     "build": {
