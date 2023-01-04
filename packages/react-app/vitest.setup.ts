@@ -26,3 +26,13 @@ window.matchMedia =
       addListener: vitest.fn(),
       removeListener: vitest.fn(),
     }))
+
+window.matchMedia =
+  global.matchMedia =
+  globalThis.matchMedia =
+    window.matchMedia ||
+    vitest.fn().mockImplementation(() => ({
+      matches: false,
+      addListener: vitest.fn(),
+      removeListener: vitest.fn(),
+    }))
