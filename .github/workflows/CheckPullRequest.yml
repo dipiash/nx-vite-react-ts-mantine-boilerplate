@@ -28,9 +28,9 @@ jobs:
         with:
           version: 7.22.0
           run_install: |
+            - args: [ --global, esbuild ]
             - recursive: true
               args: [ --frozen-lockfile, --strict-peer-dependencies ]
-            - args: [ --global, esbuild ]
 
   type-check:
     runs-on: ubuntu-latest
