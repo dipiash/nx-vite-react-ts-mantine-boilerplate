@@ -36,7 +36,7 @@ jobs:
           fetch-depth: 0
 
       - name: Reusable Action for PNPM and NX
-        uses: dipiash/pnpm-nx-reusable-action@v6
+        uses: dipiash/pnpm-nx-reusable-action@v7
 
       - name: type-check PR
         if: github.ref != 'refs/heads/main'
@@ -55,7 +55,7 @@ jobs:
           fetch-depth: 0
 
       - name: Reusable Action for PNPM and NX
-        uses: dipiash/pnpm-nx-reusable-action@v6
+        uses: dipiash/pnpm-nx-reusable-action@v7
 
       - name: lint PR
         if: github.ref != 'refs/heads/main'
@@ -74,7 +74,7 @@ jobs:
           fetch-depth: 0
 
       - name: Reusable Action for PNPM and NX
-        uses: dipiash/pnpm-nx-reusable-action@v6
+        uses: dipiash/pnpm-nx-reusable-action@v7
 
       - name: stylelint PR
         if: github.ref != 'refs/heads/main'
@@ -93,7 +93,7 @@ jobs:
           fetch-depth: 0
 
       - name: Reusable Action for PNPM and NX
-        uses: dipiash/pnpm-nx-reusable-action@v6
+        uses: dipiash/pnpm-nx-reusable-action@v7
 
       - name: test PR
         if: github.ref != 'refs/heads/main'
