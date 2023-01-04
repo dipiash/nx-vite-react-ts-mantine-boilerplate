@@ -14,9 +14,12 @@ jobs:
       - uses: actions/checkout@v3
         with:
           fetch-depth: 0
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 16.x
 
       - name: Reusable Action for PNPM and NX
-        uses: dipiash/pnpm-nx-reusable-action@v4
+        uses: dipiash/pnpm-nx-reusable-action@v7
 
       - name: Install and Build 🔧
         run: npx nx build react-app
