@@ -154,7 +154,9 @@
     "webpack": "5.75.0",
     "postcss": "8.4.20",
     "postcss-scss": "4.0.6",
-    "postcss-styled": "0.34.0"
+    "postcss-styled": "0.34.0",
+    "tslib": "2.4.1",
+    "jsdom": "16.7.0"
   },
   "dependencies": {
     "@emotion/react": "11.10.5",
