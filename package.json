@@ -41,13 +41,6 @@
     "node": "16.x",
     "pnpm": "7.x"
   },
-  "pnpm": {
-    "neverBuiltDependencies": [
-      "esbuild",
-      "fsevents",
-      "level"
-    ]
-  },
   "lint-staged": {
     "**/*.{js,jsx,ts,tsx}": [
       "nx affected --target=lint --fix=true --uncommitted=true",
