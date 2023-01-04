@@ -1,10 +1,11 @@
 {
+  "name": "react-app",
   "projectType": "application",
   "sourceRoot": "packages/react-app/src",
   "tags": [],
   "targets": {
     "type-check": {
-      "executor": "@nrwl/workspace:run-commands",
+      "executor": "nx:run-commands",
       "options": {
         "cwd": "./packages/react-app",
         "commands": [
@@ -15,7 +16,7 @@
       }
     },
     "serve": {
-      "executor": "@nrwl/workspace:run-commands",
+      "executor": "nx:run-commands",
       "options": {
         "cwd": "./packages/react-app",
         "commands": [
@@ -26,7 +27,7 @@
       }
     },
     "preview": {
-      "executor": "@nrwl/workspace:run-commands",
+      "executor": "nx:run-commands",
       "options": {
         "cwd": "./packages/react-app",
         "commands": [
@@ -37,7 +38,7 @@
       }
     },
     "build": {
-      "executor": "@nrwl/workspace:run-commands",
+      "executor": "nx:run-commands",
       "options": {
         "cwd": "./packages/react-app",
         "commands": [
@@ -48,7 +49,7 @@
       }
     },
     "build-serve": {
-      "executor": "@nrwl/workspace:run-commands",
+      "executor": "nx:run-commands",
       "options": {
         "cwd": "./packages/react-app",
         "commands": [
@@ -73,7 +74,7 @@
       }
     },
     "test": {
-      "executor": "@nrwl/workspace:run-commands",
+      "executor": "nx:run-commands",
       "options": {
         "cwd": "./packages/react-app",
         "commands": [
