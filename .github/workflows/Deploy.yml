@@ -16,7 +16,7 @@ jobs:
           fetch-depth: 0
 
       - name: Reusable Action for PNPM and NX
-        uses: dipiash/pnpm-nx-reusable-action@v4
+        uses: dipiash/pnpm-nx-reusable-action@v6
 
       - name: Install and Build 🔧
         run: npx nx build react-app
