@@ -1,4 +1,5 @@
 {
+  "name": "data-access",
   "sourceRoot": "packages/data-access/src",
   "projectType": "library",
   "tags": [],
@@ -11,7 +12,7 @@
       }
     },
     "codegen": {
-      "executor": "@nrwl/workspace:run-commands",
+      "executor": "nx:run-commands",
       "options": {
         "cwd": "./packages/data-access",
         "commands": [
