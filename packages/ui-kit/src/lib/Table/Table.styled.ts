@@ -23,7 +23,7 @@ export const STable = styled.div`
   }
 
   .thead .tr {
-    background-color: rgba(192, 221, 220, 0.53) !important;
+    background-color: rgba(192 221 220 / 0.53) !important;
   }
 
   .tr:nth-child(2n + 1) {
@@ -39,6 +39,7 @@ export const STable = styled.div`
   }
 
   .th {
+    /* stylelint-disable-next-line plugin/no-unsupported-browser-features */
     text-transform: uppercase;
   }
 
@@ -85,6 +86,8 @@ export const STable = styled.div`
       float: left;
 
       font-weight: bold;
+
+      /* stylelint-disable-next-line plugin/no-unsupported-browser-features */
       text-transform: uppercase;
 
       content: attr(data-label);
