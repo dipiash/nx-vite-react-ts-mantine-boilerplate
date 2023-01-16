@@ -6,6 +6,9 @@
     "types": ["jest", "node", "cypress"]
   },
   "include": [
+    "src",
+    "**/*.cy.ts",
+    "**/*.cy.tsx",
     "**/*.test.ts",
     "**/*.spec.ts",
     "**/*.test.tsx",
@@ -15,6 +18,9 @@
     "**/*.test.jsx",
     "**/*.spec.jsx",
     "**/*.d.ts",
+    "cypress/**/*.ts",
+    "cypress.config.ts",
+    "cypress.d.ts",
     "../../global.d.ts"
   ]
 }
