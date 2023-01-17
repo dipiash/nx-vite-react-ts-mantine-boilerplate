@@ -7,7 +7,7 @@ import tsconfigPaths from 'vite-tsconfig-paths'
 
 import { dependencies } from '../../package.json'
 
-const isDevelopment = Boolean(process.env.DEV)
+const isDevelopment = Boolean(process.env.DEV || process.env.NODE_ENV === 'development')
 const isAnalyzeEnabled = Boolean(process.env.ANALYZE)
 const isNoMinify = Boolean(process.env.NO_MINIFY)
 const isSourceMapsEnabled = Boolean(process.env.SOURCE_MAPS)
@@ -74,12 +74,12 @@ export default defineConfig({
         compact: false,
         plugins: [
           [
-            'babel-plugin-styled-components',
+            '@emotion',
             {
-              pure: true,
-              ssr: true,
-              displayName: isDevelopment,
-              fileName: isDevelopment,
+              sourceMap: isDevelopment,
+              autoLabel: 'dev-only',
+              labelFormat: '[local]',
+              cssPropOptimization: true,
             },
           ],
         ],
