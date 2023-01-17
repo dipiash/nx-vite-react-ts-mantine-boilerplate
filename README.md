@@ -30,6 +30,6 @@ npm install -g nx
 - [Vite](https://vitejs.dev/)
 - [Vitest](https://vitest.dev/)
 - [Cypress](https://www.cypress.io)
-- [Styled Components](https://styled-components.com/)
+- [Styled Components](https://emotion.sh/docs/styled)
 - [ESLint](https://eslint.org/)
 - [Stylelint](https://stylelint.io/)

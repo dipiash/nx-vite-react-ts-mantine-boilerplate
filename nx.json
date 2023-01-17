@@ -32,15 +32,15 @@
   "generators": {
     "@nrwl/react": {
       "application": {
-        "style": "styled-components",
+        "style": "@emotion/styled",
         "linter": "eslint",
         "babel": true
       },
       "component": {
-        "style": "styled-components"
+        "style": "@emotion/styled"
       },
       "library": {
-        "style": "styled-components",
+        "style": "@emotion/styled",
         "linter": "eslint"
       }
     }
