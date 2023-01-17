@@ -3,8 +3,9 @@ import styled from 'styled-components'
 export const SHeader = styled.div`
   display: flex;
   box-sizing: border-box;
-  border-bottom: 1px solid #eee;
   margin-bottom: 10px;
+
+  border-bottom: 1px solid #eee;
 
   .headerItem {
     flex: 1;
