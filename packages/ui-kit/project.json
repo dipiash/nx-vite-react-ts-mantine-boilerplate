@@ -16,12 +16,14 @@
       }
     },
     "e2e": {
-      "executor": "@nrwl/cypress:cypress",
+      "executor": "nx:run-commands",
       "options": {
-        "cypressConfig": "packages/ui-kit/cypress.json",
-        "exit": false,
-        "headed": true,
-        "testingType": "component"
+        "cwd": "./packages/ui-kit",
+        "commands": [
+          {
+            "command": "cypress run --component --config-file=cypress.config.ts"
+          }
+        ]
       }
     },
     "build": {
