@@ -67,9 +67,7 @@
       "options": {
         "uiFramework": "@storybook/react",
         "port": 4400,
-        "config": {
-          "configFolder": "packages/ui-kit/.storybook"
-        }
+        "configDir": "packages/ui-kit/.storybook"
       },
       "configurations": {
         "ci": {
@@ -79,13 +77,11 @@
     },
     "storybook:build": {
       "executor": "@nrwl/storybook:build",
-      "outputs": ["{options.outputPath}"],
+      "outputs": ["{options.outputDir}"],
       "options": {
         "uiFramework": "@storybook/react",
-        "outputPath": "packages/ui-kit/dist/storybook",
-        "config": {
-          "configFolder": "packages/ui-kit/.storybook"
-        }
+        "configDir": "packages/ui-kit/.storybook",
+        "outputDir": "packages/ui-kit/dist/storybook"
       },
       "configurations": {
         "ci": {
