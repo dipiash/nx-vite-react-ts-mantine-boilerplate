@@ -1,6 +1,4 @@
 ![CI](https://github.com/dipiash/nx-ts-vite-react-graphql-styled-monorepo-example/actions/workflows/CheckPullRequest.yml/badge.svg?branch=main)
-[![Total alerts](https://img.shields.io/lgtm/alerts/g/dipiash/nx-ts-vite-react-graphql-styled-monorepo-example.svg?logo=lgtm&logoWidth=18)](https://lgtm.com/projects/g/dipiash/nx-ts-vite-react-graphql-styled-monorepo-example/alerts/)
-[![Language grade: JavaScript](https://img.shields.io/lgtm/grade/javascript/g/dipiash/nx-ts-vite-react-graphql-styled-monorepo-example.svg?logo=lgtm&logoWidth=18)](https://lgtm.com/projects/g/dipiash/nx-ts-vite-react-graphql-styled-monorepo-example/context:javascript)
 
 # Getting Started
 
