@@ -1,4 +1,12 @@
 {
+  "tasksRunnerOptions": {
+    "default": {
+      "runner": "@nx/workspace/tasks-runners/default",
+      "options": {
+        "cacheableOperations": ["build", "lint", "stylelint", "test", "e2e", "build-storybook", "type-check"]
+      }
+    }
+  },
   "extends": "nx/presets/core.json",
   "npmScope": "nx-ts-vite-react-graphql-styled-monorepo-example",
   "affected": {
@@ -19,18 +27,10 @@
     "nx.json": "*"
   },
   "cli": {
-    "defaultCollection": "@nrwl/react"
-  },
-  "tasksRunnerOptions": {
-    "default": {
-      "runner": "@nrwl/workspace/tasks-runners/default",
-      "options": {
-        "cacheableOperations": ["build", "lint", "stylelint", "test", "e2e", "build-storybook", "type-check"]
-      }
-    }
+    "defaultCollection": "@nx/react"
   },
   "generators": {
-    "@nrwl/react": {
+    "@nx/react": {
       "application": {
         "style": "@emotion/styled",
         "linter": "eslint",
@@ -47,10 +47,7 @@
   },
   "defaultProject": "react-app",
   "namedInputs": {
-    "default": [
-      "{projectRoot}/**/*",
-      "sharedGlobals"
-    ],
+    "default": ["{projectRoot}/**/*", "sharedGlobals"],
     "sharedGlobals": [
       "{workspaceRoot}/workspace.json",
       "{workspaceRoot}/tsconfig.base.json",
@@ -62,34 +59,25 @@
       "default",
       "!{projectRoot}/.eslintrc.json",
       "!{projectRoot}/.storybook/**/*",
-      "!{projectRoot}/**/*.stories.@(js|jsx|ts|tsx|mdx)"
+      "!{projectRoot}/**/*.stories.@(js|jsx|ts|tsx|mdx)",
+      "!{projectRoot}/tsconfig.storybook.json"
     ]
   },
   "targetDefaults": {
     "build": {
-      "inputs": [
-        "production",
-        "^production"
-      ]
+      "inputs": ["production", "^production"]
     },
     "e2e": {
-      "inputs": [
-        "default",
-        "^production"
-      ]
+      "inputs": ["default", "^production"]
     },
     "lint": {
-      "inputs": [
-        "default",
-        "{workspaceRoot}/.eslintrc.json"
-      ]
+      "inputs": ["default", "{workspaceRoot}/.eslintrc.json"]
     },
     "storybook:build": {
-      "inputs": [
-        "default",
-        "^production",
-        "{workspaceRoot}/.storybook/**/*"
-      ]
+      "inputs": ["default", "^production", "{workspaceRoot}/.storybook/**/*"]
+    },
+    "build-storybook": {
+      "inputs": ["default", "^production", "{projectRoot}/.storybook/**/*", "{projectRoot}/tsconfig.storybook.json"]
     }
   }
 }

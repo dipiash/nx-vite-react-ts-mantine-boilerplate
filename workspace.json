@@ -1,9 +1,0 @@
-{
-  "version": 2,
-  "projects": {
-    "data-access": "packages/data-access",
-    "icons": "packages/icons",
-    "react-app": "packages/react-app",
-    "ui-kit": "packages/ui-kit"
-  }
-}

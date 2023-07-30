@@ -1,9 +1,14 @@
-module.exports = {
-  stories: [],
-  addons: ['@storybook/addon-essentials'],
-  framework: '@storybook/react',
-  core: {
-    builder: '@storybook/builder-vite',
-    disableTelemetry: true,
+export default {
+  framework: {
+    name: '@storybook/react-vite',
+    options: {}
   },
+  core: {
+    disableTelemetry: true
+  },
+  stories: [],
+  addons: [],
+  docs: {
+    autodocs: true
+  }
 };

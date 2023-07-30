@@ -11,7 +11,7 @@
     }
   },
   "ignorePatterns": ["**/*", "node_modules"],
-  "plugins": ["@nrwl/nx"],
+  "plugins": ["@nx"],
   "settings": {
     "react": {
       "pragma": "React",
@@ -30,7 +30,7 @@
     {
       "files": ["*.ts", "*.tsx", "*.js", "*.jsx"],
       "rules": {
-        "@nrwl/nx/enforce-module-boundaries": [
+        "@nx/enforce-module-boundaries": [
           "error",
           {
             "enforceBuildableLibDependency": true,
@@ -49,7 +49,7 @@
       "files": ["*.ts", "*.tsx"],
       "extends": [
         "eslint:recommended",
-        "plugin:@nrwl/nx/typescript",
+        "plugin:@nx/typescript",
         "prettier",
         "plugin:prettier/recommended",
         "plugin:jsx-a11y/recommended",
@@ -62,17 +62,7 @@
         "plugin:@typescript-eslint/recommended",
         "plugin:testing-library/react"
       ],
-      "plugins": [
-        "react",
-        "react-hooks",
-        "sonarjs",
-        "unicorn",
-        "@typescript-eslint",
-        "prettier",
-        "promise",
-        "import",
-        "simple-import-sort"
-      ],
+      "plugins": ["react", "react-hooks", "sonarjs", "unicorn", "@typescript-eslint", "prettier", "promise", "import", "simple-import-sort"],
       "rules": {
         "prettier/prettier": "error",
         "react/prop-types": "off",
@@ -131,14 +121,7 @@
               "pascalCase": true,
               "camelCase": true
             },
-            "ignore": [
-              "vite(st)?.config.ts",
-              "vite-environment.d.ts",
-              "\\.spec.ts(x)?",
-              "\\.types.ts(x)?",
-              "\\.stories.ts(x)?",
-              "\\.styled.ts(x)?"
-            ]
+            "ignore": ["vite(st)?.config.ts", "vite-environment.d.ts", "\\.spec.ts(x)?", "\\.types.ts(x)?", "\\.stories.ts(x)?", "\\.styled.ts(x)?"]
           }
         ],
         "padding-line-between-statements": [
@@ -152,9 +135,7 @@
         "prefer-arrow-callback": "off",
         "no-console": ["error", { "allow": ["warn", "info", "error"] }],
         "@typescript-eslint/no-use-before-define": ["error"],
-        "@typescript-eslint/no-unused-vars": [
-          "error"
-        ],
+        "@typescript-eslint/no-unused-vars": ["error"],
         "promise/prefer-await-to-then": "error",
         "no-underscore-dangle": [
           "error",

@@ -1,16 +1,13 @@
-const rootMain = require('../../../.storybook/main');
-const tsconfigPaths = require('vite-tsconfig-paths').default;
+import rootMain from '../../../.storybook/main'
+import tsconfigPaths from 'vite-tsconfig-paths'
 
-module.exports = {
+export default {
   ...rootMain,
   core: { ...rootMain.core },
-  stories: [
-    ...rootMain.stories,
-    '../src/lib/**/*.stories.@(js|jsx|ts|tsx)',
-  ],
-  addons: [...rootMain.addons],
+  stories: [...rootMain.stories, '../src/lib/**/*.stories.@(js|jsx|ts|tsx)'],
+  addons: ['@storybook/addon-essentials', ...rootMain.addons],
   async viteFinal(config, { configType }) {
-    config.resolve.dedupe = ["@storybook/client-api"]
+    config.resolve.dedupe = ['@storybook/client-api']
 
     if (configType === 'PRODUCTION') {
       config.base = '/storybook/'
@@ -19,9 +16,9 @@ module.exports = {
     config.plugins.push(
       tsconfigPaths({
         root: '../..',
-      })
+      }),
     )
 
-    return config;
+    return config
   },
 }
