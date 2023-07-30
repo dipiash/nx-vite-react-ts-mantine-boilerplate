@@ -1,5 +1,5 @@
-import { mergeConfig } from 'vite'
-import { defineConfig } from 'vitest/config'
+/// <reference types="vitest" />
+import { defineConfig, mergeConfig } from 'vite'
 
 import baseConfig from './vite.config'
 

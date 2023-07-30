@@ -39,7 +39,6 @@ export const STable = styled.div`
   }
 
   .th {
-    /* stylelint-disable-next-line plugin/no-unsupported-browser-features */
     text-transform: uppercase;
   }
 
@@ -87,7 +86,6 @@ export const STable = styled.div`
 
       font-weight: bold;
 
-      /* stylelint-disable-next-line plugin/no-unsupported-browser-features */
       text-transform: uppercase;
 
       content: attr(data-label);
