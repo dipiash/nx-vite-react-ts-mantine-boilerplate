@@ -3,6 +3,8 @@ import path from 'node:path'
 import { defineConfig } from 'vite'
 import dts from 'vite-dts'
 
+const isDevelopment = Boolean(process.env['DEV'] || process.env['NODE_ENV'] === 'development')
+
 const isExternal = (id: string) => !id.startsWith('.') && !path.isAbsolute(id)
 
 export default defineConfig({
@@ -21,12 +23,12 @@ export default defineConfig({
       babel: {
         plugins: [
           [
-            'babel-plugin-styled-components',
+            '@emotion',
             {
-              pure: true,
-              ssr: true,
-              displayName: true, // TODO: Need to add production settings
-              fileName: true, // TODO: Need to add production settings
+              sourceMap: isDevelopment,
+              autoLabel: 'dev-only',
+              labelFormat: '[filename]--[local]',
+              cssPropOptimization: true,
             },
           ],
         ],
