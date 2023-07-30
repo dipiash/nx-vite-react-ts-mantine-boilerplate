@@ -148,7 +148,7 @@
     "vite-dts": "1.0.4",
     "vite-tsconfig-paths": "4.0.3",
     "vitest": "0.26.3",
-    "webpack": "5.75.0"
+    "webpack": "5.76.0"
   },
   "dependencies": {
     "@emotion/babel-plugin": "^11.10.5",
