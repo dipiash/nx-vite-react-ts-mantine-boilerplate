@@ -38,8 +38,8 @@
   },
   "private": true,
   "engines": {
-    "node": "16.x",
-    "pnpm": "7.x"
+    "node": "20.x",
+    "pnpm": "8.x"
   },
   "lint-staged": {
     "**/*.{js,jsx,ts,tsx}": [
