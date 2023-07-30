@@ -24,9 +24,9 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-
 
-      - uses: pnpm/action-setup@v2.2.4
+      - uses: pnpm/action-setup@v2.4.0
         with:
-          version: 7.22.0
+          version: 8
           run_install: true
 
   type-check:
@@ -42,7 +42,7 @@ jobs:
           node-version: 20
 
       - name: Reusable Action for PNPM and NX
-        uses: dipiash/pnpm-nx-reusable-action@v7
+        uses: dipiash/pnpm-nx-reusable-action@v8
 
       - name: type-check PR
         if: github.ref != 'refs/heads/main'
@@ -64,7 +64,7 @@ jobs:
           node-version: 20
 
       - name: Reusable Action for PNPM and NX
-        uses: dipiash/pnpm-nx-reusable-action@v7
+        uses: dipiash/pnpm-nx-reusable-action@v8
 
       - name: lint PR
         if: github.ref != 'refs/heads/main'
@@ -86,7 +86,7 @@ jobs:
           node-version: 20
 
       - name: Reusable Action for PNPM and NX
-        uses: dipiash/pnpm-nx-reusable-action@v7
+        uses: dipiash/pnpm-nx-reusable-action@v8
 
       - name: stylelint PR
         if: github.ref != 'refs/heads/main'
@@ -108,7 +108,7 @@ jobs:
           node-version: 20
 
       - name: Reusable Action for PNPM and NX
-        uses: dipiash/pnpm-nx-reusable-action@v7
+        uses: dipiash/pnpm-nx-reusable-action@v8
 
       - name: test PR
         if: github.ref != 'refs/heads/main'
