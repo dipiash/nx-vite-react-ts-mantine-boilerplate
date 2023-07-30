@@ -32,4 +32,3 @@ npm install -g nx
 - [Cypress](https://www.cypress.io)
 - [Styled Components](https://emotion.sh/docs/styled)
 - [ESLint](https://eslint.org/)
-- [Stylelint](https://stylelint.io/)

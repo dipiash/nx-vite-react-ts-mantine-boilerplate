@@ -2,7 +2,7 @@ import viteReact from '@vitejs/plugin-react'
 import path from 'node:path'
 import analyze from 'rollup-plugin-analyzer'
 import visualizer from 'rollup-plugin-visualizer'
-import { defineConfig, splitVendorChunkPlugin } from 'vite'
+import { defineConfig } from 'vite'
 import tsconfigPaths from 'vite-tsconfig-paths'
 
 import { dependencies } from '../../package.json'
@@ -26,12 +26,6 @@ function renderChunks(deps: Record<string, string>) {
   }
 
   return chunks
-}
-
-const plugins = []
-
-if (!isDevelopment) {
-  plugins.push(splitVendorChunkPlugin())
 }
 
 // https://vitejs.dev/config/
@@ -67,7 +61,6 @@ export default defineConfig({
     minify: isNoMinify ? false : 'esbuild',
   },
   plugins: [
-    ...plugins,
     tsconfigPaths(),
     viteReact({
       babel: {
