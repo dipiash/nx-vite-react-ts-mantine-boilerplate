@@ -36,7 +36,7 @@ export const RepositoriesTable: FC<IRepositoriesTableProperties> = ({ queryStrin
                 license: node?.licenseInfo && node?.licenseInfo.name,
                 date: node?.createdAt,
               }
-            : undefined,
+            : (undefined as unknown as IRepositoryData),
         )
         .filter((node): node is IRepositoryData => node !== undefined),
     [resultData],
