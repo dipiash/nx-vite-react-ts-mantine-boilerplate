@@ -67,6 +67,13 @@
         "lintFilePatterns": ["packages/react-app/**/*.{ts,tsx,js,jsx}"]
       }
     },
+    "stylelint": {
+      "executor": "nx-stylelint:lint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["packages/react-app/src/**/*.{ts,tsx,js,jsx}"]
+      }
+    },
     "test": {
       "executor": "nx:run-commands",
       "options": {

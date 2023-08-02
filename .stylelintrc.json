@@ -1,0 +1,55 @@
+{
+  "processors": ["stylelint-processor-styled-components"],
+  "customSyntax": "postcss-styled-syntax",
+  "extends": ["stylelint-config-standard-scss", "stylelint-config-recommended", "stylelint-config-styled-components"],
+  "plugins": [
+    "stylelint-prettier",
+    "stylelint-no-nested-media",
+    "stylelint-max-lines",
+    "stylelint-high-performance-animation",
+    "stylelint-no-unsupported-browser-features",
+    "stylelint-order",
+    "stylelint-config-rational-order/plugin"
+  ],
+  "ignoreFiles": ["./node_modules/**", "./**/node_modules/**", "./**/dist/**", "./**/coverage/**"],
+  "rules": {
+    "pitcher/no-nested-media": true,
+    "pitcher/max-lines": 300,
+    "prettier/prettier": true,
+    "plugin/no-low-performance-animation-properties": true,
+    "plugin/no-unsupported-browser-features": [
+      true,
+      {
+        "browsers": ["> 1%", "Last 2 versions"],
+        "severity": "warning",
+        "ignorePartialSupport": true
+      }
+    ],
+    "alpha-value-notation": "number",
+    "order/properties-order": [[], { "severity": "warning" }],
+    "plugin/rational-order": [
+      true,
+      {
+        "border-in-box-model": false,
+        "empty-line-between-groups": true,
+        "severity": "warning"
+      }
+    ],
+    "property-no-unknown": [true, { "ignoreProperties": ["box-orient"] }],
+    "selector-class-pattern": ".*",
+    "selector-attribute-quotes": "always",
+    "selector-max-id": 0,
+    "comment-empty-line-before": ["always", { "except": ["first-nested"] }],
+    "declaration-block-single-line-max-declarations": 1,
+    "function-url-quotes": "always",
+    "declaration-empty-line-before": ["always", {
+      "except": ["first-nested"],
+      "ignore": ["after-comment", "after-declaration"]
+    }],
+    "media-feature-range-notation": null,
+    "max-nesting-depth": 10,
+    "color-hex-length": "short",
+    "no-missing-end-of-source-newline": null,
+    "color-function-notation": "modern"
+  }
+}
