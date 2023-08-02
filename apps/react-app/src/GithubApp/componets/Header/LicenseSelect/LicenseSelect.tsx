@@ -1,7 +1,7 @@
 import React, { FC, useMemo } from 'react'
 
-import { useListLicensesQuery } from '@nx-ts-vite-react-graphql-styled-monorepo-example/data-access'
-import { Error, Loader, Select, SelectItem } from '@nx-ts-vite-react-graphql-styled-monorepo-example/ui-kit'
+import { useListLicensesQuery } from '@nx-vite-react-ts-mantine-boilerplate/data-access'
+import { Error, Loader, Select, SelectItem } from '@nx-vite-react-ts-mantine-boilerplate/ui-kit'
 
 import { LicenseSelectProperties } from './LicenseSelect.types'
 

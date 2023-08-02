@@ -4,7 +4,7 @@ import { MockedResponse } from '@apollo/react-testing'
 import { act, render, screen } from '@testing-library/react'
 import { describe, expect, it } from 'vitest'
 
-import { ListRepositoriesDocument } from '@nx-ts-vite-react-graphql-styled-monorepo-example/data-access'
+import { ListRepositoriesDocument } from '@nx-vite-react-ts-mantine-boilerplate/data-access'
 
 import { getDateCondition, getLanguageCondition, getLicenseCondition, getRepositoryNameCondition, getSortCondition } from '../../../utils'
 import { RepositoriesTable } from '../index'

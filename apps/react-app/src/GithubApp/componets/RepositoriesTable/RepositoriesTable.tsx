@@ -1,7 +1,7 @@
 import React, { FC, useMemo } from 'react'
 
-import { SearchResultItemEdge, useListRepositoriesQuery } from '@nx-ts-vite-react-graphql-styled-monorepo-example/data-access'
-import { Error, Loader, Pagination, Space, Table } from '@nx-ts-vite-react-graphql-styled-monorepo-example/ui-kit'
+import { SearchResultItemEdge, useListRepositoriesQuery } from '@nx-vite-react-ts-mantine-boilerplate/data-access'
+import { Error, Loader, Pagination, Space, Table } from '@nx-vite-react-ts-mantine-boilerplate/ui-kit'
 
 import { IRepositoriesTableProperties, IRepositoryData } from './RepositoriesTable.types'
 

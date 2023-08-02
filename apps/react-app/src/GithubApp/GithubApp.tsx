@@ -1,7 +1,7 @@
 import React, { ChangeEvent, useCallback, useState } from 'react'
 import { useDebouncedValue } from '@mantine/hooks'
 
-import { Button } from '@nx-ts-vite-react-graphql-styled-monorepo-example/ui-kit'
+import { Button } from '@nx-vite-react-ts-mantine-boilerplate/ui-kit'
 
 import { useInputTokenForGraphql } from './hooks/useInputTokenForGraphql'
 

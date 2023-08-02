@@ -8,7 +8,7 @@
     }
   },
   "extends": "nx/presets/core.json",
-  "npmScope": "nx-ts-vite-react-graphql-styled-monorepo-example",
+  "npmScope": "nx-vite-react-ts-mantine-boilerplate",
   "affected": {
     "defaultBase": "main"
   },

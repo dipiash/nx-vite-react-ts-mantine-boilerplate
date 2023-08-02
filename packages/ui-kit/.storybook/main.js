@@ -10,7 +10,7 @@ export default {
     config.resolve.dedupe = ['@storybook/client-api']
 
     if (configType === 'PRODUCTION') {
-      config.base = '/storybook/'
+      config.base = '/storybook'
     }
 
     config.plugins.push(

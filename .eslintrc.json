@@ -77,7 +77,7 @@
               // React, Apollo, Other @**, Styled Components
               ["^react", "^@apollo", "^@?\\w", "^styled"],
               // Monorepo packages
-              ["^(@nx-ts-vite-react-graphql-styled-monorepo-example)(/.*|$)"],
+              ["^(@nx-vite-react-ts-mantine-boilerplate)(/.*|$)"],
               // Types
               ["^.+?[Tt]ype.+?"],
               // Hooks

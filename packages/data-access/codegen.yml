@@ -3,6 +3,7 @@ schema:
   - ${GITHUB_API_ENDPOINT}:
       headers:
         Authorization: bearer ${GITHUB_TOKEN}
+        User-Agent: nx-vite-react-ts-mantine-boilerplate
 documents: 'src/lib/graphql/**/*.graphql'
 generates:
   src/lib/generated/fragment-matcher.ts:

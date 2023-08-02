@@ -94,7 +94,7 @@
         "cwd": "./packages/ui-kit",
         "commands": [
           {
-            "command": "npx http-server dist/storybook"
+            "command": "npx http-server dist -o /storybook"
           }
         ]
       }
