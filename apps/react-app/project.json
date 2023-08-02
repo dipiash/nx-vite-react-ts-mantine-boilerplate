@@ -2,13 +2,13 @@
   "name": "react-app",
   "$schema": "../../node_modules/nx/schemas/project-schema.json",
   "projectType": "application",
-  "sourceRoot": "packages/react-app/src",
+  "sourceRoot": "apps/react-app/src",
   "tags": [],
   "targets": {
     "type-check": {
       "executor": "nx:run-commands",
       "options": {
-        "cwd": "./packages/react-app",
+        "cwd": "./apps/react-app",
         "commands": [
           {
             "command": "tsc --project tsconfig.app.json --noEmit"
@@ -19,7 +19,7 @@
     "serve": {
       "executor": "nx:run-commands",
       "options": {
-        "cwd": "./packages/react-app",
+        "cwd": "./apps/react-app",
         "commands": [
           {
             "command": "vite serve"
@@ -30,7 +30,7 @@
     "preview": {
       "executor": "nx:run-commands",
       "options": {
-        "cwd": "./packages/react-app",
+        "cwd": "./apps/react-app",
         "commands": [
           {
             "command": "vite preview"
@@ -41,7 +41,7 @@
     "build": {
       "executor": "nx:run-commands",
       "options": {
-        "cwd": "./packages/react-app",
+        "cwd": "./apps/react-app",
         "commands": [
           {
             "command": "vite build"
@@ -52,7 +52,7 @@
     "build-serve": {
       "executor": "nx:run-commands",
       "options": {
-        "cwd": "./packages/react-app",
+        "cwd": "./apps/react-app",
         "commands": [
           {
             "command": "npx http-server dist"
@@ -64,20 +64,20 @@
       "executor": "@nx/linter:eslint",
       "outputs": ["{options.outputFile}"],
       "options": {
-        "lintFilePatterns": ["packages/react-app/**/*.{ts,tsx,js,jsx}"]
+        "lintFilePatterns": ["apps/react-app/**/*.{ts,tsx,js,jsx}"]
       }
     },
     "stylelint": {
       "executor": "nx-stylelint:lint",
       "outputs": ["{options.outputFile}"],
       "options": {
-        "lintFilePatterns": ["packages/react-app/src/**/*.{ts,tsx,js,jsx}"]
+        "lintFilePatterns": ["apps/react-app/src/**/*.{ts,tsx,js,jsx}"]
       }
     },
     "test": {
       "executor": "nx:run-commands",
       "options": {
-        "cwd": "./packages/react-app",
+        "cwd": "./apps/react-app",
         "commands": [
           {
             "command": "vitest run --config ./vitest.config.ts --coverage --passWithNoTests"
