@@ -13,6 +13,10 @@
       "Organization",
       "User"
     ],
+    "AnnouncementBanner": [
+      "Enterprise",
+      "Organization"
+    ],
     "Assignable": [
       "Issue",
       "PullRequest"
@@ -43,8 +47,10 @@
       "OrgInviteMemberAuditEntry",
       "OrgInviteToBusinessAuditEntry",
       "OrgOauthAppAccessApprovedAuditEntry",
+      "OrgOauthAppAccessBlockedAuditEntry",
       "OrgOauthAppAccessDeniedAuditEntry",
       "OrgOauthAppAccessRequestedAuditEntry",
+      "OrgOauthAppAccessUnblockedAuditEntry",
       "OrgRemoveBillingManagerAuditEntry",
       "OrgRemoveMemberAuditEntry",
       "OrgRemoveOutsideCollaboratorAuditEntry",
@@ -89,14 +95,24 @@
       "User"
     ],
     "BranchActorAllowanceActor": [
+      "App",
       "Team",
       "User"
     ],
+    "BypassActor": [
+      "App",
+      "Team"
+    ],
+    "Claimable": [
+      "Mannequin",
+      "User"
+    ],
     "Closable": [
+      "Discussion",
       "Issue",
       "Milestone",
       "Project",
-      "ProjectNext",
+      "ProjectV2",
       "PullRequest"
     ],
     "Closer": [
@@ -142,6 +158,7 @@
       "Discussion",
       "DiscussionComment",
       "GistComment",
+      "Issue",
       "IssueComment",
       "PullRequestReview",
       "PullRequestReviewComment",
@@ -175,6 +192,7 @@
     "GitSignature": [
       "GpgSignature",
       "SmimeSignature",
+      "SshSignature",
       "UnknownSignature"
     ],
     "HovercardContext": [
@@ -276,6 +294,7 @@
       "PullRequestReviewComment"
     ],
     "Node": [
+      "AddedToMergeQueueEvent",
       "AddedToProjectEvent",
       "App",
       "AssignedEvent",
@@ -302,6 +321,7 @@
       "Commit",
       "CommitComment",
       "CommitCommentThread",
+      "Comparison",
       "ConnectedEvent",
       "ConvertToDraftEvent",
       "ConvertedNoteToIssueEvent",
@@ -318,6 +338,8 @@
       "Discussion",
       "DiscussionCategory",
       "DiscussionComment",
+      "DiscussionPoll",
+      "DiscussionPollOption",
       "DraftIssue",
       "Enterprise",
       "EnterpriseAdministratorInvitation",
@@ -342,6 +364,7 @@
       "LabeledEvent",
       "Language",
       "License",
+      "LinkedBranch",
       "LockedEvent",
       "Mannequin",
       "MarkedAsDuplicateEvent",
@@ -351,6 +374,8 @@
       "MembersCanDeleteReposDisableAuditEntry",
       "MembersCanDeleteReposEnableAuditEntry",
       "MentionedEvent",
+      "MergeQueue",
+      "MergeQueueEntry",
       "MergedEvent",
       "MigrationSource",
       "Milestone",
@@ -373,8 +398,10 @@
       "OrgInviteMemberAuditEntry",
       "OrgInviteToBusinessAuditEntry",
       "OrgOauthAppAccessApprovedAuditEntry",
+      "OrgOauthAppAccessBlockedAuditEntry",
       "OrgOauthAppAccessDeniedAuditEntry",
       "OrgOauthAppAccessRequestedAuditEntry",
+      "OrgOauthAppAccessUnblockedAuditEntry",
       "OrgRemoveBillingManagerAuditEntry",
       "OrgRemoveMemberAuditEntry",
       "OrgRemoveOutsideCollaboratorAuditEntry",
@@ -387,6 +414,7 @@
       "Organization",
       "OrganizationIdentityProvider",
       "OrganizationInvitation",
+      "OrganizationMigration",
       "Package",
       "PackageFile",
       "PackageTag",
@@ -399,11 +427,18 @@
       "Project",
       "ProjectCard",
       "ProjectColumn",
-      "ProjectNext",
-      "ProjectNextField",
-      "ProjectNextItem",
-      "ProjectNextItemFieldValue",
-      "ProjectView",
+      "ProjectV2",
+      "ProjectV2Field",
+      "ProjectV2Item",
+      "ProjectV2ItemFieldDateValue",
+      "ProjectV2ItemFieldIterationValue",
+      "ProjectV2ItemFieldNumberValue",
+      "ProjectV2ItemFieldSingleSelectValue",
+      "ProjectV2ItemFieldTextValue",
+      "ProjectV2IterationField",
+      "ProjectV2SingleSelectField",
+      "ProjectV2View",
+      "ProjectV2Workflow",
       "PublicKey",
       "PullRequest",
       "PullRequestCommit",
@@ -411,6 +446,7 @@
       "PullRequestReview",
       "PullRequestReviewComment",
       "PullRequestReviewThread",
+      "PullRequestThread",
       "Push",
       "PushAllowance",
       "Reaction",
@@ -419,6 +455,7 @@
       "ReferencedEvent",
       "Release",
       "ReleaseAsset",
+      "RemovedFromMergeQueueEvent",
       "RemovedFromProjectEvent",
       "RenamedTitleEvent",
       "ReopenedEvent",
@@ -444,6 +481,9 @@
       "Repository",
       "RepositoryInvitation",
       "RepositoryMigration",
+      "RepositoryRule",
+      "RepositoryRuleset",
+      "RepositoryRulesetBypassActor",
       "RepositoryTopic",
       "RepositoryVisibilityChangeDisableAuditEntry",
       "RepositoryVisibilityChangeEnableAuditEntry",
@@ -457,6 +497,7 @@
       "SecurityAdvisory",
       "SponsorsActivity",
       "SponsorsListing",
+      "SponsorsListingFeaturedItem",
       "SponsorsTier",
       "Sponsorship",
       "SponsorshipNewsletter",
@@ -488,13 +529,16 @@
       "UserStatus",
       "VerifiableDomain",
       "Workflow",
-      "WorkflowRun"
+      "WorkflowRun",
+      "WorkflowRunFile"
     ],
     "OauthApplicationAuditEntryData": [
       "OauthApplicationCreateAuditEntry",
       "OrgOauthAppAccessApprovedAuditEntry",
+      "OrgOauthAppAccessBlockedAuditEntry",
       "OrgOauthAppAccessDeniedAuditEntry",
-      "OrgOauthAppAccessRequestedAuditEntry"
+      "OrgOauthAppAccessRequestedAuditEntry",
+      "OrgOauthAppAccessUnblockedAuditEntry"
     ],
     "OrgRestoreMemberAuditEntryMembership": [
       "OrgRestoreMemberMembershipOrganizationAuditEntryData",
@@ -521,8 +565,10 @@
       "OrgInviteMemberAuditEntry",
       "OrgInviteToBusinessAuditEntry",
       "OrgOauthAppAccessApprovedAuditEntry",
+      "OrgOauthAppAccessBlockedAuditEntry",
       "OrgOauthAppAccessDeniedAuditEntry",
       "OrgOauthAppAccessRequestedAuditEntry",
+      "OrgOauthAppAccessUnblockedAuditEntry",
       "OrgRemoveBillingManagerAuditEntry",
       "OrgRemoveMemberAuditEntry",
       "OrgRemoveOutsideCollaboratorAuditEntry",
@@ -581,8 +627,10 @@
       "OrgInviteMemberAuditEntry",
       "OrgInviteToBusinessAuditEntry",
       "OrgOauthAppAccessApprovedAuditEntry",
+      "OrgOauthAppAccessBlockedAuditEntry",
       "OrgOauthAppAccessDeniedAuditEntry",
       "OrgOauthAppAccessRequestedAuditEntry",
+      "OrgOauthAppAccessUnblockedAuditEntry",
       "OrgRemoveBillingManagerAuditEntry",
       "OrgRemoveMemberAuditEntry",
       "OrgRemoveOutsideCollaboratorAuditEntry",
@@ -622,6 +670,10 @@
       "TeamRemoveMemberAuditEntry",
       "TeamRemoveRepositoryAuditEntry"
     ],
+    "OrganizationOrUser": [
+      "Organization",
+      "User"
+    ],
     "PackageOwner": [
       "Organization",
       "Repository",
@@ -644,29 +696,59 @@
       "Issue",
       "PullRequest"
     ],
-    "ProjectNextFieldCommon": [
-      "ProjectNextField"
-    ],
-    "ProjectNextItemContent": [
-      "DraftIssue",
-      "Issue",
-      "PullRequest"
-    ],
-    "ProjectNextOwner": [
-      "Issue",
-      "Organization",
-      "PullRequest",
-      "User"
-    ],
     "ProjectOwner": [
       "Organization",
       "Repository",
       "User"
     ],
+    "ProjectV2Actor": [
+      "Team",
+      "User"
+    ],
+    "ProjectV2FieldCommon": [
+      "ProjectV2Field",
+      "ProjectV2IterationField",
+      "ProjectV2SingleSelectField"
+    ],
+    "ProjectV2FieldConfiguration": [
+      "ProjectV2Field",
+      "ProjectV2IterationField",
+      "ProjectV2SingleSelectField"
+    ],
+    "ProjectV2ItemContent": [
+      "DraftIssue",
+      "Issue",
+      "PullRequest"
+    ],
+    "ProjectV2ItemFieldValue": [
+      "ProjectV2ItemFieldDateValue",
+      "ProjectV2ItemFieldIterationValue",
+      "ProjectV2ItemFieldLabelValue",
+      "ProjectV2ItemFieldMilestoneValue",
+      "ProjectV2ItemFieldNumberValue",
+      "ProjectV2ItemFieldPullRequestValue",
+      "ProjectV2ItemFieldRepositoryValue",
+      "ProjectV2ItemFieldReviewerValue",
+      "ProjectV2ItemFieldSingleSelectValue",
+      "ProjectV2ItemFieldTextValue",
+      "ProjectV2ItemFieldUserValue"
+    ],
+    "ProjectV2ItemFieldValueCommon": [
+      "ProjectV2ItemFieldDateValue",
+      "ProjectV2ItemFieldIterationValue",
+      "ProjectV2ItemFieldNumberValue",
+      "ProjectV2ItemFieldSingleSelectValue",
+      "ProjectV2ItemFieldTextValue"
+    ],
     "ProjectV2Owner": [
       "Issue",
       "Organization",
       "PullRequest",
+      "User"
+    ],
+    "ProjectV2Recent": [
+      "Organization",
+      "Repository",
       "User"
     ],
     "PullRequestTimelineItem": [
@@ -705,6 +787,7 @@
       "UserBlockedEvent"
     ],
     "PullRequestTimelineItems": [
+      "AddedToMergeQueueEvent",
       "AddedToProjectEvent",
       "AssignedEvent",
       "AutoMergeDisabledEvent",
@@ -746,6 +829,7 @@
       "PullRequestRevisionMarker",
       "ReadyForReviewEvent",
       "ReferencedEvent",
+      "RemovedFromMergeQueueEvent",
       "RemovedFromProjectEvent",
       "RenamedTitleEvent",
       "ReopenedEvent",
@@ -851,6 +935,7 @@
       "User"
     ],
     "RequestedReviewer": [
+      "Bot",
       "Mannequin",
       "Team",
       "User"
@@ -860,8 +945,24 @@
       "StatusContext"
     ],
     "ReviewDismissalAllowanceActor": [
+      "App",
       "Team",
       "User"
+    ],
+    "RuleParameters": [
+      "BranchNamePatternParameters",
+      "CommitAuthorEmailPatternParameters",
+      "CommitMessagePatternParameters",
+      "CommitterEmailPatternParameters",
+      "PullRequestParameters",
+      "RequiredDeploymentsParameters",
+      "RequiredStatusChecksParameters",
+      "TagNamePatternParameters",
+      "UpdateParameters"
+    ],
+    "RuleSource": [
+      "Organization",
+      "Repository"
     ],
     "SearchResultItem": [
       "App",
@@ -885,6 +986,10 @@
       "Organization",
       "User"
     ],
+    "SponsorsListingFeatureableItem": [
+      "Repository",
+      "User"
+    ],
     "Starrable": [
       "Gist",
       "Repository",
@@ -902,6 +1007,9 @@
       "Repository",
       "Team",
       "TeamDiscussion"
+    ],
+    "SubscribableThread": [
+      "Issue"
     ],
     "TeamAuditEntryData": [
       "OrgRestoreMemberMembershipTeamAuditEntryData",
@@ -937,7 +1045,10 @@
       "ReviewDismissedEvent",
       "TeamDiscussion",
       "TeamDiscussionComment",
-      "User"
+      "User",
+      "Workflow",
+      "WorkflowRun",
+      "WorkflowRunFile"
     ],
     "Updatable": [
       "CommitComment",
@@ -947,7 +1058,7 @@
       "Issue",
       "IssueComment",
       "Project",
-      "ProjectNext",
+      "ProjectV2",
       "PullRequest",
       "PullRequestReview",
       "PullRequestReviewComment",

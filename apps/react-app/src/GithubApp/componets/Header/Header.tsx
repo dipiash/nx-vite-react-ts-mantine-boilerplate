@@ -1,6 +1,6 @@
 import React, { FC, memo } from 'react'
 
-import { Input } from '@nx-ts-vite-react-graphql-styled-monorepo-example/ui-kit'
+import { Input } from '@nx-vite-react-ts-mantine-boilerplate/ui-kit'
 
 import { IHeaderProperties } from './Header.types'
 

@@ -1,4 +1,4 @@
-import { Scalars } from '@nx-ts-vite-react-graphql-styled-monorepo-example/data-access'
+import { Scalars } from '@nx-vite-react-ts-mantine-boilerplate/data-access'
 
 export interface IRepositoriesTableProperties {
   queryString: string

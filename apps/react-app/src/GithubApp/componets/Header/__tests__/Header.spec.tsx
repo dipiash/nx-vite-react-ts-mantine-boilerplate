@@ -4,7 +4,7 @@ import { act, fireEvent, render, screen, waitFor } from '@testing-library/react'
 import userEvent from '@testing-library/user-event'
 import { describe, expect, it, vitest } from 'vitest'
 
-import { ListLicensesDocument } from '@nx-ts-vite-react-graphql-styled-monorepo-example/data-access'
+import { ListLicensesDocument } from '@nx-vite-react-ts-mantine-boilerplate/data-access'
 
 import { Header } from '../index'
 
