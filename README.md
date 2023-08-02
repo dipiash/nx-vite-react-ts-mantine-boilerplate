@@ -1,4 +1,7 @@
 ![CI](https://github.com/dipiash/nx-ts-vite-react-graphql-styled-monorepo-example/actions/workflows/CheckPullRequest.yml/badge.svg?branch=main)
+[![Hits](https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fgithub.com%2Fdipiash%2Fnx-vite-react-ts-mantine-boilerplate&count_bg=%2379C83D&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=hits&edge_flat=false)](https://hits.seeyoufarm.com)
+
+# NX Boilerplate with React + Vite + TypeScript + Mantine
 
 # Getting Started
 
