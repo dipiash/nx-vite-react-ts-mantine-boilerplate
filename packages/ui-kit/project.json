@@ -45,6 +45,13 @@
         "lintFilePatterns": ["packages/ui-kit/**/*.{ts,tsx,js,jsx}"]
       }
     },
+    "stylelint": {
+      "executor": "nx-stylelint:lint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["packages/ui-kit/**/*.{ts,tsx,js,jsx}"]
+      }
+    },
     "test": {
       "executor": "nx:run-commands",
       "options": {

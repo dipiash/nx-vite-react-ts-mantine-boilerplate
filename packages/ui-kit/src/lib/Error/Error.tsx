@@ -1,6 +1,6 @@
 import React, { FC, memo } from 'react'
 import { Alert } from '@mantine/core'
-import { IconAlertCircle } from '@tabler/icons'
+import { IconAlertCircle } from '@tabler/icons-react'
 
 import { IErrorProperties } from './Error.types'
 
