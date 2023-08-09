@@ -22,10 +22,10 @@ jobs:
         uses: dipiash/pnpm-nx-reusable-action@v8
 
       - name: Install and Build 🔧
-        run: npx nx build react-app
+        run: npx nx build main
 
       - name: Deploy 🚀
         uses: JamesIves/github-pages-deploy-action@v4.3.0
         with:
           branch: gh-pages
-          folder: packages/react-app/dist
+          folder: packages/main/dist

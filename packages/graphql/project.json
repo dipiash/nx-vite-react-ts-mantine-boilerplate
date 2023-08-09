@@ -1,0 +1,27 @@
+{
+  "name": "graphql",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "packages/graphql/src",
+  "projectType": "library",
+  "tags": [],
+  "targets": {
+    "lint": {
+      "executor": "@nx/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["packages/graphql/**/*.graphql"]
+      }
+    },
+    "codegen": {
+      "executor": "nx:run-commands",
+      "options": {
+        "cwd": "./packages/graphql",
+        "commands": [
+          {
+            "command": "DOTENV_CONFIG_PATH=\"./.env.local\" graphql-codegen --require dotenv/config --config ./codegen.yml"
+          }
+        ]
+      }
+    }
+  }
+}

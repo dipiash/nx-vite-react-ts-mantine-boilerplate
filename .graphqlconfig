@@ -1,5 +1,0 @@
-{
-  "name": "GraphQL Schema",
-  "schema": "packages/data-access/src/lib/generated/schema.graphql",
-  "documents": "packages/data-access/src/lib/graphql/**/*.graphql"
-}
