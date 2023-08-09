@@ -45,7 +45,7 @@
       }
     }
   },
-  "defaultProject": "react-app",
+  "defaultProject": "main",
   "namedInputs": {
     "default": ["{projectRoot}/**/*", "sharedGlobals"],
     "sharedGlobals": [

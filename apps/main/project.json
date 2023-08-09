@@ -1,0 +1,89 @@
+{
+  "name": "main",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "projectType": "application",
+  "sourceRoot": "apps/main/src",
+  "tags": [],
+  "targets": {
+    "type-check": {
+      "executor": "nx:run-commands",
+      "options": {
+        "cwd": "./apps/main",
+        "commands": [
+          {
+            "command": "tsc --project tsconfig.app.json --noEmit"
+          }
+        ]
+      }
+    },
+    "serve": {
+      "executor": "nx:run-commands",
+      "options": {
+        "cwd": "./apps/main",
+        "commands": [
+          {
+            "command": "vite serve"
+          }
+        ]
+      }
+    },
+    "preview": {
+      "executor": "nx:run-commands",
+      "options": {
+        "cwd": "./apps/main",
+        "commands": [
+          {
+            "command": "vite preview"
+          }
+        ]
+      }
+    },
+    "build": {
+      "executor": "nx:run-commands",
+      "options": {
+        "cwd": "./apps/main",
+        "commands": [
+          {
+            "command": "vite build"
+          }
+        ]
+      }
+    },
+    "build-serve": {
+      "executor": "nx:run-commands",
+      "options": {
+        "cwd": "./apps/main",
+        "commands": [
+          {
+            "command": "npx http-server dist"
+          }
+        ]
+      }
+    },
+    "lint": {
+      "executor": "@nx/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["apps/main/**/*.{ts,tsx,js,jsx}"]
+      }
+    },
+    "stylelint": {
+      "executor": "nx-stylelint:lint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["apps/main/src/**/*.{ts,tsx,js,jsx}"]
+      }
+    },
+    "test": {
+      "executor": "nx:run-commands",
+      "options": {
+        "cwd": "./apps/main",
+        "commands": [
+          {
+            "command": "vitest run --config ./vitest.config.ts --coverage --passWithNoTests"
+          }
+        ]
+      }
+    }
+  }
+}

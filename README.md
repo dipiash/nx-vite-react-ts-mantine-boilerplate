@@ -23,14 +23,14 @@ pnpm run init-project
 ### Development
 
 1. Read [how to create GitHub access token](https://help.github.com/en/github/authenticating-to-github/creating-a-personal-access-token-for-the-command-line)
-2. Add `.env.local` into `./packages/data-access/.env.local`
+2. Add `.env.local` into `./packages/graphql/.env.local`
    ```bash
-   cp ./packages/data-access/env.example ./packages/data-access/.env.local
+   cp ./packages/graphql/env.example ./packages/graphql/.env.local
    ```
    and add your GitHub token (see step 1)
-3. Add `.env.local` to `./apps/react-app/.env.local`
+3. Add `.env.local` to `./apps/main/.env.local`
    ```bash
-   cp ./apps/react-app/env.example ./apps/react-app/.env.local
+   cp ./apps/main/env.example ./apps/main/.env.local
    ```
    and add your GitHub token (see step 1)
 4. _[Optional step]_ Generate code from GraphQL schema

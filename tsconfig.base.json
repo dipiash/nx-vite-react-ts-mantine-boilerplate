@@ -20,7 +20,7 @@
     "strict": true,
     "baseUrl": "./packages",
     "paths": {
-      "@nx-vite-react-ts-mantine-boilerplate/data-access": ["data-access/src"],
+      "@nx-vite-react-ts-mantine-boilerplate/graphql": ["graphql/src"],
       "@nx-vite-react-ts-mantine-boilerplate/icons": ["icons/src"],
       "@nx-vite-react-ts-mantine-boilerplate/ui-kit": ["ui-kit/src"]
     }
