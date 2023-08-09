@@ -1,4 +1,4 @@
-import viteReact from '@vitejs/plugin-react'
+import react from '@vitejs/plugin-react-swc'
 import path from 'node:path'
 import analyze from 'rollup-plugin-analyzer'
 import visualizer from 'rollup-plugin-visualizer'
@@ -60,23 +60,5 @@ export default defineConfig({
     },
     minify: isNoMinify ? false : 'esbuild',
   },
-  plugins: [
-    tsconfigPaths(),
-    viteReact({
-      babel: {
-        compact: false,
-        plugins: [
-          [
-            '@emotion',
-            {
-              sourceMap: isDevelopment,
-              autoLabel: 'dev-only',
-              labelFormat: '[local]',
-              cssPropOptimization: true,
-            },
-          ],
-        ],
-      },
-    }),
-  ],
+  plugins: [tsconfigPaths(), react()],
 })
