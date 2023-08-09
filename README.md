@@ -1,7 +1,7 @@
 ![CI](https://github.com/dipiash/nx-vite-react-ts-mantine-boilerplate/actions/workflows/CheckPullRequest.yml/badge.svg?branch=main)
 [![Hits](https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fgithub.com%2Fdipiash%2Fnx-vite-react-ts-mantine-boilerplate&count_bg=%2379C83D&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=hits&edge_flat=false)](https://hits.seeyoufarm.com)
 
-# NX Boilerplate with React + Vite + TypeScript + Mantine
+# NX monorepo boilerplate with React + Vite + TypeScript + Mantine
 
 ## Getting Started
 
@@ -43,14 +43,33 @@ pnpm run init-project
    ```
    and open the page http://localhost:3000/
 
-### Used technologies
+### Examples
 
-- [Nx](https://nx.dev)
-- [React](https://reactjs.org)
-- [Storybook](https://storybook.js.org/)
+- [GitHub repository list](https://dipiash.github.io/nx-vite-react-ts-mantine-boilerplate/)
+
+### App screenshots
+
+#### Desktop version
+
+<img alt="app_screenshot_1.png" height="200" src="docs/app_screenshot_1.png"/>
+
+<img alt="app_screenshot_2.png" height="200" src="docs/app_screenshot_2.png"/>
+
+#### Mobile version
+
+<img alt="app_screenshot_3.png" height="200" src="docs/app_screenshot_3.png"/>
+
+### Features
+
+- [Nx 16](https://nx.dev)
+- [React 18](https://reactjs.org)
+- [Mantine](https://mantine.dev/)
+- [Storybook 7](https://storybook.js.org/)
 - [TypeScript](https://www.typescriptlang.org/)
 - [Vite](https://vitejs.dev/)
 - [Vitest](https://vitest.dev/)
+- [React Testing Library](https://testing-library.com/docs/react-testing-library/intro)
 - [Cypress](https://www.cypress.io)
 - [Styled Components](https://emotion.sh/docs/styled)
 - [ESLint](https://eslint.org/)
+- HMR (Hot Module Replacement)

@@ -1,9 +1,7 @@
-import viteReact from '@vitejs/plugin-react'
+import react from '@vitejs/plugin-react-swc'
 import path from 'node:path'
 import { defineConfig } from 'vite'
 import dts from 'vite-dts'
-
-const isDevelopment = Boolean(process.env['DEV'] || process.env['NODE_ENV'] === 'development')
 
 const isExternal = (id: string) => !id.startsWith('.') && !path.isAbsolute(id)
 
@@ -17,22 +15,5 @@ export default defineConfig({
       external: isExternal,
     },
   },
-  plugins: [
-    dts(),
-    viteReact({
-      babel: {
-        plugins: [
-          [
-            '@emotion',
-            {
-              sourceMap: isDevelopment,
-              autoLabel: 'dev-only',
-              labelFormat: '[filename]--[local]',
-              cssPropOptimization: true,
-            },
-          ],
-        ],
-      },
-    }),
-  ],
+  plugins: [dts(), react()],
 })

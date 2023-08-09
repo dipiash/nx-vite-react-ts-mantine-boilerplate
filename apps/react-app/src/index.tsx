@@ -1,18 +1,16 @@
-import React, { FC } from 'react'
+import React from 'react'
 import { createRoot } from 'react-dom/client'
 import { BrowserRouter } from 'react-router-dom'
 
 import App from './App'
 
-const Renderer: FC = () => (
+const container = document.querySelector('#root')
+const root = createRoot(container as Element)
+
+root.render(
   <React.StrictMode>
     <BrowserRouter>
       <App />
     </BrowserRouter>
-  </React.StrictMode>
+  </React.StrictMode>,
 )
-
-const container = document.querySelector('#root')
-const root = createRoot(container as Element)
-
-root.render(<Renderer />)

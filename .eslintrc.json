@@ -62,7 +62,7 @@
         "plugin:@typescript-eslint/recommended",
         "plugin:testing-library/react"
       ],
-      "plugins": ["react", "react-hooks", "sonarjs", "unicorn", "@typescript-eslint", "prettier", "promise", "import", "simple-import-sort"],
+      "plugins": ["react", "react-hooks", "sonarjs", "unicorn", "@typescript-eslint", "prettier", "promise", "import", "simple-import-sort", "react-refresh"],
       "rules": {
         "prettier/prettier": "error",
         "react/prop-types": "off",
@@ -143,7 +143,8 @@
             "allow": ["_id", "__typename", "__schema", "__dirname"],
             "allowAfterThis": true
           }
-        ]
+        ],
+        "react-refresh/only-export-components": "error"
       }
     },
     {
