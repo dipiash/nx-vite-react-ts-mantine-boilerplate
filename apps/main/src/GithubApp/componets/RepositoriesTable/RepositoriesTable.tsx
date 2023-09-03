@@ -3,11 +3,11 @@ import React, { FC, useMemo } from 'react'
 import { SearchResultItemEdge, useListRepositoriesQuery } from '@nx-vite-react-ts-mantine-boilerplate/graphql'
 import { Error, Loader, Pagination, Space, Table } from '@nx-vite-react-ts-mantine-boilerplate/ui-kit'
 
-import { IRepositoriesTableProperties, IRepositoryData } from './RepositoriesTable.types'
+import { RepositoriesTablePropertiesInterface, RepositoryDataInterface } from './RepositoriesTable.types'
 
 import { enhancedFetchMore, getPaginationParameters } from './utils'
 
-export const RepositoriesTable: FC<IRepositoriesTableProperties> = ({ queryString, limit }) => {
+export const RepositoriesTable: FC<RepositoriesTablePropertiesInterface> = ({ queryString, limit }) => {
   const { data, error, loading, fetchMore } = useListRepositoriesQuery({
     variables: {
       queryString: queryString,
@@ -24,7 +24,7 @@ export const RepositoriesTable: FC<IRepositoriesTableProperties> = ({ queryStrin
     date: 'Date',
   }
 
-  const tableData = useMemo<IRepositoryData[]>(
+  const tableData = useMemo<RepositoryDataInterface[]>(
     () =>
       resultData
         .map(({ node }) =>
@@ -36,9 +36,9 @@ export const RepositoriesTable: FC<IRepositoriesTableProperties> = ({ queryStrin
                 license: node?.licenseInfo && node?.licenseInfo.name,
                 date: node?.createdAt,
               }
-            : (undefined as unknown as IRepositoryData),
+            : (undefined as unknown as RepositoryDataInterface),
         )
-        .filter((node): node is IRepositoryData => node !== undefined),
+        .filter((node): node is RepositoryDataInterface => node !== undefined),
     [resultData],
   )
 

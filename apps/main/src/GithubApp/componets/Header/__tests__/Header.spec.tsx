@@ -1,18 +1,18 @@
 import React, { ChangeEvent } from 'react'
-import { MockedProvider, MockedResponse } from '@apollo/react-testing'
-import { act, fireEvent, render, screen, waitFor } from '@testing-library/react'
-import userEvent from '@testing-library/user-event'
 import { describe, expect, it, vitest } from 'vitest'
 
+import { MockedProvider, MockedResponse } from '@apollo/react-testing'
 import { ListLicensesDocument } from '@nx-vite-react-ts-mantine-boilerplate/graphql'
+import { act, fireEvent, render, screen, waitFor } from '@testing-library/react'
+import userEvent from '@testing-library/user-event'
 
 import { Header } from '../index'
 
 import licensesListMockDataSuccess from './mocks/result.success.json'
 
 const mocks: {
-  success: ReadonlyArray<MockedResponse>
-  error: ReadonlyArray<MockedResponse>
+  success: readonly MockedResponse[]
+  error: readonly MockedResponse[]
 } = {
   success: [
     {

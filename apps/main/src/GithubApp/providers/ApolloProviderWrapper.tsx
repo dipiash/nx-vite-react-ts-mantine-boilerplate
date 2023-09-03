@@ -1,7 +1,7 @@
 import React, { FC, PropsWithChildren } from 'react'
+
 import { ApolloClient, ApolloProvider, createHttpLink, from, InMemoryCache } from '@apollo/client'
 import { setContext } from '@apollo/client/link/context'
-
 import { introspectionResult } from '@nx-vite-react-ts-mantine-boilerplate/graphql'
 
 const httpLink = createHttpLink({
@@ -27,6 +27,6 @@ const gqlClient = new ApolloClient({
   link: from([authLink, httpLink]),
 })
 
-export const ApolloProviderWrapper: FC<PropsWithChildren<Record<string, unknown>>> = ({ children }) => {
-  return <ApolloProvider client={gqlClient}>{children}</ApolloProvider>
-}
+export const ApolloProviderWrapper: FC<PropsWithChildren<Record<string, unknown>>> = ({ children }) => (
+  <ApolloProvider client={gqlClient}>{children}</ApolloProvider>
+)
