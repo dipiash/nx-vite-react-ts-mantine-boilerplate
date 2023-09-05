@@ -1,4 +1,4 @@
-export interface LicenseSelectProperties {
+export interface LicenseSelectPropertiesInterface {
   onChange: (value: string) => void
   className?: string
 }

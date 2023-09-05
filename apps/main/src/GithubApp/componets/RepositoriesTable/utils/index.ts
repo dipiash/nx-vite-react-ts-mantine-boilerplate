@@ -13,8 +13,8 @@ export const enhancedFetchMore = ({
   cursorBefore?: string
   cursorAfter?: string
   limit: number
-}) => {
-  return fetchMore({
+}) =>
+  fetchMore({
     variables: {
       queryString: queryString,
       cursorBefore: cursorBefore,
@@ -32,13 +32,10 @@ export const enhancedFetchMore = ({
       return fetchMoreResult
     },
   })
-}
 
-export const getPaginationParameters = (pageInfo?: PageInfo) => {
-  return {
-    cursorBefore: pageInfo?.startCursor || '',
-    cursorAfter: pageInfo?.endCursor || '',
-    isPreviousDisabled: !pageInfo?.hasPreviousPage,
-    isNextDisabled: !pageInfo?.hasNextPage,
-  }
-}
+export const getPaginationParameters = (pageInfo?: PageInfo) => ({
+  cursorBefore: pageInfo?.startCursor || '',
+  cursorAfter: pageInfo?.endCursor || '',
+  isPreviousDisabled: !pageInfo?.hasPreviousPage,
+  isNextDisabled: !pageInfo?.hasNextPage,
+})

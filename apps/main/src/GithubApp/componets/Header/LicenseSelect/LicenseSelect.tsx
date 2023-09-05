@@ -3,11 +3,11 @@ import React, { FC, useMemo } from 'react'
 import { useListLicensesQuery } from '@nx-vite-react-ts-mantine-boilerplate/graphql'
 import { Error, Loader, Select, SelectItem } from '@nx-vite-react-ts-mantine-boilerplate/ui-kit'
 
-import { LicenseSelectProperties } from './LicenseSelect.types'
+import { LicenseSelectPropertiesInterface } from './LicenseSelect.types'
 
 const firstEmptySelectItem: SelectItem[] = [{ value: '', label: '--- Not Selected ---' }]
 
-export const LicenseSelect: FC<LicenseSelectProperties> = ({ onChange, ...rest }) => {
+export const LicenseSelect: FC<LicenseSelectPropertiesInterface> = ({ onChange, ...rest }) => {
   const { data, loading, error } = useListLicensesQuery()
 
   const preparedLicenses = useMemo<SelectItem[]>(() => {

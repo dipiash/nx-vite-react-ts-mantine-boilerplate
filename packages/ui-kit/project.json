@@ -40,16 +40,24 @@
     },
     "lint": {
       "executor": "@nx/linter:eslint",
-      "outputs": ["{options.outputFile}"],
+      "outputs": [
+        "{options.outputFile}"
+      ],
       "options": {
-        "lintFilePatterns": ["packages/ui-kit/**/*.{ts,tsx,js,jsx}"]
+        "lintFilePatterns": [
+          "packages/ui-kit/**/*.{ts,tsx,js,jsx}"
+        ]
       }
     },
     "stylelint": {
       "executor": "nx-stylelint:lint",
-      "outputs": ["{options.outputFile}"],
+      "outputs": [
+        "{options.outputFile}"
+      ],
       "options": {
-        "lintFilePatterns": ["packages/ui-kit/**/*.{ts,tsx,js,jsx}"]
+        "lintFilePatterns": [
+          "packages/ui-kit/**/*.{ts,tsx,js,jsx}"
+        ]
       }
     },
     "test": {
@@ -77,7 +85,9 @@
     },
     "storybook:build": {
       "executor": "@nx/storybook:build",
-      "outputs": ["{options.outputDir}"],
+      "outputs": [
+        "{options.outputDir}"
+      ],
       "options": {
         "configDir": "packages/ui-kit/.storybook",
         "outputDir": "packages/ui-kit/dist/storybook"

@@ -1,5 +1,5 @@
 import { ReactNode } from 'react'
 
-export interface IErrorProperties {
+export interface ErrorPropertiesInterface {
   text: ReactNode
 }

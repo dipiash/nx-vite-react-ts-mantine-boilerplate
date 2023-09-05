@@ -1,10 +1,10 @@
 import React from 'react'
-import { MockedProvider } from '@apollo/client/testing'
-import { MockedResponse } from '@apollo/react-testing'
-import { act, render, screen } from '@testing-library/react'
 import { describe, expect, it } from 'vitest'
 
+import { MockedProvider } from '@apollo/client/testing'
+import { MockedResponse } from '@apollo/react-testing'
 import { ListRepositoriesDocument } from '@nx-vite-react-ts-mantine-boilerplate/graphql'
+import { act, render, screen } from '@testing-library/react'
 
 import { getDateCondition, getLanguageCondition, getLicenseCondition, getRepositoryNameCondition, getSortCondition } from '../../../utils'
 import { RepositoriesTable } from '../index'
@@ -22,9 +22,9 @@ const queryString = [
 const limitItems = 10
 
 const mocks: {
-  success: ReadonlyArray<MockedResponse>
-  empty: ReadonlyArray<MockedResponse>
-  error: ReadonlyArray<MockedResponse>
+  success: readonly MockedResponse[]
+  empty: readonly MockedResponse[]
+  error: readonly MockedResponse[]
 } = {
   success: [
     {

@@ -1,3 +1,3 @@
-export interface ILoaderProperties {
+export interface LoaderPropertiesInterface {
   loading: boolean
 }
