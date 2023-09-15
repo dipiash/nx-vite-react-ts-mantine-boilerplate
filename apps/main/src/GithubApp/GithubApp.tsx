@@ -11,7 +11,7 @@ import { ApolloProviderWrapper } from './providers/ApolloProviderWrapper'
 import { getDateCondition, getLanguageCondition, getLicenseCondition, getRepositoryNameCondition, getSortCondition } from './utils'
 
 export const GithubApp = () => {
-  const { isTokenExist, handleUpdateToken } = useInputTokenForGraphql()
+  const { handleUpdateToken, isTokenExist } = useInputTokenForGraphql()
 
   const [license, setLicense] = useState<string>('')
 

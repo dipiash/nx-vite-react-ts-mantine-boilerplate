@@ -7,21 +7,21 @@ import { RepositoriesTablePropertiesInterface, RepositoryDataInterface } from '.
 
 import { enhancedFetchMore, getPaginationParameters } from './utils'
 
-export const RepositoriesTable: FC<RepositoriesTablePropertiesInterface> = ({ queryString, limit }) => {
-  const { data, error, loading, fetchMore } = useListRepositoriesQuery({
+export const RepositoriesTable: FC<RepositoriesTablePropertiesInterface> = ({ limit, queryString }) => {
+  const { data, error, fetchMore, loading } = useListRepositoriesQuery({
     variables: {
-      queryString: queryString,
       first: limit,
+      queryString: queryString,
     },
   })
 
   const resultData = useMemo(() => (data?.search.edges || []) as SearchResultItemEdge[], [data])
 
   const tableColumns = {
+    date: 'Date',
+    license: 'License',
     name: 'Name',
     stars: 'Stars',
-    license: 'License',
-    date: 'Date',
   }
 
   const tableData = useMemo<RepositoryDataInterface[]>(
@@ -30,11 +30,11 @@ export const RepositoriesTable: FC<RepositoriesTablePropertiesInterface> = ({ qu
         .map(({ node }) =>
           node?.__typename === 'Repository'
             ? {
+                date: node?.createdAt,
                 key: node?.id,
+                license: node?.licenseInfo && node?.licenseInfo.name,
                 name: node?.name,
                 stars: node?.stargazers && node?.stargazers.totalCount,
-                license: node?.licenseInfo && node?.licenseInfo.name,
-                date: node?.createdAt,
               }
             : (undefined as unknown as RepositoryDataInterface),
         )
@@ -51,8 +51,8 @@ export const RepositoriesTable: FC<RepositoriesTablePropertiesInterface> = ({ qu
       <Table columns={tableColumns} data={tableData} error={tableError} />
       <Space h={10} />
       <Pagination
-        onPrevClick={() => enhancedFetchMore({ fetchMore, queryString, cursorBefore: paginationParameters.cursorBefore, limit })}
-        onNextClick={() => enhancedFetchMore({ fetchMore, queryString, cursorAfter: paginationParameters.cursorAfter, limit })}
+        onPrevClick={() => enhancedFetchMore({ cursorBefore: paginationParameters.cursorBefore, fetchMore, limit, queryString })}
+        onNextClick={() => enhancedFetchMore({ cursorAfter: paginationParameters.cursorAfter, fetchMore, limit, queryString })}
         isPrevDisabled={paginationParameters.isPreviousDisabled}
         isNextDisabled={paginationParameters.isNextDisabled}
       />

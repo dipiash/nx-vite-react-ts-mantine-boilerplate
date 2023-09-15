@@ -26,27 +26,13 @@ const mocks: {
   empty: readonly MockedResponse[]
   error: readonly MockedResponse[]
 } = {
-  success: [
-    {
-      request: {
-        query: ListRepositoriesDocument,
-        variables: {
-          queryString,
-          first: limitItems,
-        },
-      },
-      result: {
-        data: repositoriesListMockDataSuccess,
-      },
-    },
-  ],
   empty: [
     {
       request: {
         query: ListRepositoriesDocument,
         variables: {
-          queryString,
           first: limitItems,
+          queryString,
         },
       },
       result: {
@@ -56,10 +42,24 @@ const mocks: {
   ],
   error: [
     {
+      error: new Error('An error occurred'),
       request: {
         query: ListRepositoriesDocument,
       },
-      error: new Error('An error occurred'),
+    },
+  ],
+  success: [
+    {
+      request: {
+        query: ListRepositoriesDocument,
+        variables: {
+          first: limitItems,
+          queryString,
+        },
+      },
+      result: {
+        data: repositoriesListMockDataSuccess,
+      },
     },
   ],
 }

@@ -7,7 +7,7 @@ import { HeaderPropertiesInterface } from './Header.types'
 import { SHeader } from './Header.styled'
 import { LicenseSelect } from './LicenseSelect'
 
-export const Header: FC<HeaderPropertiesInterface> = memo(({ handleSetRepositoryName, handleSetLicense }) => (
+export const Header: FC<HeaderPropertiesInterface> = memo(({ handleSetLicense, handleSetRepositoryName }) => (
   <SHeader>
     <div className="headerItem left">
       <Input

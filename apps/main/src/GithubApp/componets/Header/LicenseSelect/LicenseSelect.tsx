@@ -5,10 +5,10 @@ import { Error, Loader, Select, SelectItem } from '@nx-vite-react-ts-mantine-boi
 
 import { LicenseSelectPropertiesInterface } from './LicenseSelect.types'
 
-const firstEmptySelectItem: SelectItem[] = [{ value: '', label: '--- Not Selected ---' }]
+const firstEmptySelectItem: SelectItem[] = [{ label: '--- Not Selected ---', value: '' }]
 
 export const LicenseSelect: FC<LicenseSelectPropertiesInterface> = ({ onChange, ...rest }) => {
-  const { data, loading, error } = useListLicensesQuery()
+  const { data, error, loading } = useListLicensesQuery()
 
   const preparedLicenses = useMemo<SelectItem[]>(() => {
     const preparedOriginalLicenses =
@@ -16,8 +16,8 @@ export const LicenseSelect: FC<LicenseSelectPropertiesInterface> = ({ onChange, 
         .map((license) =>
           license
             ? ({
-                value: license.key,
                 label: license.name,
+                value: license.key,
               } as SelectItem)
             : undefined,
         )
