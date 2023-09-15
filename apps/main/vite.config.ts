@@ -32,13 +32,8 @@ function renderChunks(deps: Record<string, string>) {
 // https://vitejs.dev/config/
 export default defineConfig({
   base: './',
-  server: {
-    port: 3000,
-    host: false,
-    https: false,
-  },
   build: {
-    sourcemap: isSourceMapsEnabled,
+    minify: isNoMinify ? false : 'esbuild',
     rollupOptions: {
       output: {
         manualChunks: {
@@ -50,16 +45,21 @@ export default defineConfig({
         ? ([
             analyze(),
             visualizer({
-              filename: path.join(__dirname, 'dist/stats/stats.html'),
-              open: isDevelopment,
-              gzipSize: true,
               brotliSize: true,
+              filename: path.join(__dirname, 'dist/stats/stats.html'),
+              gzipSize: true,
+              open: isDevelopment,
               projectRoot: path.join(__dirname),
             }),
           ] as unknown as any) // eslint-disable-line @typescript-eslint/no-explicit-any
         : [],
     },
-    minify: isNoMinify ? false : 'esbuild',
+    sourcemap: isSourceMapsEnabled,
   },
   plugins: [tsconfigPaths(), react()],
+  server: {
+    host: false,
+    https: false,
+    port: 3000,
+  },
 })

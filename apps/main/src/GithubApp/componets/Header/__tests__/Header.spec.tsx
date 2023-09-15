@@ -14,6 +14,14 @@ const mocks: {
   success: readonly MockedResponse[]
   error: readonly MockedResponse[]
 } = {
+  error: [
+    {
+      error: new Error('An error occurred'),
+      request: {
+        query: ListLicensesDocument,
+      },
+    },
+  ],
   success: [
     {
       request: {
@@ -24,14 +32,6 @@ const mocks: {
       },
     },
   ],
-  error: [
-    {
-      request: {
-        query: ListLicensesDocument,
-      },
-      error: new Error('An error occurred'),
-    },
-  ],
 }
 
 describe('Header', () => {
@@ -39,8 +39,8 @@ describe('Header', () => {
     const user = userEvent.setup()
 
     const state = {
-      name: '',
       license: '',
+      name: '',
     }
 
     const handleSetRepositoryName = (event_: ChangeEvent<HTMLInputElement>) => {

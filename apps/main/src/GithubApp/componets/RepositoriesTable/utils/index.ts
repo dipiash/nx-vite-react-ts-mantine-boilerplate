@@ -1,11 +1,11 @@
 import { PageInfo } from '@nx-vite-react-ts-mantine-boilerplate/graphql'
 
 export const enhancedFetchMore = ({
-  fetchMore,
-  queryString,
-  cursorBefore,
   cursorAfter,
+  cursorBefore,
+  fetchMore,
   limit,
+  queryString,
 }: {
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   fetchMore: any
@@ -15,13 +15,6 @@ export const enhancedFetchMore = ({
   limit: number
 }) =>
   fetchMore({
-    variables: {
-      queryString: queryString,
-      cursorBefore: cursorBefore,
-      cursorAfter: cursorAfter,
-      last: cursorBefore ? limit || 10 : undefined,
-      first: cursorAfter ? limit || 10 : undefined,
-    },
     notifyOnNetworkStatusChange: true,
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
     updateQuery: (previous: any, { fetchMoreResult }: { fetchMoreResult: any }) => {
@@ -31,11 +24,18 @@ export const enhancedFetchMore = ({
 
       return fetchMoreResult
     },
+    variables: {
+      cursorAfter: cursorAfter,
+      cursorBefore: cursorBefore,
+      first: cursorAfter ? limit || 10 : undefined,
+      last: cursorBefore ? limit || 10 : undefined,
+      queryString: queryString,
+    },
   })
 
 export const getPaginationParameters = (pageInfo?: PageInfo) => ({
-  cursorBefore: pageInfo?.startCursor || '',
   cursorAfter: pageInfo?.endCursor || '',
-  isPreviousDisabled: !pageInfo?.hasPreviousPage,
+  cursorBefore: pageInfo?.startCursor || '',
   isNextDisabled: !pageInfo?.hasNextPage,
+  isPreviousDisabled: !pageInfo?.hasPreviousPage,
 })

@@ -14,5 +14,5 @@ export const useInputTokenForGraphql = () => {
     handleUpdateToken()
   }
 
-  return { isTokenExist, handleUpdateToken }
+  return { handleUpdateToken, isTokenExist }
 }
