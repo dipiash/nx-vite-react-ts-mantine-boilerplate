@@ -147,7 +147,7 @@
     "@mantine/core": "6.0.20",
     "@mantine/hooks": "6.0.20",
     "@tabler/icons-react": "2.34.0",
-    "graphql": "16.8.0",
+    "graphql": "16.8.1",
     "graphql-tag": "2.12.6",
     "react": "18.2.0",
     "react-dom": "18.2.0",
