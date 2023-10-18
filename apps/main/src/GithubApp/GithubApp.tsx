@@ -31,7 +31,7 @@ export const GithubApp = () => {
   }, [])
 
   const handleSetLicense = useCallback((license: string) => {
-    setLicense(license)
+    setLicense(license.trim())
   }, [])
 
   return (

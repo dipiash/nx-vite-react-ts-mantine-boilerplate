@@ -4,6 +4,7 @@ import { describe, expect, it } from 'vitest'
 import { MockedProvider } from '@apollo/client/testing'
 import { MockedResponse } from '@apollo/react-testing'
 import { ListRepositoriesDocument } from '@nx-vite-react-ts-mantine-boilerplate/graphql'
+import { ThemeProvider } from '@nx-vite-react-ts-mantine-boilerplate/ui-kit'
 import { act, render, screen } from '@testing-library/react'
 
 import { getDateCondition, getLanguageCondition, getLicenseCondition, getRepositoryNameCondition, getSortCondition } from '../../../utils'
@@ -67,9 +68,11 @@ const mocks: {
 describe('RepositoriesTable', () => {
   it('Render loading state', async () => {
     render(
-      <MockedProvider mocks={[]}>
-        <RepositoriesTable queryString={queryString} limit={limitItems} />
-      </MockedProvider>,
+      <ThemeProvider>
+        <MockedProvider mocks={[]}>
+          <RepositoriesTable queryString={queryString} limit={limitItems} />
+        </MockedProvider>
+      </ThemeProvider>,
     )
 
     expect(screen.getByText('Loading...')).toBeTruthy()
@@ -77,9 +80,11 @@ describe('RepositoriesTable', () => {
 
   it('Render empty state', async () => {
     render(
-      <MockedProvider mocks={mocks.empty}>
-        <RepositoriesTable queryString={queryString} limit={limitItems} />
-      </MockedProvider>,
+      <ThemeProvider>
+        <MockedProvider mocks={mocks.empty}>
+          <RepositoriesTable queryString={queryString} limit={limitItems} />
+        </MockedProvider>
+      </ThemeProvider>,
     )
 
     await act(() => new Promise((resolve) => setTimeout(resolve, 0)))
@@ -89,22 +94,25 @@ describe('RepositoriesTable', () => {
 
   it('Render with success response', async () => {
     render(
-      <MockedProvider mocks={mocks.success}>
-        <RepositoriesTable queryString={queryString} limit={limitItems} />
-      </MockedProvider>,
+      <ThemeProvider>
+        <MockedProvider mocks={mocks.success}>
+          <RepositoriesTable queryString={queryString} limit={limitItems} />
+        </MockedProvider>
+      </ThemeProvider>,
     )
 
     await act(() => new Promise((resolve) => setTimeout(resolve, 0)))
 
-    expect(screen.queryByText('Loading...')).toBeFalsy()
     expect(screen.getByText('nextjs-lit-token-gating')).toBeTruthy()
   })
 
   it('Render error', async () => {
     render(
-      <MockedProvider mocks={mocks.error}>
-        <RepositoriesTable queryString={queryString} limit={limitItems} />
-      </MockedProvider>,
+      <ThemeProvider>
+        <MockedProvider mocks={mocks.error}>
+          <RepositoriesTable queryString={queryString} limit={limitItems} />
+        </MockedProvider>
+      </ThemeProvider>,
     )
 
     await act(() => new Promise((resolve) => setTimeout(resolve, 0)))

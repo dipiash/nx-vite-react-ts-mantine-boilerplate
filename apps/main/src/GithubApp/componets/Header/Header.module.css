@@ -1,0 +1,29 @@
+.root {
+  display: flex;
+  box-sizing: border-box;
+  margin-bottom: 10px;
+  border-bottom: 1px solid #eee;
+}
+
+.headerItem {
+  flex: 1;
+  flex-direction: column;
+}
+
+.headerItemLeft {
+  padding-right: 5px;
+}
+
+.headerItemRight {
+  padding-left: 5px;
+}
+
+.headerField {
+  width: 100%;
+}
+
+@media screen and (width <= 640px) {
+  .header {
+    flex-direction: column;
+  }
+}

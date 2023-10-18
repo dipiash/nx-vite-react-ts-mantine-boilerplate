@@ -1,16 +1,16 @@
 import React, { FC, useMemo } from 'react'
 
 import { useListLicensesQuery } from '@nx-vite-react-ts-mantine-boilerplate/graphql'
-import { Error, Loader, Select, SelectItem } from '@nx-vite-react-ts-mantine-boilerplate/ui-kit'
+import { ComboboxItem, Error, Loader, Select } from '@nx-vite-react-ts-mantine-boilerplate/ui-kit'
 
 import { LicenseSelectPropertiesInterface } from './LicenseSelect.types'
 
-const firstEmptySelectItem: SelectItem[] = [{ label: '--- Not Selected ---', value: '' }]
+const firstEmptyComboboxItem: ComboboxItem[] = [{ label: '--- Not Selected ---', value: ' ' }]
 
 export const LicenseSelect: FC<LicenseSelectPropertiesInterface> = ({ onChange, ...rest }) => {
   const { data, error, loading } = useListLicensesQuery()
 
-  const preparedLicenses = useMemo<SelectItem[]>(() => {
+  const preparedLicenses = useMemo<ComboboxItem[]>(() => {
     const preparedOriginalLicenses =
       data?.licenses
         .map((license) =>
@@ -18,12 +18,12 @@ export const LicenseSelect: FC<LicenseSelectPropertiesInterface> = ({ onChange, 
             ? ({
                 label: license.name,
                 value: license.key,
-              } as SelectItem)
+              } as ComboboxItem)
             : undefined,
         )
-        .filter((license): license is SelectItem => license !== undefined) || []
+        .filter((license): license is ComboboxItem => license !== undefined) || []
 
-    return [...firstEmptySelectItem, ...preparedOriginalLicenses]
+    return [...firstEmptyComboboxItem, ...preparedOriginalLicenses]
   }, [data])
 
   if (error) {
@@ -35,12 +35,20 @@ export const LicenseSelect: FC<LicenseSelectPropertiesInterface> = ({ onChange, 
       <Select
         searchable
         data-testid="licenses-select"
-        nothingFound="Nothing found"
+        nothingFoundMessage="Nothing found"
         label="License type"
         data={preparedLicenses}
         onChange={onChange}
-        defaultValue=""
-        filter={(value, item) => Boolean(item?.label?.toLowerCase().includes(value.toLowerCase().trim()))}
+        defaultValue=" "
+        filter={({ options, search }) => {
+          const splittedSearch = search.toLowerCase().trim().split(' ')
+
+          return (options as ComboboxItem[]).filter((option) => {
+            const words = option.label.toLowerCase().trim().split(' ')
+
+            return splittedSearch.every((searchWord) => words.some((word) => word.includes(searchWord)))
+          })
+        }}
         {...rest}
       />
     </Loader>

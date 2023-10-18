@@ -20,9 +20,7 @@
     },
     "import/resolver": {
       "typescript": {
-        "alwaysTryTypes": true,
-        // use a glob pattern
-        "project": "packages/*/tsconfig.json"
+        "alwaysTryTypes": true
       }
     }
   },
