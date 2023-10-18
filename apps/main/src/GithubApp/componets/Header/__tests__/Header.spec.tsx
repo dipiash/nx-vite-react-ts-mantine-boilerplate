@@ -3,8 +3,9 @@ import { describe, expect, it, vitest } from 'vitest'
 
 import { MockedProvider, MockedResponse } from '@apollo/react-testing'
 import { ListLicensesDocument } from '@nx-vite-react-ts-mantine-boilerplate/graphql'
+import { ThemeProvider } from '@nx-vite-react-ts-mantine-boilerplate/ui-kit'
 import { act, fireEvent, render, screen, waitFor } from '@testing-library/react'
-import userEvent from '@testing-library/user-event'
+import { userEvent } from '@testing-library/user-event'
 
 import { Header } from '../index'
 
@@ -52,9 +53,11 @@ describe('Header', () => {
     }
 
     render(
-      <MockedProvider mocks={mocks.success}>
-        <Header handleSetRepositoryName={handleSetRepositoryName} handleSetLicense={handleSetLicense} />
-      </MockedProvider>,
+      <ThemeProvider>
+        <MockedProvider mocks={mocks.success}>
+          <Header handleSetRepositoryName={handleSetRepositoryName} handleSetLicense={handleSetLicense} />
+        </MockedProvider>
+      </ThemeProvider>,
     )
 
     await act(() => new Promise((resolve) => setTimeout(resolve, 0))) // wait for response
@@ -92,9 +95,11 @@ describe('Header', () => {
 
   it('error render', async () => {
     render(
-      <MockedProvider mocks={mocks.error}>
-        <Header handleSetRepositoryName={vitest.fn} handleSetLicense={vitest.fn} />
-      </MockedProvider>,
+      <ThemeProvider>
+        <MockedProvider mocks={mocks.error}>
+          <Header handleSetRepositoryName={vitest.fn} handleSetLicense={vitest.fn} />
+        </MockedProvider>
+      </ThemeProvider>,
     )
 
     await act(() => new Promise((resolve) => setTimeout(resolve, 0))) // wait for response

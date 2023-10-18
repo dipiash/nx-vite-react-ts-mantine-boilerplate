@@ -78,7 +78,7 @@
       ],
       "options": {
         "lintFilePatterns": [
-          "apps/main/src/**/*.{ts,tsx,js,jsx}"
+          "apps/main/src/**/*.{css}"
         ]
       }
     },

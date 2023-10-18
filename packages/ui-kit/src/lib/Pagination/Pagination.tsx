@@ -7,7 +7,7 @@ import { PaginationPropertiesInterface } from './Pagination.types'
 import { Button } from '../Button'
 
 export const Pagination: FC<PaginationPropertiesInterface> = ({ isNextDisabled, isPrevDisabled, onNextClick, onPrevClick }) => (
-  <Group grow spacing="xs">
+  <Group grow gap="xs">
     <Button data-testid="button-prev" disabled={isPrevDisabled} onClick={onPrevClick}>
       {'<'} Prev
     </Button>

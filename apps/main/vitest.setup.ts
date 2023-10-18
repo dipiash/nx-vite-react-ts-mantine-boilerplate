@@ -20,9 +20,14 @@ window.matchMedia =
   global.matchMedia =
   globalThis.matchMedia =
     window.matchMedia ||
-    vitest.fn().mockImplementation(() => ({
+    vitest.fn().mockImplementation((query) => ({
+      addEventListener: vitest.fn(),
       addListener: vitest.fn(),
+      dispatchEvent: vitest.fn(),
       matches: false,
+      media: query,
+      onchange: null,
+      removeEventListener: vitest.fn(),
       removeListener: vitest.fn(),
     }))
 
@@ -30,8 +35,17 @@ window.matchMedia =
   global.matchMedia =
   globalThis.matchMedia =
     window.matchMedia ||
-    vitest.fn().mockImplementation(() => ({
+    vitest.fn().mockImplementation((query) => ({
+      addEventListener: vitest.fn(),
       addListener: vitest.fn(),
+      dispatchEvent: vitest.fn(),
       matches: false,
+      media: query,
+      onchange: null,
+      removeEventListener: vitest.fn(),
       removeListener: vitest.fn(),
     }))
+
+const { getComputedStyle } = window
+
+window.getComputedStyle = (elt) => getComputedStyle(elt)

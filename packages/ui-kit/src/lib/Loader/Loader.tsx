@@ -1,15 +1,15 @@
 import React, { FC, PropsWithChildren } from 'react'
 
-import { LoadingOverlay } from '@mantine/core'
+import { LoadingOverlay, VisuallyHidden } from '@mantine/core'
 
 import { LoaderPropertiesInterface } from './Loader.types'
 
-import { SLoaderWrapper } from './Loader.styled'
+import classes from './Loader.module.css'
 
 export const Loader: FC<PropsWithChildren<LoaderPropertiesInterface>> = ({ children, loading, ...rest }) => (
-  <SLoaderWrapper {...rest}>
-    <LoadingOverlay visible={loading} />
-    {loading && <span className="hiddenLoaderText">Loading...</span>}
+  <div className={classes.root} {...rest}>
+    <LoadingOverlay className={classes.overlay} visible={loading} />
+    <VisuallyHidden>Loading...</VisuallyHidden>
     {children}
-  </SLoaderWrapper>
+  </div>
 )

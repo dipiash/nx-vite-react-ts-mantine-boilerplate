@@ -1,4 +1,10 @@
+import React from 'react'
+
 import { Preview } from '@storybook/react'
+
+import { ThemeProvider } from '../src/providers'
+
+import '@mantine/core/styles.css'
 
 const preview: Preview = {
   parameters: {
@@ -11,5 +17,7 @@ const preview: Preview = {
     },
   },
 }
+
+export const decorators = [(renderStory) => <ThemeProvider>{renderStory()}</ThemeProvider>]
 
 export default preview
