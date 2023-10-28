@@ -61,25 +61,17 @@
       }
     },
     "lint": {
-      "executor": "@nx/linter:eslint",
-      "outputs": [
-        "{options.outputFile}"
-      ],
+      "executor": "@nx/eslint:lint",
+      "outputs": ["{options.outputFile}"],
       "options": {
-        "lintFilePatterns": [
-          "apps/main/**/*.{ts,tsx,js,jsx}"
-        ]
+        "lintFilePatterns": ["apps/main/**/*.{ts,tsx,js,jsx}"]
       }
     },
     "stylelint": {
       "executor": "nx-stylelint:lint",
-      "outputs": [
-        "{options.outputFile}"
-      ],
+      "outputs": ["{options.outputFile}"],
       "options": {
-        "lintFilePatterns": [
-          "apps/main/src/**/*.{css}"
-        ]
+        "lintFilePatterns": ["apps/main/src/**/*.{css}"]
       }
     },
     "test": {
