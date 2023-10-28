@@ -6,14 +6,10 @@
   "tags": [],
   "targets": {
     "lint": {
-      "executor": "@nx/linter:eslint",
-      "outputs": [
-        "{options.outputFile}"
-      ],
+      "executor": "@nx/eslint:lint",
+      "outputs": ["{options.outputFile}"],
       "options": {
-        "lintFilePatterns": [
-          "packages/graphql/**/*.graphql"
-        ]
+        "lintFilePatterns": ["packages/graphql/**/*.graphql"]
       }
     },
     "codegen": {
