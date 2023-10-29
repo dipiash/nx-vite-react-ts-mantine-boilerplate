@@ -72,3 +72,7 @@ pnpm run init-project
 - [Cypress](https://www.cypress.io)
 - [ESLint](https://eslint.org/)
 - HMR (Hot Module Replacement)
+
+## License
+This code is licensed under the MIT License. 
+You can find the license file [here](/LICENSE).
