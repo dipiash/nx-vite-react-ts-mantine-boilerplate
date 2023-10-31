@@ -9,7 +9,7 @@ import { LicenseSelect } from './LicenseSelect'
 
 import classes from './Header.module.css'
 
-export const Header: FC<HeaderPropertiesInterface> = memo(({ handleSetLicense, handleSetRepositoryName }) => (
+export const Header: FC<HeaderPropertiesInterface> = memo(({ form }) => (
   <div className={classes.root}>
     <div className={cx(classes.headerItem, classes.headerItemLeft)}>
       <Input
@@ -18,11 +18,11 @@ export const Header: FC<HeaderPropertiesInterface> = memo(({ handleSetLicense, h
         className={classes.headerField}
         name="search"
         placeholder="Search by repository name"
-        onChange={handleSetRepositoryName}
+        {...form.getInputProps('repositoryName')}
       />
     </div>
     <div className={cx(classes.headerItem, classes.headerItemRight)}>
-      <LicenseSelect className={classes.headerField} onChange={handleSetLicense} />
+      <LicenseSelect className={classes.headerField} {...form.getInputProps('license')} />
     </div>
   </div>
 ))

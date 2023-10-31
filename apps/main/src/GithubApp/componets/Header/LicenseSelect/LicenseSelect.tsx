@@ -7,7 +7,7 @@ import { LicenseSelectPropertiesInterface } from './LicenseSelect.types'
 
 const firstEmptyComboboxItem: ComboboxItem[] = [{ label: '--- Not Selected ---', value: ' ' }]
 
-export const LicenseSelect: FC<LicenseSelectPropertiesInterface> = ({ onChange, ...rest }) => {
+export const LicenseSelect: FC<LicenseSelectPropertiesInterface> = ({ ...rest }) => {
   const { data, error, loading } = useListLicensesQuery()
 
   const preparedLicenses = useMemo<ComboboxItem[]>(() => {
@@ -38,7 +38,6 @@ export const LicenseSelect: FC<LicenseSelectPropertiesInterface> = ({ onChange, 
         nothingFoundMessage="Nothing found"
         label="License type"
         data={preparedLicenses}
-        onChange={onChange}
         defaultValue=" "
         filter={({ options, search }) => {
           const splittedSearch = search.toLowerCase().trim().split(' ')
@@ -53,8 +52,4 @@ export const LicenseSelect: FC<LicenseSelectPropertiesInterface> = ({ onChange, 
       />
     </Loader>
   )
-}
-
-LicenseSelect.defaultProps = {
-  onChange: () => void 0,
 }

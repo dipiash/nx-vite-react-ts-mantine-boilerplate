@@ -1,5 +1,5 @@
 export const getLicenseCondition = (license?: string) => {
-  if (!license) {
+  if (!license || license === ' ') {
     return ''
   }
 
