@@ -1,6 +1,7 @@
 import React from 'react'
 
 import { useForm } from '@mantine/form'
+import { useDebouncedValue } from '@mantine/hooks'
 import { Button } from '@nx-vite-react-ts-mantine-boilerplate/ui-kit'
 
 import { useInputTokenForGraphql } from './hooks/useInputTokenForGraphql'
@@ -15,12 +16,14 @@ export const GithubApp = () => {
 
   const form = useForm({
     initialValues: {
-      license: '',
+      license: ' ',
       repositoryName: '',
     },
   })
   const license = form.values.license
-  const repositoryName = form.values.repositoryName
+  const repositoryNameValue = form.values.repositoryName
+
+  const [repositoryName] = useDebouncedValue(repositoryNameValue, 300)
 
   const queryString = [
     getSortCondition('stars', 'desc'),

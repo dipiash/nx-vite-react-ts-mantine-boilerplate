@@ -38,6 +38,7 @@ export const LicenseSelect: FC<LicenseSelectPropertiesInterface> = ({ ...rest })
         nothingFoundMessage="Nothing found"
         label="License type"
         data={preparedLicenses}
+        defaultValue=" "
         filter={({ options, search }) => {
           const splittedSearch = search.toLowerCase().trim().split(' ')
 
