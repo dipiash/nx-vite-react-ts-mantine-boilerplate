@@ -11,7 +11,7 @@
         "cwd": "./apps/main",
         "commands": [
           {
-            "command": "tsc --project tsconfig.app.json --noEmit"
+            "command": "tsc --project tsconfig.app.json --noEmit && tsc --project tsconfig.spec.json --noEmit"
           }
         ]
       }
