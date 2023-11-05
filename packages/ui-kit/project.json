@@ -11,7 +11,7 @@
         "cwd": "./packages/ui-kit",
         "commands": [
           {
-            "command": "tsc --project tsconfig.lib.json --noEmit"
+            "command": "tsc --project tsconfig.lib.json --noEmit && tsc --project tsconfig.spec.json --noEmit"
           }
         ]
       }
