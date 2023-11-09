@@ -291,6 +291,7 @@
       "DiscussionComment",
       "GistComment",
       "IssueComment",
+      "PullRequestReview",
       "PullRequestReviewComment"
     ],
     "Node": [
@@ -958,7 +959,8 @@
       "RequiredDeploymentsParameters",
       "RequiredStatusChecksParameters",
       "TagNamePatternParameters",
-      "UpdateParameters"
+      "UpdateParameters",
+      "WorkflowsParameters"
     ],
     "RuleSource": [
       "Organization",
