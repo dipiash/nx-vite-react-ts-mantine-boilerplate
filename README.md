@@ -66,7 +66,7 @@ pnpm run init-project
 - [Mantine 7](https://mantine.dev/)
 - [Storybook 7](https://storybook.js.org/)
 - [TypeScript](https://www.typescriptlang.org/)
-- [Vite](https://vitejs.dev/)
+- [Vite 5](https://vitejs.dev/)
 - [Vitest](https://vitest.dev/)
 - [React Testing Library](https://testing-library.com/docs/react-testing-library/intro)
 - [Cypress](https://www.cypress.io)
