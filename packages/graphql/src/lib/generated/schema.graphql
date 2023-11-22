@@ -5042,7 +5042,7 @@ input CreateTeamDiscussionInput {
   """A unique identifier for the client performing the mutation."""
   clientMutationId: String
 
-  "If true, restricts the visibility of this discussion to team members and organization admins. If false or not specified, allows any organization member to view this discussion.\n\n**Upcoming Change on 2024-07-01 UTC**\n**Description:** `private` will be removed. Follow the guide at https://github.blog/changelog/2023-02-08-sunset-notice-team-discussions/ to find a suitable replacement.\n**Reason:** The Team Discussions feature is deprecated in favor of Organization Discussions.\n"
+  "If true, restricts the visibility of this discussion to team members and organization owners. If false or not specified, allows any organization member to view this discussion.\n\n**Upcoming Change on 2024-07-01 UTC**\n**Description:** `private` will be removed. Follow the guide at https://github.blog/changelog/2023-02-08-sunset-notice-team-discussions/ to find a suitable replacement.\n**Reason:** The Team Discussions feature is deprecated in favor of Organization Discussions.\n"
   private: Boolean
 
   "The ID of the team to which the discussion belongs. This field is required.\n\n**Upcoming Change on 2024-07-01 UTC**\n**Description:** `teamId` will be removed. Follow the guide at https://github.blog/changelog/2023-02-08-sunset-notice-team-discussions/ to find a suitable replacement.\n**Reason:** The Team Discussions feature is deprecated in favor of Organization Discussions.\n"
@@ -7895,7 +7895,7 @@ enum EnterpriseMembersCanCreateRepositoriesSettingValue {
   DISABLED
 
   """
-  Organization administrators choose whether to allow members to create repositories.
+  Organization owners choose whether to allow members to create repositories.
   """
   NO_POLICY
 
@@ -12370,6 +12370,21 @@ type MarketplaceListingEdge {
   node: MarketplaceListing
 }
 
+"""Represents a member feature request notification"""
+type MemberFeatureRequestNotification implements Node {
+  """
+  Represents member feature request body containing organization name and the number of feature requests
+  """
+  body: String!
+  id: ID!
+
+  """Represents member feature request notification title"""
+  title: String!
+
+  """Identifies the date and time when the object was last updated."""
+  updatedAt: DateTime!
+}
+
 """Entities that have members who can set status messages."""
 interface MemberStatusable {
   """
@@ -13583,7 +13598,9 @@ type Mutation {
     input: CreateDiscussionInput!
   ): CreateDiscussionPayload
 
-  """Creates an organization as part of an enterprise account."""
+  """
+  Creates an organization as part of an enterprise account. A personal access token used to create an organization is implicitly permitted to update the organization it created, if the organization is part of an enterprise that has SAML enabled or uses Enterprise Managed Users. If the organization is not part of such an enterprise, and instead has SAML enabled for it individually, the token will then require SAML authorization to continue working against that organization.
+  """
   createEnterpriseOrganization(
     """Parameters for CreateEnterpriseOrganization"""
     input: CreateEnterpriseOrganizationInput!
@@ -14309,6 +14326,12 @@ type Mutation {
     input: UnresolveReviewThreadInput!
   ): UnresolveReviewThreadPayload
 
+  """Unsubscribes from notifications"""
+  unsubscribeFromNotifications(
+    """Parameters for UnsubscribeFromNotifications"""
+    input: UnsubscribeFromNotificationsInput!
+  ): UnsubscribeFromNotificationsPayload
+
   """Update a branch protection rule"""
   updateBranchProtectionRule(
     """Parameters for UpdateBranchProtectionRule"""
@@ -14395,7 +14418,7 @@ type Mutation {
     input: UpdateEnterpriseMembersCanInviteCollaboratorsSettingInput!
   ): UpdateEnterpriseMembersCanInviteCollaboratorsSettingPayload
 
-  """Sets whether or not an organization admin can make purchases."""
+  """Sets whether or not an organization owner can make purchases."""
   updateEnterpriseMembersCanMakePurchasesSetting(
     """Parameters for UpdateEnterpriseMembersCanMakePurchasesSetting"""
     input: UpdateEnterpriseMembersCanMakePurchasesSettingInput!
@@ -14514,6 +14537,14 @@ type Mutation {
     """Parameters for UpdateOrganizationWebCommitSignoffSetting"""
     input: UpdateOrganizationWebCommitSignoffSettingInput!
   ): UpdateOrganizationWebCommitSignoffSettingPayload
+
+  """
+  Toggle the setting for your GitHub Sponsors profile that allows other GitHub accounts to sponsor you on GitHub while paying for the sponsorship on Patreon. Only applicable when you have a GitHub Sponsors profile and have connected your GitHub account with Patreon.
+  """
+  updatePatreonSponsorability(
+    """Parameters for UpdatePatreonSponsorability"""
+    input: UpdatePatreonSponsorabilityInput!
+  ): UpdatePatreonSponsorabilityPayload
 
   """Updates an existing project."""
   updateProject(
@@ -16235,7 +16266,7 @@ type OrgRemoveMemberAuditEntry implements AuditEntry & Node & OrganizationAuditE
 """The type of membership a user has with an Organization."""
 enum OrgRemoveMemberAuditEntryMembershipType {
   """
-  Organization administrators have full access and can change several settings, including the names of repositories that belong to the Organization and Owners team membership. In addition, organization admins can delete the organization and all of its repositories.
+  Organization owners have full access and can change several settings, including the names of repositories that belong to the Organization and Owners team membership. In addition, organization owners can delete the organization and all of its repositories.
   """
   ADMIN
 
@@ -21096,14 +21127,14 @@ type ProjectV2Workflow implements Node {
   """Identifies the primary key from the database."""
   databaseId: Int
 
-  """The workflows' enabled state."""
+  """Whether the workflow is enabled."""
   enabled: Boolean!
   id: ID!
 
-  """The workflows' name."""
+  """The name of the workflow."""
   name: String!
 
-  """The workflows' number."""
+  """The number of the workflow."""
   number: Int!
 
   """The project that contains this workflow."""
@@ -21148,16 +21179,16 @@ input ProjectV2WorkflowOrder {
 
 """Properties by which project workflows can be ordered."""
 enum ProjectV2WorkflowsOrderField {
-  """The workflows' date and time of creation"""
+  """The date and time of the workflow creation"""
   CREATED_AT
 
-  """The workflows' name"""
+  """The name of the workflow"""
   NAME
 
-  """The workflows' number"""
+  """The number of the workflow"""
   NUMBER
 
-  """The workflows' date and time of update"""
+  """The date and time of the workflow update"""
   UPDATED_AT
 }
 
@@ -28285,7 +28316,7 @@ type RepositoryRulesetBypassActor implements Node {
   bypassMode: RepositoryRulesetBypassActorBypassMode
   id: ID!
 
-  """This actor represents the ability for an organization admin to bypass"""
+  """This actor represents the ability for an organization owner to bypass"""
   organizationAdmin: Boolean!
 
   """
@@ -28345,7 +28376,7 @@ input RepositoryRulesetBypassActorInput {
   """The bypass mode for this actor."""
   bypassMode: RepositoryRulesetBypassActorBypassMode!
 
-  """For org admin bupasses, true"""
+  """For organization owner bypasses, true"""
   organizationAdmin: Boolean
 
   """For role bypasses, the role database ID"""
@@ -30276,6 +30307,9 @@ type SponsorsActivity implements Node {
   currentPrivacyLevel: SponsorshipPrivacy
   id: ID!
 
+  """The platform that was used to pay for the sponsorship."""
+  paymentSource: SponsorshipPaymentSource
+
   """The tier that the sponsorship used to use, for tier change events."""
   previousSponsorsTier: SponsorsTier
 
@@ -31467,6 +31501,9 @@ type Sponsorship implements Node {
   """The entity that is being sponsored"""
   maintainer: User! @deprecated(reason: "`Sponsorship.maintainer` will be removed. Use `Sponsorship.sponsorable` instead. Removal on 2020-04-01 UTC.")
 
+  """The platform that was most recently used to pay for the sponsorship."""
+  paymentSource: SponsorshipPaymentSource
+
   """The privacy level for this sponsorship."""
   privacyLevel: SponsorshipPrivacy!
 
@@ -31607,6 +31644,15 @@ input SponsorshipOrder {
 enum SponsorshipOrderField {
   """Order sponsorship by creation time."""
   CREATED_AT
+}
+
+"""How payment was made for funding a GitHub Sponsors sponsorship."""
+enum SponsorshipPaymentSource {
+  """Payment was made through GitHub."""
+  GITHUB
+
+  """Payment was made through Patreon."""
+  PATREON
 }
 
 """The privacy of a sponsorship"""
@@ -32942,7 +32988,7 @@ type TeamDiscussion implements Comment & Deletable & Node & Reactable & Subscrib
   isPinned: Boolean! @deprecated(reason: "The Team Discussions feature is deprecated in favor of Organization Discussions. Follow the guide at https://github.blog/changelog/2023-02-08-sunset-notice-team-discussions/ to find a suitable replacement. Removal on 2024-07-01 UTC.")
 
   """
-  Whether or not the discussion is only visible to team members and org admins.
+  Whether or not the discussion is only visible to team members and organization owners.
   """
   isPrivate: Boolean! @deprecated(reason: "The Team Discussions feature is deprecated in favor of Organization Discussions. Follow the guide at https://github.blog/changelog/2023-02-08-sunset-notice-team-discussions/ to find a suitable replacement. Removal on 2024-07-01 UTC.")
 
@@ -34330,6 +34376,24 @@ type UnresolveReviewThreadPayload {
   thread: PullRequestReviewThread
 }
 
+"""Autogenerated input type of UnsubscribeFromNotifications"""
+input UnsubscribeFromNotificationsInput {
+  """A unique identifier for the client performing the mutation."""
+  clientMutationId: String
+
+  """The NotificationThread IDs of the objects to unsubscribe from."""
+  ids: [ID!]!
+}
+
+"""Autogenerated return type of UnsubscribeFromNotifications"""
+type UnsubscribeFromNotificationsPayload {
+  """A unique identifier for the client performing the mutation."""
+  clientMutationId: String
+
+  """Did the operation succeed?"""
+  success: Boolean
+}
+
 """Represents an 'unsubscribed' event on a given `Subscribable`."""
 type UnsubscribedEvent implements Node {
   """Identifies the actor who performed the event."""
@@ -35440,6 +35504,31 @@ type UpdateParameters {
 input UpdateParametersInput {
   """Branch can pull changes from its upstream repository"""
   updateAllowsFetchAndMerge: Boolean!
+}
+
+"""Autogenerated input type of UpdatePatreonSponsorability"""
+input UpdatePatreonSponsorabilityInput {
+  """A unique identifier for the client performing the mutation."""
+  clientMutationId: String
+
+  """
+  Whether Patreon tiers should be shown on the GitHub Sponsors profile page, allowing potential sponsors to make their payment through Patreon instead of GitHub.
+  """
+  enablePatreonSponsorships: Boolean!
+
+  """
+  The username of the organization with the GitHub Sponsors profile, if any. Defaults to the GitHub Sponsors profile for the authenticated user if omitted.
+  """
+  sponsorableLogin: String
+}
+
+"""Autogenerated return type of UpdatePatreonSponsorability"""
+type UpdatePatreonSponsorabilityPayload {
+  """A unique identifier for the client performing the mutation."""
+  clientMutationId: String
+
+  """The GitHub Sponsors profile."""
+  sponsorsListing: SponsorsListing
 }
 
 """Autogenerated input type of UpdateProjectCard"""

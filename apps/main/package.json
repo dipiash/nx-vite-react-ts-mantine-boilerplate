@@ -1,3 +1,4 @@
 {
-  "name": "main"
+  "name": "main",
+  "type": "module"
 }

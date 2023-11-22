@@ -371,6 +371,7 @@
       "MarkedAsDuplicateEvent",
       "MarketplaceCategory",
       "MarketplaceListing",
+      "MemberFeatureRequestNotification",
       "MembersCanDeleteReposClearAuditEntry",
       "MembersCanDeleteReposDisableAuditEntry",
       "MembersCanDeleteReposEnableAuditEntry",
