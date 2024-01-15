@@ -7,14 +7,7 @@
   "targets": {
     "lint": {
       "executor": "@nx/eslint:lint",
-      "outputs": [
-        "{options.outputFile}"
-      ],
-      "options": {
-        "lintFilePatterns": [
-          "packages/graphql/**/*.graphql"
-        ]
-      }
+      "outputs": ["{options.outputFile}"]
     },
     "codegen": {
       "executor": "nx:run-commands",
