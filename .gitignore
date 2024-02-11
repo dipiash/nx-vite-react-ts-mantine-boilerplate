@@ -42,6 +42,7 @@ stats.html
 node_modules
 coverage
 
+.env
 .env.*
 !.env.example
 
