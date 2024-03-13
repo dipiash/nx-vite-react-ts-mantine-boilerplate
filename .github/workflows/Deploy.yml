@@ -7,6 +7,10 @@ on:
       - completed
 env:
   VITE_GITHUB_API_ENDPOINT: https://api.github.com/graphql
+  # Nx 18 enables using plugins to infer targets by default
+  # This is disabled for existing workspaces to maintain compatibility
+  # For more info, see: https://nx.dev/concepts/inferred-tasks
+  NX_ADD_PLUGINS: false
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
