@@ -1,5 +1,5 @@
 #!/bin/sh
 . "$(dirname "$0")/_/husky.sh"
 
-nx affected --target=lint
-nx affected --target=type-check
+pnpm dlx nx affected --target=lint
+pnpm dlx nx affected --target=type-check

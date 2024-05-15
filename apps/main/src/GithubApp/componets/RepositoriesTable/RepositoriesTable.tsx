@@ -7,7 +7,7 @@ import { RepositoriesTablePropertiesInterface, RepositoryDataInterface } from '.
 
 import { enhancedFetchMore, getPaginationParameters } from './utils'
 
-export const RepositoriesTable: FC<RepositoriesTablePropertiesInterface> = ({ limit, queryString }) => {
+export const RepositoriesTable: FC<RepositoriesTablePropertiesInterface> = ({ limit = 10, queryString }) => {
   const { data, error, fetchMore, loading } = useListRepositoriesQuery({
     variables: {
       first: limit,
@@ -72,8 +72,4 @@ export const RepositoriesTable: FC<RepositoriesTablePropertiesInterface> = ({ li
       />
     </Loader>
   )
-}
-
-RepositoriesTable.defaultProps = {
-  limit: 10,
 }

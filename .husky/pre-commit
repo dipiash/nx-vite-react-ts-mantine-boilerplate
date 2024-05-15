@@ -1,4 +1,4 @@
 #!/bin/sh
 . "$(dirname "$0")/_/husky.sh"
 
-nx affected --target=type-check --uncommitted=true && node_modules/.bin/lint-staged
+pnpm dlx nx affected --target=type-check --uncommitted=true && node_modules/.bin/lint-staged

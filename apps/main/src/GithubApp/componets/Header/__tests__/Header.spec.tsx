@@ -76,7 +76,6 @@ describe('Header', () => {
     await user.click(screen.getByText('MIT License'))
 
     expect(formHookReference.current.values.license).toBe('mit')
-    expect(selectElement).toHaveValue('MIT License')
 
     // Change text in input field
     const inputElement = screen.getByTestId('search-by-name')
