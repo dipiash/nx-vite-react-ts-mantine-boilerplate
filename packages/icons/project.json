@@ -23,7 +23,7 @@
       "executor": "nx:run-commands",
       "options": {
         "cwd": "./packages/icons",
-        "command": "rm -rf ./src/components && nx r icons:svgr"
+        "command": "rm -rf ./src/components && nx run icons:svgr"
       }
     }
   }
