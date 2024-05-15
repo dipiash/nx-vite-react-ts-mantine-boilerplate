@@ -78,7 +78,7 @@ devDependencies:
     version: 4.3.0(graphql-tag@2.12.6)(graphql@16.8.1)
   '@graphql-eslint/eslint-plugin':
     specifier: 3.20.1
-    version: 3.20.1(@babel/core@7.24.0)(@types/node@20.12.12)(graphql@16.8.1)
+    version: 3.20.1(@babel/core@7.24.5)(@types/node@20.12.12)(graphql@16.8.1)
   '@nx/cypress':
     specifier: 19.0.3
     version: 19.0.3(@types/node@20.12.12)(cypress@13.9.0)(nx@19.0.3)(typescript@5.4.5)
@@ -180,7 +180,7 @@ devDependencies:
     version: 8.0.1(react@18.3.1)
   babel-loader:
     specifier: 9.1.3
-    version: 9.1.3(@babel/core@7.24.0)(webpack@5.89.0)
+    version: 9.1.3(@babel/core@7.24.5)(webpack@5.89.0)
   cypress:
     specifier: ^13.9.0
     version: 13.9.0
@@ -207,7 +207,7 @@ devDependencies:
     version: 6.8.0(eslint@9.2.0)
   eslint-plugin-nimbus-clean:
     specifier: 1.3.1
-    version: 1.3.1(@typescript-eslint/eslint-plugin@7.9.0)(eslint-config-prettier@9.1.0)(eslint-import-resolver-typescript@3.6.1)(eslint-plugin-import@2.29.1)(eslint-plugin-jsx-a11y@6.8.0)(eslint-plugin-perfectionist@2.10.0)(eslint-plugin-prettier@5.1.3)(eslint-plugin-promise@6.1.1)(eslint-plugin-react-hooks@4.6.2)(eslint-plugin-react@7.34.1)(eslint-plugin-simple-import-sort@12.1.0)(eslint-plugin-sonarjs@1.0.3)(eslint-plugin-testing-library@6.2.2)(eslint-plugin-unicorn@53.0.0)(eslint@9.2.0)(prettier@3.2.5)
+    version: 1.3.1(@typescript-eslint/eslint-plugin@7.9.0)(eslint-config-prettier@9.1.0)(eslint-import-resolver-typescript@3.6.1)(eslint-plugin-import@2.29.1)(eslint-plugin-jsx-a11y@6.8.0)(eslint-plugin-perfectionist@2.10.0)(eslint-plugin-prettier@5.1.3)(eslint-plugin-promise@6.1.1)(eslint-plugin-react-hooks@4.6.2)(eslint-plugin-react@7.34.1)(eslint-plugin-simple-import-sort@12.1.0)(eslint-plugin-sonarjs@0.25.1)(eslint-plugin-testing-library@6.2.2)(eslint-plugin-unicorn@53.0.0)(eslint@9.2.0)(prettier@3.2.5)
   eslint-plugin-perfectionist:
     specifier: 2.10.0
     version: 2.10.0(eslint@9.2.0)(typescript@5.4.5)
@@ -230,8 +230,8 @@ devDependencies:
     specifier: 12.1.0
     version: 12.1.0(eslint@9.2.0)
   eslint-plugin-sonarjs:
-    specifier: 1.0.3
-    version: 1.0.3(eslint@9.2.0)
+    specifier: 0.25.1
+    version: 0.25.1(eslint@9.2.0)
   eslint-plugin-storybook:
     specifier: 0.8.0
     version: 0.8.0(eslint@9.2.0)(typescript@5.4.5)
@@ -1584,6 +1584,16 @@ packages:
       '@babel/core': ^7.0.0-0
     dependencies:
       '@babel/core': 7.24.0
+      '@babel/helper-plugin-utils': 7.22.5
+    dev: true
+
+  /@babel/plugin-syntax-import-assertions@7.23.3(@babel/core@7.24.5):
+    resolution: {integrity: sha512-lPgDSU+SJLK3xmFDTV2ZRQAiM7UuUjGidwBywFavObCiZc1BeAAcMtHJKUya92hPHO+at63JJPLygilZard8jw==}
+    engines: {node: '>=6.9.0'}
+    peerDependencies:
+      '@babel/core': ^7.0.0-0
+    dependencies:
+      '@babel/core': 7.24.5
       '@babel/helper-plugin-utils': 7.22.5
     dev: true
 
@@ -3410,6 +3420,20 @@ packages:
       '@babel/helper-module-imports': 7.22.15
       '@babel/helper-plugin-utils': 7.22.5
       '@babel/plugin-syntax-jsx': 7.23.3(@babel/core@7.24.0)
+      '@babel/types': 7.23.6
+    dev: true
+
+  /@babel/plugin-transform-react-jsx@7.23.4(@babel/core@7.24.5):
+    resolution: {integrity: sha512-5xOpoPguCZCRbo/JeHlloSkTA8Bld1J/E1/kLfD1nsuiW1m8tduTA1ERCgIZokDflX/IBzKcqR3l7VlRgiIfHA==}
+    engines: {node: '>=6.9.0'}
+    peerDependencies:
+      '@babel/core': ^7.0.0-0
+    dependencies:
+      '@babel/core': 7.24.5
+      '@babel/helper-annotate-as-pure': 7.22.5
+      '@babel/helper-module-imports': 7.22.15
+      '@babel/helper-plugin-utils': 7.22.5
+      '@babel/plugin-syntax-jsx': 7.23.3(@babel/core@7.24.5)
       '@babel/types': 7.23.6
     dev: true
 
@@ -5712,15 +5736,15 @@ packages:
       - supports-color
     dev: true
 
-  /@graphql-eslint/eslint-plugin@3.20.1(@babel/core@7.24.0)(@types/node@20.12.12)(graphql@16.8.1):
+  /@graphql-eslint/eslint-plugin@3.20.1(@babel/core@7.24.5)(@types/node@20.12.12)(graphql@16.8.1):
     resolution: {integrity: sha512-RbwVlz1gcYG62sECR1u0XqMh8w5e5XMCCZoMvPQ3nJzEBCTfXLGX727GBoRmSvY1x4gJmqNZ1lsOX7lZY14RIw==}
     engines: {node: '>=12'}
     peerDependencies:
       graphql: ^0.8.0 || ^0.9.0 || ^0.10.0 || ^0.11.0 || ^0.12.0 || ^0.13.0 || ^14.0.0 || ^15.0.0 || ^16.0.0
     dependencies:
       '@babel/code-frame': 7.23.4
-      '@graphql-tools/code-file-loader': 7.3.23(@babel/core@7.24.0)(graphql@16.8.1)
-      '@graphql-tools/graphql-tag-pluck': 7.5.2(@babel/core@7.24.0)(graphql@16.8.1)
+      '@graphql-tools/code-file-loader': 7.3.23(@babel/core@7.24.5)(graphql@16.8.1)
+      '@graphql-tools/graphql-tag-pluck': 7.5.2(@babel/core@7.24.5)(graphql@16.8.1)
       '@graphql-tools/utils': 9.2.1(graphql@16.8.1)
       chalk: 4.1.2
       debug: 4.3.4(supports-color@8.1.1)
@@ -5780,12 +5804,12 @@ packages:
       value-or-promise: 1.0.12
     dev: true
 
-  /@graphql-tools/code-file-loader@7.3.23(@babel/core@7.24.0)(graphql@16.8.1):
+  /@graphql-tools/code-file-loader@7.3.23(@babel/core@7.24.5)(graphql@16.8.1):
     resolution: {integrity: sha512-8Wt1rTtyTEs0p47uzsPJ1vAtfAx0jmxPifiNdmo9EOCuUPyQGEbMaik/YkqZ7QUFIEYEQu+Vgfo8tElwOPtx5Q==}
     peerDependencies:
       graphql: ^14.0.0 || ^15.0.0 || ^16.0.0 || ^17.0.0
     dependencies:
-      '@graphql-tools/graphql-tag-pluck': 7.5.2(@babel/core@7.24.0)(graphql@16.8.1)
+      '@graphql-tools/graphql-tag-pluck': 7.5.2(@babel/core@7.24.5)(graphql@16.8.1)
       '@graphql-tools/utils': 9.2.1(graphql@16.8.1)
       globby: 11.1.0
       graphql: 16.8.1
@@ -6049,13 +6073,13 @@ packages:
       unixify: 1.0.0
     dev: true
 
-  /@graphql-tools/graphql-tag-pluck@7.5.2(@babel/core@7.24.0)(graphql@16.8.1):
+  /@graphql-tools/graphql-tag-pluck@7.5.2(@babel/core@7.24.5)(graphql@16.8.1):
     resolution: {integrity: sha512-RW+H8FqOOLQw0BPXaahYepVSRjuOHw+7IL8Opaa5G5uYGOBxoXR7DceyQ7BcpMgktAOOmpDNQ2WtcboChOJSRA==}
     peerDependencies:
       graphql: ^14.0.0 || ^15.0.0 || ^16.0.0 || ^17.0.0
     dependencies:
       '@babel/parser': 7.23.6
-      '@babel/plugin-syntax-import-assertions': 7.23.3(@babel/core@7.24.0)
+      '@babel/plugin-syntax-import-assertions': 7.23.3(@babel/core@7.24.5)
       '@babel/traverse': 7.23.4
       '@babel/types': 7.23.6
       '@graphql-tools/utils': 9.2.1(graphql@16.8.1)
@@ -11225,14 +11249,14 @@ packages:
       webpack: 5.89.0(esbuild@0.21.2)
     dev: true
 
-  /babel-loader@9.1.3(@babel/core@7.24.0)(webpack@5.89.0):
+  /babel-loader@9.1.3(@babel/core@7.24.5)(webpack@5.89.0):
     resolution: {integrity: sha512-xG3ST4DglodGf8qSwv0MdeWLhrDsw/32QMdTO5T1ZIp9gQur0HkCyFs7Awskr10JKXFXwpAhiCuYX5oGXnRGbw==}
     engines: {node: '>= 14.15.0'}
     peerDependencies:
       '@babel/core': ^7.12.0
       webpack: '>=5'
     dependencies:
-      '@babel/core': 7.24.0
+      '@babel/core': 7.24.5
       find-cache-dir: 4.0.0
       schema-utils: 4.2.0
       webpack: 5.89.0(esbuild@0.21.2)
@@ -13942,8 +13966,8 @@ packages:
       '@babel/plugin-transform-react-jsx': ^7.14.9
       eslint: ^8.1.0
     dependencies:
-      '@babel/plugin-syntax-flow': 7.23.3(@babel/core@7.24.0)
-      '@babel/plugin-transform-react-jsx': 7.23.4(@babel/core@7.24.0)
+      '@babel/plugin-syntax-flow': 7.23.3(@babel/core@7.24.5)
+      '@babel/plugin-transform-react-jsx': 7.23.4(@babel/core@7.24.5)
       eslint: 9.2.0
       lodash: 4.17.21
       string-natural-compare: 3.0.1
@@ -14066,7 +14090,7 @@ packages:
       object.fromentries: 2.0.7
     dev: true
 
-  /eslint-plugin-nimbus-clean@1.3.1(@typescript-eslint/eslint-plugin@7.9.0)(eslint-config-prettier@9.1.0)(eslint-import-resolver-typescript@3.6.1)(eslint-plugin-import@2.29.1)(eslint-plugin-jsx-a11y@6.8.0)(eslint-plugin-perfectionist@2.10.0)(eslint-plugin-prettier@5.1.3)(eslint-plugin-promise@6.1.1)(eslint-plugin-react-hooks@4.6.2)(eslint-plugin-react@7.34.1)(eslint-plugin-simple-import-sort@12.1.0)(eslint-plugin-sonarjs@1.0.3)(eslint-plugin-testing-library@6.2.2)(eslint-plugin-unicorn@53.0.0)(eslint@9.2.0)(prettier@3.2.5):
+  /eslint-plugin-nimbus-clean@1.3.1(@typescript-eslint/eslint-plugin@7.9.0)(eslint-config-prettier@9.1.0)(eslint-import-resolver-typescript@3.6.1)(eslint-plugin-import@2.29.1)(eslint-plugin-jsx-a11y@6.8.0)(eslint-plugin-perfectionist@2.10.0)(eslint-plugin-prettier@5.1.3)(eslint-plugin-promise@6.1.1)(eslint-plugin-react-hooks@4.6.2)(eslint-plugin-react@7.34.1)(eslint-plugin-simple-import-sort@12.1.0)(eslint-plugin-sonarjs@0.25.1)(eslint-plugin-testing-library@6.2.2)(eslint-plugin-unicorn@53.0.0)(eslint@9.2.0)(prettier@3.2.5):
     resolution: {integrity: sha512-rMxV1tUqPvgTpaUStUj0fHR4skNP2GrbB3deCs56HrfbqYo3LQDswz879qiTeQis6bgYvvuUhYoGoFnnx3Sqtw==}
     engines: {node: ^14.17.0 || ^16.0.0 || >= 18.0.0}
     peerDependencies:
@@ -14099,7 +14123,7 @@ packages:
       eslint-plugin-react: 7.34.1(eslint@9.2.0)
       eslint-plugin-react-hooks: 4.6.2(eslint@9.2.0)
       eslint-plugin-simple-import-sort: 12.1.0(eslint@9.2.0)
-      eslint-plugin-sonarjs: 1.0.3(eslint@9.2.0)
+      eslint-plugin-sonarjs: 0.25.1(eslint@9.2.0)
       eslint-plugin-testing-library: 6.2.2(eslint@9.2.0)(typescript@5.4.5)
       eslint-plugin-unicorn: 53.0.0(eslint@9.2.0)
       prettier: 3.2.5
@@ -14214,11 +14238,11 @@ packages:
       eslint: 9.2.0
     dev: true
 
-  /eslint-plugin-sonarjs@1.0.3(eslint@9.2.0):
-    resolution: {integrity: sha512-6s41HLPYPyDrp+5+7Db5yFYbod6h9pC7yx+xfcNwHRcLe1EZwbbQT/tdOAkR7ekVUkNGEvN3GmYakIoQUX7dEg==}
+  /eslint-plugin-sonarjs@0.25.1(eslint@9.2.0):
+    resolution: {integrity: sha512-5IOKvj/GMBNqjxBdItfotfRHo7w48496GOu1hxdeXuD0mB1JBlDCViiLHETDTfA8pDAVSBimBEQoetRXYceQEw==}
     engines: {node: '>=16'}
     peerDependencies:
-      eslint: ^8.0.0 || ^9.0.0
+      eslint: ^5.0.0 || ^6.0.0 || ^7.0.0 || ^8.0.0
     dependencies:
       eslint: 9.2.0
     dev: true
