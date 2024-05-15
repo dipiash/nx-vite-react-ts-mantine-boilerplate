@@ -25,7 +25,7 @@
     "clean:all": "pnpm clean:node-modules && pnpm clean:dist && pnpm clean:coverage && pnpm clean:icons",
     "upgrade:nx": "nx migrate latest && pnpm install && nx migrate --run-migrations --if-exists && rm -rf migrations.json",
     "upgrade:storybook": "storybook upgrade",
-    "prepare": "husky install"
+    "prepare": "husky"
   },
   "private": true,
   "engines": {
