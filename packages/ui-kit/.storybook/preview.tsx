@@ -7,8 +7,9 @@ import { ThemeProvider } from '../src/providers'
 import '@mantine/core/styles.css'
 
 const preview: Preview = {
+  decorators: [(renderStory) => <ThemeProvider>{renderStory()}</ThemeProvider>],
+
   parameters: {
-    actions: { argTypesRegex: '^on[A-Z].*' },
     controls: {
       matchers: {
         color: /(background|color)$/i,
@@ -16,8 +17,7 @@ const preview: Preview = {
       },
     },
   },
+  tags: ['autodocs'],
 }
-
-export const decorators = [(renderStory) => <ThemeProvider>{renderStory()}</ThemeProvider>]
 
 export default preview

@@ -2,7 +2,6 @@ import React from 'react'
 import { describe, expect, it } from 'vitest'
 
 import { MockedProvider } from '@apollo/client/testing'
-import { MockedResponse } from '@apollo/react-testing'
 import { ListRepositoriesDocument } from '@nx-vite-react-ts-mantine-boilerplate/graphql'
 import { ThemeProvider } from '@nx-vite-react-ts-mantine-boilerplate/ui-kit'
 import { act, render, screen } from '@testing-library/react'
@@ -22,11 +21,7 @@ const queryString = [
 ].join(' ')
 const limitItems = 10
 
-const mocks: {
-  success: readonly MockedResponse[]
-  empty: readonly MockedResponse[]
-  error: readonly MockedResponse[]
-} = {
+const mocks = {
   empty: [
     {
       request: {

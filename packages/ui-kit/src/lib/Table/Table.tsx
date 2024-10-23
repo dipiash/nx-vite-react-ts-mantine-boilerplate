@@ -4,7 +4,7 @@ import { TablePropertiesInterface } from './Table.types'
 
 import classes from './Table.module.css'
 
-export const Table: FC<TablePropertiesInterface> = ({ columns, data, error }) => {
+export const Table: FC<TablePropertiesInterface> = ({ columns = {}, data = [], error = false }) => {
   const columnKeys = useMemo(() => Object.keys(columns), [columns])
 
   return (
@@ -33,10 +33,4 @@ export const Table: FC<TablePropertiesInterface> = ({ columns, data, error }) =>
       </div>
     </div>
   )
-}
-
-Table.defaultProps = {
-  columns: {},
-  data: [],
-  error: false,
 }

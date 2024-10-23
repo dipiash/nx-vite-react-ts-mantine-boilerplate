@@ -45,20 +45,24 @@
     },
     {
       "files": ["*.ts", "*.tsx"],
-      "extends": [
-        "plugin:nimbus-clean/recommended",
-        "plugin:@nx/typescript"
-      ],
+      "extends": ["plugin:nimbus-clean/recommended", "plugin:@nx/typescript"],
       "plugins": ["react-refresh"],
       "rules": {
-        "react-refresh/only-export-components": "error"
+        "react-refresh/only-export-components": "error",
+        "@typescript-eslint/no-extra-semi": "error",
+        "no-extra-semi": "off"
       }
     },
     {
       "files": ["*.graphql"],
       "extends": "plugin:@graphql-eslint/operations-all",
       "rules": {
-        "@graphql-eslint/match-document-filename": ["error", { "query": "PascalCase" }]
+        "@graphql-eslint/match-document-filename": [
+          "error",
+          {
+            "query": "PascalCase"
+          }
+        ]
       }
     }
   ],
