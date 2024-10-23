@@ -60,7 +60,7 @@ npm run init-project
 
 ### Features
 
-- [Nx 16](https://nx.dev)
+- [Nx 20](https://nx.dev)
 - [React 18](https://reactjs.org)
 - [Mantine 7](https://mantine.dev/)
 - [Storybook 7](https://storybook.js.org/)
