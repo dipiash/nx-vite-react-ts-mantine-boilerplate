@@ -23,7 +23,7 @@ jobs:
           node-version: 20
 
       - name: Reusable Action for PNPM and NX
-        uses: dipiash/pnpm-nx-reusable-action@v8
+        uses: dipiash/pnpm-nx-reusable-action@v10
 
       - name: Install and Build 🔧
         run: npx nx build main
