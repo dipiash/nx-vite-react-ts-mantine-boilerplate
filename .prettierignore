@@ -1,7 +1,12 @@
-# Add files here to ignore them from prettier formatting
-
-/dist
-/coverage
+.assets
+.nx
+.idea
+.vscode
+.husky
+dist
+build
+coverage
+node_modules
+.vercel
 
 /.nx/cache
-/.nx/workspace-data

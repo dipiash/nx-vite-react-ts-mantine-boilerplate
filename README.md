@@ -8,16 +8,11 @@
 ### Prerequisites
 
 ```sh
-# Install pnpm
-npx pnpm add -g pnpm
-```
-
-```sh
 # Install NX
 npm install -g nx
 
 # Init project
-pnpm run init-project
+npm run init-project
 ```
 
 ### Development
@@ -39,11 +34,11 @@ pnpm run init-project
    and add your GitHub token (see step 1)
 5. _[Optional step]_ Generate code from GraphQL schema
    ```sh
-   pnpm codegen:graphql
+   npm run codegen:graphql
    ```
 6. Start the app
    ```sh
-   pnpm dev
+   npm run dev
    ```
    and open the page http://localhost:3000/
 

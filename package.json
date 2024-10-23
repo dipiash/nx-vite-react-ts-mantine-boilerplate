@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "license": "MIT",
   "scripts": {
-    "init": "pnpm clean:all && pnpm i && pnpm build:icons",
+    "init": "npm run clean:all && npm install && npm run build:icons",
     "dev": "nx serve main",
     "dev:storybook": "nx storybook ui-kit",
     "build:app": "nx build main",
@@ -22,15 +22,14 @@
     "clean:dist": "rm -rf packages/*/build && rm -rf packages/*/dist",
     "clean:coverage": "rm -rf packages/*/coverage",
     "clean:icons": "rm -rf packages/icons/src/components",
-    "clean:all": "pnpm clean:node-modules && pnpm clean:dist && pnpm clean:coverage && pnpm clean:icons",
-    "upgrade:nx": "nx migrate latest && pnpm install && nx migrate --run-migrations --if-exists && rm -rf migrations.json",
+    "clean:all": "npm run clean:node-modules && npm run clean:dist && npm run clean:coverage && npm run clean:icons",
+    "upgrade:nx": "nx migrate latest && npm install && nx migrate --run-migrations --if-exists && rm -rf migrations.json",
     "upgrade:storybook": "storybook upgrade",
     "prepare": "husky"
   },
   "private": true,
   "engines": {
-    "node": "20.x",
-    "pnpm": "8.x"
+    "node": "20.x"
   },
   "lint-staged": {
     "**/*.{js,jsx,ts,tsx}": [
@@ -104,7 +103,7 @@
     "eslint-plugin-storybook": "0.10.1",
     "eslint-plugin-testing-library": "6.2.2",
     "eslint-plugin-unicorn": "53.0.0",
-    "husky": "9.0.11",
+    "husky": "9.1.6",
     "jsdom": "24.0.0",
     "lint-staged": "15.2.2",
     "nx": "20.0.3",

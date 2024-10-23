@@ -6,7 +6,7 @@ Welcome to our project! We're thrilled that you're considering contributing. Her
 
 1. Fork the repository to your GitHub account.
 2. Clone the forked repository to your local machine.
-3. Run `pnpm install` to install the project dependencies.
+3. Run `npm install` to install the project dependencies.
 4. Familiarize yourself with the project's structure and codebase.
 
 ## Branching
@@ -20,8 +20,8 @@ Welcome to our project! We're thrilled that you're considering contributing. Her
 2. To configure environment variables:
    - Copy `cp ./packages/graphql/env.example ./packages/graphql/.env.local` and add your GitHub token as indicated in step 1.
    - Copy `cp ./apps/main/env.example ./apps/main/.env.local` and add your GitHub token in the same way.
-3. If needed, you can generate code from the GraphQL schema using: `pnpm codegen:graphql`
-4. To start the application: `pnpm dev`
+3. If needed, you can generate code from the GraphQL schema using: `npm run codegen:graphql`
+4. To start the application: `npm run dev`
 5. Open your browser and navigate to http://localhost:3000 to view the app.
 
 ## Committing
