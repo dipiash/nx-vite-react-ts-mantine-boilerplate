@@ -47,3 +47,4 @@ coverage
 !.env.example
 
 .nx/cache
+.nx/workspace-data

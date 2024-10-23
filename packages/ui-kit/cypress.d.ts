@@ -1,3 +1,4 @@
+/// <reference types="cypress" />
 import { mount } from 'cypress/react'
 
 // Augment the Cypress namespace to include type definitions for

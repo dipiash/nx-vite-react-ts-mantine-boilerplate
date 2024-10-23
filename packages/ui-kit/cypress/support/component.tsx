@@ -16,11 +16,18 @@
 // Import commands.js using ES2015 syntax:
 // Alternatively you can use CommonJS syntax:
 // require('./commands')
+import React, { ReactNode } from 'react'
 import { mount } from 'cypress/react18'
 
 import './commands'
 
-Cypress.Commands.add('mount', mount)
+import { ThemeProvider } from '../../src/providers'
+
+Cypress.Commands.add('mount', (component: ReactNode, options = {}) => {
+  const wrapped = <ThemeProvider>{component}</ThemeProvider>
+
+  return mount(wrapped, options)
+})
 
 // Example use:
 // cy.mount(<MyComponent />)
