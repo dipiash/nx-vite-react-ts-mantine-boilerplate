@@ -1,9 +1,9 @@
 import React from 'react'
 
-import { Error } from './Error'
+import { ErrorBlock } from './ErrorBlock'
 
 describe('<Error />', () => {
   it('renders', () => {
-    cy.mount(<Error text="Error" />)
+    cy.mount(<ErrorBlock text="Error" />)
   })
 })

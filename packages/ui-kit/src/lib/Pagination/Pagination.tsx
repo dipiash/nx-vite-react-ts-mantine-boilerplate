@@ -1,10 +1,8 @@
+import { Group } from '@mantine/core'
 import React, { FC } from 'react'
 
-import { Group } from '@mantine/core'
-
-import { PaginationPropertiesInterface } from './Pagination.types'
-
 import { Button } from '../Button'
+import { PaginationPropertiesInterface } from './Pagination.types'
 
 export const Pagination: FC<PaginationPropertiesInterface> = ({
   isNextDisabled = false,
@@ -12,7 +10,7 @@ export const Pagination: FC<PaginationPropertiesInterface> = ({
   onNextClick,
   onPrevClick,
 }) => (
-  <Group grow gap="xs">
+  <Group gap="xs" grow>
     <Button data-testid="button-prev" disabled={isPreviousDisabled} onClick={onPrevClick}>
       {'<'} Prev
     </Button>

@@ -1,12 +1,12 @@
 import path from 'node:path'
-import analyze from 'rollup-plugin-analyzer'
-import visualizer from 'rollup-plugin-visualizer'
-import { defineConfig, splitVendorChunkPlugin } from 'vite'
-import tsconfigPaths from 'vite-tsconfig-paths'
 
 import react from '@vitejs/plugin-react-swc'
+import analyze from 'rollup-plugin-analyzer'
+import visualizer from 'rollup-plugin-visualizer'
+import { defineConfig } from 'vite'
+import tsconfigPaths from 'vite-tsconfig-paths'
 
-const isDevelopment = Boolean(process.env.DEV || process.env.NODE_ENV === 'development')
+const isDevelopment = Boolean(process.env.DEV ?? process.env.NODE_ENV === 'development')
 const isAnalyzeEnabled = Boolean(process.env.ANALYZE)
 const isNoMinify = Boolean(process.env.NO_MINIFY)
 const isSourceMapsEnabled = Boolean(process.env.SOURCE_MAPS)
@@ -43,7 +43,7 @@ export default defineConfig({
     },
     sourcemap: isSourceMapsEnabled,
   },
-  plugins: [tsconfigPaths(), react(), splitVendorChunkPlugin()],
+  plugins: [tsconfigPaths(), react()],
   server: {
     host: false,
     port: 3000,

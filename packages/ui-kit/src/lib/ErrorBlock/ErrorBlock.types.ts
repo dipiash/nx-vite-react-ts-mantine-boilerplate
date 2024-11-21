@@ -1,5 +1,5 @@
 import { ReactNode } from 'react'
 
-export interface ErrorPropertiesInterface {
+export interface ErrorBlockPropertiesInterface {
   text: ReactNode
 }

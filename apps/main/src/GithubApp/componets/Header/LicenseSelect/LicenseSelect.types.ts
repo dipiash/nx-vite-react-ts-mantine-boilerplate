@@ -1,4 +1,4 @@
 export interface LicenseSelectPropertiesInterface {
-  onChange: (value: string | null) => void
   className?: string
+  onChange: (value: null | string) => void
 }

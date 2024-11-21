@@ -1,10 +1,8 @@
+import { SearchResultItemEdge, useListRepositoriesQuery } from '@nx-vite-react-ts-mantine-boilerplate/graphql'
+import { ErrorBlock, Loader, Pagination, Space, Table } from '@nx-vite-react-ts-mantine-boilerplate/ui-kit'
 import React, { FC, useMemo } from 'react'
 
-import { SearchResultItemEdge, useListRepositoriesQuery } from '@nx-vite-react-ts-mantine-boilerplate/graphql'
-import { Error, Loader, Pagination, Space, Table } from '@nx-vite-react-ts-mantine-boilerplate/ui-kit'
-
 import { RepositoriesTablePropertiesInterface, RepositoryDataInterface } from './RepositoriesTable.types'
-
 import { enhancedFetchMore, getPaginationParameters } from './utils'
 
 export const RepositoriesTable: FC<RepositoriesTablePropertiesInterface> = ({ limit = 10, queryString }) => {
@@ -18,9 +16,9 @@ export const RepositoriesTable: FC<RepositoriesTablePropertiesInterface> = ({ li
   const resultData = useMemo(() => (data?.search.edges || []) as SearchResultItemEdge[], [data])
 
   const tableColumns = {
+    name: 'Name',
     date: 'Date',
     license: 'License',
-    name: 'Name',
     stars: 'Stars',
   }
 
@@ -30,45 +28,45 @@ export const RepositoriesTable: FC<RepositoriesTablePropertiesInterface> = ({ li
         .map(({ node }) =>
           node?.__typename === 'Repository'
             ? {
+                name: node?.name,
                 date: node?.createdAt,
                 key: node?.id,
-                license: node?.licenseInfo && node?.licenseInfo.name,
-                name: node?.name,
-                stars: node?.stargazers && node?.stargazers.totalCount,
+                license: node?.licenseInfo?.name,
+                stars: node?.stargazers?.totalCount,
               }
             : (undefined as unknown as RepositoryDataInterface),
         )
-        .filter((node): node is RepositoryDataInterface => node !== undefined),
+        .filter((node): node is RepositoryDataInterface => node != undefined),
     [resultData],
   )
 
-  const tableError = error ? <Error text="Repositories list loading error." /> : false
+  const tableError = error ? <ErrorBlock text="Repositories list loading error." /> : false
 
   const paginationParameters = getPaginationParameters(data?.search.pageInfo)
 
   return (
-    <Loader loading={loading} data-testid="repositories-list-loading">
+    <Loader data-testid="repositories-list-loading" loading={loading}>
       <Table columns={tableColumns} data={tableData} error={tableError} />
       <Space h={10} />
       <Pagination
-        onPrevClick={() =>
-          enhancedFetchMore({
-            cursorBefore: paginationParameters.cursorBefore,
-            fetchMore,
-            limit,
-            queryString,
-          })
-        }
+        isNextDisabled={paginationParameters.isNextDisabled}
+        isPrevDisabled={paginationParameters.isPreviousDisabled}
         onNextClick={() =>
           enhancedFetchMore({
             cursorAfter: paginationParameters.cursorAfter,
-            fetchMore,
             limit,
             queryString,
+            fetchMore,
           })
         }
-        isPrevDisabled={paginationParameters.isPreviousDisabled}
-        isNextDisabled={paginationParameters.isNextDisabled}
+        onPrevClick={() =>
+          enhancedFetchMore({
+            cursorBefore: paginationParameters.cursorBefore,
+            limit,
+            queryString,
+            fetchMore,
+          })
+        }
       />
     </Loader>
   )
