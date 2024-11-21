@@ -1,6 +1,5 @@
-import React, { FC } from 'react'
-
 import { ThemeProvider } from '@nx-vite-react-ts-mantine-boilerplate/ui-kit'
+import React, { FC } from 'react'
 
 import { GithubApp } from './GithubApp'
 

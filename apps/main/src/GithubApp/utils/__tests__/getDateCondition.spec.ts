@@ -2,10 +2,12 @@ import { describe, it } from 'vitest'
 
 import { getDateCondition } from '../getDateCondition'
 
+type DateVariantType = number | string | undefined
+
 describe('getDateCondition', () => {
-  let year: number | string | undefined
-  let month: number | string | undefined
-  let day: number | string | undefined
+  let year: DateVariantType
+  let month: DateVariantType
+  let day: DateVariantType
 
   beforeEach(() => {
     const date = new Date()

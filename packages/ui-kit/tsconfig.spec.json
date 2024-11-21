@@ -3,7 +3,7 @@
   "compilerOptions": {
     "outDir": "../../dist/out-tsc",
     "module": "commonjs",
-    "types": ["jest", "node", "cypress"]
+    "types": ["cypress", "jest", "node" ]
   },
   "include": [
     "src",

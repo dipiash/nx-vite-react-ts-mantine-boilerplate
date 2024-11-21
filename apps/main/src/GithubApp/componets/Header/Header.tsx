@@ -1,10 +1,8 @@
-import React, { FC, memo } from 'react'
-import cx from 'clsx'
-
 import { Input } from '@nx-vite-react-ts-mantine-boilerplate/ui-kit'
+import cx from 'clsx'
+import React, { FC, memo } from 'react'
 
 import { HeaderPropertiesInterface } from './Header.types'
-
 import { LicenseSelect } from './LicenseSelect'
 
 import classes from './Header.module.css'
@@ -14,9 +12,9 @@ export const Header: FC<HeaderPropertiesInterface> = memo(({ form }) => (
     <div className={cx(classes.headerItem, classes.headerItemLeft)}>
       <Input
         label="Search by repo name"
-        data-testid="search-by-name"
-        className={classes.headerField}
         name="search"
+        className={classes.headerField}
+        data-testid="search-by-name"
         placeholder="Search by repository name"
         {...form.getInputProps('repositoryName')}
       />

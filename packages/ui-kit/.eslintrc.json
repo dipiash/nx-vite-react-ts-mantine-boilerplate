@@ -6,7 +6,7 @@
       "files": ["*.ts", "*.tsx"],
       "rules": {},
       "parserOptions": {
-        "project": ["tsconfig.*?.json"]
+        "project": ["packages/ui-kit/tsconfig.*?.json", "packages/ui-kit/cypress/tsconfig.json"]
       }
     }
   ]

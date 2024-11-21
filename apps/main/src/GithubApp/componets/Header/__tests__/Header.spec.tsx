@@ -1,20 +1,18 @@
-import React from 'react'
-import { describe, expect, it } from 'vitest'
-
 import { MockedProvider, MockedResponse } from '@apollo/react-testing'
 import { useForm } from '@mantine/form'
 import { ListLicensesDocument } from '@nx-vite-react-ts-mantine-boilerplate/graphql'
 import { ThemeProvider } from '@nx-vite-react-ts-mantine-boilerplate/ui-kit'
 import { act, fireEvent, render, renderHook, screen } from '@testing-library/react'
 import { userEvent } from '@testing-library/user-event'
+import React from 'react'
+import { describe, expect, it } from 'vitest'
 
 import { Header } from '../index'
-
 import licensesListMockDataSuccess from './mocks/result.success.json'
 
 const mocks: {
-  success: readonly MockedResponse[]
   error: readonly MockedResponse[]
+  success: readonly MockedResponse[]
 } = {
   error: [
     {
@@ -42,8 +40,8 @@ describe('Header', () => {
 
     const { result: formHookReference } = renderHook(() =>
       useForm<{
-        repositoryName: string
         license: string
+        repositoryName: string
       }>({
         initialValues: {
           license: '',
@@ -90,8 +88,8 @@ describe('Header', () => {
   it('error render', async () => {
     const { result: formHookReference } = renderHook(() =>
       useForm<{
-        repositoryName: string
         license: string
+        repositoryName: string
       }>({
         initialValues: {
           license: '',
@@ -110,7 +108,7 @@ describe('Header', () => {
 
     await act(() => new Promise((resolve) => setTimeout(resolve, 0))) // wait for response
 
-    screen.getByText('Search by repo name')
-    screen.getByText('Licenses loading error.')
+    expect(screen.getByText('Search by repo name')).toBeVisible()
+    expect(screen.getByText('Licenses loading error.')).toBeVisible()
   })
 })

@@ -1,4 +1,4 @@
-export const getSortCondition = (field: string, sortBy: 'desc' | 'asc' = 'desc') => {
+export const getSortCondition = (field: string, sortBy: 'asc' | 'desc' = 'desc') => {
   if (!field) {
     return ''
   }

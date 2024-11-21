@@ -12,7 +12,7 @@ export const Table: FC<TablePropertiesInterface> = ({ columns = {}, data = [], e
       <div className={classes.thead}>
         <div className={classes.tr}>
           {columnKeys.map((key) => (
-            <div className={classes.th} key={key}>
+            <div key={key} className={classes.th}>
               {columns[key]}
             </div>
           ))}
@@ -22,9 +22,9 @@ export const Table: FC<TablePropertiesInterface> = ({ columns = {}, data = [], e
         {error ?? undefined}
         {!error && (!data || data.length === 0) && <div className={classes.empty}>No data</div>}
         {data.map((item) => (
-          <div className={classes.tr} key={item.key}>
+          <div key={item.key} className={classes.tr}>
             {columnKeys.map((key) => (
-              <div className={classes.td} key={key} data-label={columns[key]}>
+              <div key={key} className={classes.td} data-label={columns[key]}>
                 {item[key] || '---'}
               </div>
             ))}

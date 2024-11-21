@@ -1,8 +1,8 @@
 import path from 'node:path'
-import { defineConfig } from 'vite'
-import dts from 'vite-dts'
 
 import react from '@vitejs/plugin-react-swc'
+import { defineConfig } from 'vite'
+import dts from 'vite-dts'
 
 const isExternal = (id: string) => !id.startsWith('.') && !path.isAbsolute(id)
 

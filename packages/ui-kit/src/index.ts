@@ -1,5 +1,5 @@
 export { Button } from './lib/Button'
-export { Error } from './lib/Error'
+export { ErrorBlock } from './lib/ErrorBlock'
 export { Input } from './lib/Input'
 export { Loader } from './lib/Loader'
 export { Pagination } from './lib/Pagination'
