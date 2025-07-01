@@ -21,7 +21,9 @@ import './commands'
 // Alternatively you can use CommonJS syntax:
 // require('./commands')
 
-import { mount } from 'cypress/react18'
+// Alternatively you can use CommonJS syntax:
+// require('./commands')
+import { mount } from 'cypress/react'
 
 import { ThemeProvider } from '../../src/providers'
 

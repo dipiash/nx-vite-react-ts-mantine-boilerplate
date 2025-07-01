@@ -60,12 +60,12 @@ npm run init-project
 
 ### Features
 
-- [Nx 20](https://nx.dev)
-- [React 18](https://reactjs.org)
-- [Mantine 7](https://mantine.dev/)
-- [Storybook 7](https://storybook.js.org/)
+- [Nx 21](https://nx.dev)
+- [React 19](https://reactjs.org)
+- [Mantine 8](https://mantine.dev/)
+- [Storybook 9](https://storybook.js.org/)
 - [TypeScript](https://www.typescriptlang.org/)
-- [Vite 5](https://vitejs.dev/)
+- [Vite 7](https://vitejs.dev/)
 - [Vitest](https://vitest.dev/)
 - [React Testing Library](https://testing-library.com/docs/react-testing-library/intro)
 - [Cypress](https://www.cypress.io)
