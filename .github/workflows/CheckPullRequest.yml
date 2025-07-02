@@ -9,6 +9,7 @@ env:
   # This is disabled for existing workspaces to maintain compatibility
   # For more info, see: https://nx.dev/concepts/inferred-tasks
   NX_ADD_PLUGINS: false
+  CYPRESS_INSTALL_BINARY: 0
 jobs:
   cache-and-install:
     runs-on: ubuntu-latest
@@ -24,7 +25,7 @@ jobs:
           cache-dependency-path: '**/package-lock.json'
 
       - name: Install dependencies
-        run: npm install --verbose --ignore-scripts
+        run: npm ci --prefer-offline
 
   type-check:
     runs-on: ubuntu-latest
@@ -41,7 +42,7 @@ jobs:
           cache: 'npm'
           cache-dependency-path: '**/package-lock.json'
 
-      - run: npm install --verbose --ignore-scripts
+      - run: npm ci --prefer-offline
       - uses: nrwl/nx-set-shas@v4
 
       - name: type-check PR
@@ -66,7 +67,7 @@ jobs:
           cache: 'npm'
           cache-dependency-path: '**/package-lock.json'
 
-      - run: npm install --verbose --ignore-scripts
+      - run: npm ci --prefer-offline
       - uses: nrwl/nx-set-shas@v4
 
       - name: lint PR
@@ -91,7 +92,7 @@ jobs:
           cache: 'npm'
           cache-dependency-path: '**/package-lock.json'
 
-      - run: npm install --verbose --ignore-scripts
+      - run: npm ci --prefer-offline
       - uses: nrwl/nx-set-shas@v4
 
       - name: stylelint PR
@@ -116,7 +117,7 @@ jobs:
           cache: 'npm'
           cache-dependency-path: '**/package-lock.json'
 
-      - run: npm install --verbose --ignore-scripts
+      - run: npm ci --prefer-offline
       - uses: nrwl/nx-set-shas@v4
 
       - name: test PR
