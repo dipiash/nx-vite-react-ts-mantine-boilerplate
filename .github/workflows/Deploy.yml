@@ -25,7 +25,7 @@ jobs:
           cache: 'npm'
           cache-dependency-path: '**/package-lock.json'
 
-      - run: npm ci --prefer-offline --ignore-scripts
+      - run: npm ci --prefer-offline
 
       - name: Install and Build 🔧
         run: npx nx build main

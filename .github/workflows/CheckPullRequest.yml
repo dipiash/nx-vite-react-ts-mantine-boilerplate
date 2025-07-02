@@ -28,7 +28,7 @@ jobs:
           cache-dependency-path: '**/package-lock.json'
 
       - name: Install dependencies
-        run: npm ci --prefer-offline --ignore-scripts
+        run: npm ci --prefer-offline
 
   type-check:
     runs-on: ubuntu-latest
@@ -45,12 +45,12 @@ jobs:
           cache: 'npm'
           cache-dependency-path: '**/package-lock.json'
 
-      - run: npm ci --prefer-offline --ignore-scripts
+      - run: npm ci --prefer-offline
       - uses: nrwl/nx-set-shas@v4
 
       - name: type-check PR
         if: github.ref != 'refs/heads/main'
-        run: npx nx affected --target=type-check --base=origin/main --head=HEAD --verbose
+        run: npx nx affected --target=type-check --base=origin/main --head=HEAD
       - name: type-check Main
         if: github.ref == 'refs/heads/main'
         run: npx nx affected --target=type-check --base=origin/main~1 --head=origin/main
@@ -70,12 +70,12 @@ jobs:
           cache: 'npm'
           cache-dependency-path: '**/package-lock.json'
 
-      - run: npm ci --prefer-offline --ignore-scripts
+      - run: npm ci --prefer-offline
       - uses: nrwl/nx-set-shas@v4
 
       - name: lint PR
         if: github.ref != 'refs/heads/main'
-        run: npx nx affected --target=lint --base=origin/main --head=HEAD --verbose
+        run: npx nx affected --target=lint --base=origin/main --head=HEAD
       - name: lint Main
         if: github.ref == 'refs/heads/main'
         run: npx nx affected --target=lint --base=origin/main~1 --head=origin/main
@@ -95,12 +95,12 @@ jobs:
           cache: 'npm'
           cache-dependency-path: '**/package-lock.json'
 
-      - run: npm ci --prefer-offline --ignore-scripts
+      - run: npm ci --prefer-offline
       - uses: nrwl/nx-set-shas@v4
 
       - name: stylelint PR
         if: github.ref != 'refs/heads/main'
-        run: npx nx affected --target=stylelint --base=origin/main --head=HEAD --verbose
+        run: npx nx affected --target=stylelint --base=origin/main --head=HEAD
       - name: stylelint Main
         if: github.ref == 'refs/heads/main'
         run: npx nx affected --target=stylelint --base=origin/main~1 --head=origin/main
@@ -120,12 +120,12 @@ jobs:
           cache: 'npm'
           cache-dependency-path: '**/package-lock.json'
 
-      - run: npm ci --prefer-offline --ignore-scripts
+      - run: npm ci --prefer-offline
       - uses: nrwl/nx-set-shas@v4
 
       - name: test PR
         if: github.ref != 'refs/heads/main'
-        run: npx nx affected --target=test --base=origin/main --head=HEAD --verbose
+        run: npx nx affected --target=test --base=origin/main --head=HEAD
       - name: test Main
         if: github.ref == 'refs/heads/main'
         run: npx nx affected --target=test --base=origin/main~1 --head=origin/main
