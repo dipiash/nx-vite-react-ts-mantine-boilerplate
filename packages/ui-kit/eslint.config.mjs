@@ -20,7 +20,7 @@ const config = [
     files: ['**/*.ts', '**/*.tsx'],
     languageOptions: {
       parserOptions: {
-        project: ['packages/ui-kit/tsconfig.*?.json', 'packages/ui-kit/cypress/tsconfig.json'],
+        project: ['packages/ui-kit/tsconfig.*?.json'],
       },
     },
     // Override or add rules here

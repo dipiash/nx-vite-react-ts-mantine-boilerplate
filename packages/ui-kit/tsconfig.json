@@ -22,9 +22,6 @@
     },
     {
       "path": "./tsconfig.storybook.json"
-    },
-    {
-      "path": "./cypress/tsconfig.json"
     }
   ]
 }

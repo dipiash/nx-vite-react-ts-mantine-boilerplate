@@ -68,7 +68,6 @@ npm run init-project
 - [Vite 7](https://vitejs.dev/)
 - [Vitest](https://vitest.dev/)
 - [React Testing Library](https://testing-library.com/docs/react-testing-library/intro)
-- [Cypress](https://www.cypress.io)
 - [ESLint](https://eslint.org/)
 - HMR (Hot Module Replacement)
 

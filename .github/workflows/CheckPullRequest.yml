@@ -12,7 +12,6 @@ env:
   # This is disabled for existing workspaces to maintain compatibility
   # For more info, see: https://nx.dev/concepts/inferred-tasks
   NX_ADD_PLUGINS: false
-  CYPRESS_INSTALL_BINARY: 0
   NX_TUI: false
   NX_VERBOSE_LOGGING: true
 jobs:
