@@ -24,7 +24,7 @@ jobs:
           cache-dependency-path: '**/package-lock.json'
 
       - name: Install dependencies
-        run: npm ci --prefer-offline
+        run: npm ci
 
   type-check:
     runs-on: ubuntu-latest
@@ -41,7 +41,7 @@ jobs:
           cache: 'npm'
           cache-dependency-path: '**/package-lock.json'
 
-      - run: npm ci --prefer-offline
+      - run: npm ci
       - uses: nrwl/nx-set-shas@v4
 
       - name: type-check PR
@@ -66,7 +66,7 @@ jobs:
           cache: 'npm'
           cache-dependency-path: '**/package-lock.json'
 
-      - run: npm ci --prefer-offline
+      - run: npm ci
       - uses: nrwl/nx-set-shas@v4
 
       - name: lint PR
@@ -91,7 +91,7 @@ jobs:
           cache: 'npm'
           cache-dependency-path: '**/package-lock.json'
 
-      - run: npm ci --prefer-offline
+      - run: npm ci
       - uses: nrwl/nx-set-shas@v4
 
       - name: stylelint PR
@@ -116,7 +116,7 @@ jobs:
           cache: 'npm'
           cache-dependency-path: '**/package-lock.json'
 
-      - run: npm ci --prefer-offline
+      - run: npm ci
       - uses: nrwl/nx-set-shas@v4
 
       - name: test PR
