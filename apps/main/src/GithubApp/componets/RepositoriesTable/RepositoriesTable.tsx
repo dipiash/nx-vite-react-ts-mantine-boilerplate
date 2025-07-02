@@ -49,24 +49,24 @@ export const RepositoriesTable: FC<RepositoriesTablePropertiesInterface> = ({ li
       <Table columns={tableColumns} data={tableData} error={tableError} />
       <Space h={10} />
       <Pagination
-        isNextDisabled={paginationParameters.isNextDisabled}
-        isPrevDisabled={paginationParameters.isPreviousDisabled}
         onNextClick={() =>
           enhancedFetchMore({
             cursorAfter: paginationParameters.cursorAfter,
+            fetchMore,
             limit,
             queryString,
-            fetchMore,
           })
         }
         onPrevClick={() =>
           enhancedFetchMore({
             cursorBefore: paginationParameters.cursorBefore,
+            fetchMore,
             limit,
             queryString,
-            fetchMore,
           })
         }
+        isNextDisabled={paginationParameters.isNextDisabled}
+        isPrevDisabled={paginationParameters.isPreviousDisabled}
       />
     </Loader>
   )

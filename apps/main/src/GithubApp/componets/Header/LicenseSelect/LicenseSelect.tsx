@@ -32,9 +32,9 @@ export const LicenseSelect: FC<LicenseSelectPropertiesInterface> = ({ ...rest })
   return (
     <Loader data-testid="licenses-select-loading" loading={loading}>
       <Select
+        data-testid="licenses-select"
         label="License type"
         data={preparedLicenses}
-        data-testid="licenses-select"
         defaultValue=" "
         nothingFoundMessage="Nothing found"
         searchable

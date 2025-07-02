@@ -1,6 +1,6 @@
-import path from 'node:path'
-
 import react from '@vitejs/plugin-react-swc'
+
+import path from 'node:path'
 import { defineConfig } from 'vite'
 import dts from 'vite-dts'
 

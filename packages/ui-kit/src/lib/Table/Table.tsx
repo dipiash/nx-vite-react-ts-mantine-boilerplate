@@ -24,7 +24,7 @@ export const Table: FC<TablePropertiesInterface> = ({ columns = {}, data = [], e
         {data.map((item) => (
           <div key={item.key} className={classes.tr}>
             {columnKeys.map((key) => (
-              <div key={key} className={classes.td} data-label={columns[key]}>
+              <div key={key} data-label={columns[key]} className={classes.td}>
                 {item[key] || '---'}
               </div>
             ))}

@@ -1,10 +1,8 @@
-import React from 'react'
-
 import { Preview } from '@storybook/react-vite'
+import React from 'react'
+import '@mantine/core/styles.css'
 
 import { ThemeProvider } from '../src/providers'
-
-import '@mantine/core/styles.css'
 
 const preview: Preview = {
   decorators: [(renderStory) => <ThemeProvider>{renderStory()}</ThemeProvider>],

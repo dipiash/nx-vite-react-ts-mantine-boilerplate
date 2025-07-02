@@ -1,4 +1,14 @@
 /* eslint-disable @typescript-eslint/no-namespace */
+// Alternatively you can use CommonJS syntax:
+// require('./commands')
+import { mount } from 'cypress/react'
+
+// Import commands.js using ES2015 syntax:
+import './commands'
+
+// Alternatively you can use CommonJS syntax:
+// require('./commands')
+
 // ***********************************************************
 // This example support/component.ts is processed and
 // loaded automatically before your test files.
@@ -14,16 +24,6 @@
 // https://on.cypress.io/configuration
 // ***********************************************************
 import React, { ReactNode } from 'react'
-
-// Import commands.js using ES2015 syntax:
-import './commands'
-
-// Alternatively you can use CommonJS syntax:
-// require('./commands')
-
-// Alternatively you can use CommonJS syntax:
-// require('./commands')
-import { mount } from 'cypress/react'
 
 import { ThemeProvider } from '../../src/providers'
 
