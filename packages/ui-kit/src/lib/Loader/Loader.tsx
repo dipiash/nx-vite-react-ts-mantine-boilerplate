@@ -1,5 +1,6 @@
-import { LoadingOverlay, VisuallyHidden } from '@mantine/core'
 import React, { FC, PropsWithChildren } from 'react'
+
+import { LoadingOverlay, VisuallyHidden } from '@mantine/core'
 
 import { LoaderPropertiesInterface } from './Loader.types'
 

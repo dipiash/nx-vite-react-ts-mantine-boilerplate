@@ -1,5 +1,6 @@
-import { Group } from '@mantine/core'
 import React, { FC } from 'react'
+
+import { Group } from '@mantine/core'
 
 import { Button } from '../Button'
 import { PaginationPropertiesInterface } from './Pagination.types'

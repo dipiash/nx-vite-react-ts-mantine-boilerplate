@@ -13,13 +13,6 @@ declare global {
   interface ImportMeta {
     readonly env: ImportMetaEnv
   }
-
-  namespace Cypress {
-    interface Chainable {
-      login(email: string, password: string): void
-      matchImageSnapshot(snapshotName?: string): void
-    }
-  }
 }
 
 export {}

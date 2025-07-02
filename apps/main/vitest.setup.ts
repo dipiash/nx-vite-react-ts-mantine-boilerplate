@@ -20,11 +20,11 @@ globalThis.matchMedia =
   globalThis.matchMedia =
     globalThis.matchMedia ||
     vitest.fn().mockImplementation((query) => ({
+      addEventListener: vitest.fn(),
+      addListener: vitest.fn(),
       dispatchEvent: vitest.fn(),
       matches: false,
       media: query,
-      addEventListener: vitest.fn(),
-      addListener: vitest.fn(),
       onchange: null,
       removeEventListener: vitest.fn(),
       removeListener: vitest.fn(),
@@ -35,11 +35,11 @@ globalThis.matchMedia =
   globalThis.matchMedia =
     globalThis.matchMedia ||
     vitest.fn().mockImplementation((query) => ({
+      addEventListener: vitest.fn(),
+      addListener: vitest.fn(),
       dispatchEvent: vitest.fn(),
       matches: false,
       media: query,
-      addEventListener: vitest.fn(),
-      addListener: vitest.fn(),
       onchange: null,
       removeEventListener: vitest.fn(),
       removeListener: vitest.fn(),

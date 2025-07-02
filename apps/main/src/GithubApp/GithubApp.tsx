@@ -1,7 +1,8 @@
-import { useForm } from '@mantine/form'
-import { useDebouncedValue } from '@mantine/hooks'
 import { Button } from '@nx-vite-react-ts-mantine-boilerplate/ui-kit'
 import React from 'react'
+
+import { useForm } from '@mantine/form'
+import { useDebouncedValue } from '@mantine/hooks'
 
 import { Header } from './componets/Header'
 import { RepositoriesTable } from './componets/RepositoriesTable'
@@ -10,7 +11,7 @@ import { ApolloProviderWrapper } from './providers/ApolloProviderWrapper'
 import { getDateCondition, getLanguageCondition, getLicenseCondition, getRepositoryNameCondition, getSortCondition } from './utils'
 
 export const GithubApp = () => {
-  const { isTokenExist, handleUpdateToken } = useInputTokenForGraphql()
+  const { handleUpdateToken, isTokenExist } = useInputTokenForGraphql()
 
   const form = useForm({
     initialValues: {

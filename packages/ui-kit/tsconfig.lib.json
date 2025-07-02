@@ -2,12 +2,10 @@
   "extends": "./tsconfig.json",
   "compilerOptions": {
     "outDir": "../../dist/out-tsc",
-    "types": ["cypress", "jest", "node"]
+    "types": ["jest", "node"]
   },
   "files": ["../../node_modules/@nx/react/typings/cssmodule.d.ts", "../../node_modules/@nx/react/typings/image.d.ts"],
   "exclude": [
-    "**/*.cy.ts",
-    "**/*.cy.tsx",
     "**/*.spec.ts",
     "**/*.test.ts",
     "**/*.spec.tsx",
@@ -19,8 +17,7 @@
     "**/*.stories.ts",
     "**/*.stories.js",
     "**/*.stories.jsx",
-    "**/*.stories.tsx",
-    "cypress/**/*"
+    "**/*.stories.tsx"
   ],
   "include": ["src/**/*", "**/*.js", "**/*.jsx", "**/*.ts", "**/*.tsx", "../../global.d.ts"]
 }

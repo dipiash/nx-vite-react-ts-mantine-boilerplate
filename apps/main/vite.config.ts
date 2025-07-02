@@ -1,6 +1,6 @@
-import path from 'node:path'
-
 import react from '@vitejs/plugin-react-swc'
+
+import path from 'node:path'
 import analyze from 'rollup-plugin-analyzer'
 import visualizer from 'rollup-plugin-visualizer'
 import { defineConfig } from 'vite'
@@ -32,8 +32,8 @@ export default defineConfig({
         ? ([
             analyze(),
             visualizer({
-              brotliSize: true,
               filename: path.join(__dirname, 'dist/stats/stats.html'),
+              brotliSize: true,
               gzipSize: true,
               open: isDevelopment,
               projectRoot: path.join(__dirname),

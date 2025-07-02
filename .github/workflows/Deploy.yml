@@ -25,7 +25,10 @@ jobs:
           cache: 'npm'
           cache-dependency-path: '**/package-lock.json'
 
-      - run: npm ci --prefer-offline --ignore-scripts
+      - name: Preinstall *-linux-x64-gnu
+        run: npm add @swc/core-linux-x64-gnu @esbuild/linux-x64 --save-optional --verbose --foreground-scripts
+
+      - run: npm ci --prefer-offline --verbose --foreground-scripts
 
       - name: Install and Build 🔧
         run: npx nx build main
