@@ -1,5 +1,5 @@
 export default {
-  addons: ['@chromatic-com/storybook', '@storybook/addon-essentials'],
+  addons: ['@chromatic-com/storybook', '@storybook/addon-docs'],
   core: {
     disableTelemetry: true,
   },

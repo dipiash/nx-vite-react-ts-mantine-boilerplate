@@ -44,6 +44,12 @@ export default defineConfig({
     sourcemap: isSourceMapsEnabled,
   },
   plugins: [tsconfigPaths(), react()],
+  resolve: {
+    alias: {
+      // /esm/icons/index.mjs only exports the icons statically, so no separate chunks are created
+      '@tabler/icons-react': '@tabler/icons-react/dist/esm/icons/index.mjs',
+    },
+  },
   server: {
     host: false,
     port: 3000,

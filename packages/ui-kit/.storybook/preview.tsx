@@ -1,6 +1,6 @@
 import React from 'react'
 
-import { Preview } from '@storybook/react'
+import { Preview } from '@storybook/react-vite'
 
 import { ThemeProvider } from '../src/providers'
 

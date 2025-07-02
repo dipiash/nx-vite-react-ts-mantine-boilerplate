@@ -2,7 +2,6 @@
   display: flex;
   box-sizing: border-box;
   margin-bottom: 10px;
-  border-bottom: 1px solid #eee;
 }
 
 .headerItem {
