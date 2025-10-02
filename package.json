@@ -28,7 +28,7 @@
   },
   "private": true,
   "engines": {
-    "node": "22.x"
+    "node": "24.x"
   },
   "lint-staged": {
     "**/*.{js,jsx,ts,tsx}": [
@@ -124,9 +124,9 @@
   },
   "dependencies": {
     "@eslint/js": "9.33.0",
-    "@mantine/core": "8.2.4",
-    "@mantine/form": "8.2.4",
-    "@mantine/hooks": "8.2.4",
+    "@mantine/core": "8.3.2",
+    "@mantine/form": "8.3.2",
+    "@mantine/hooks": "8.3.2",
     "@tabler/icons-react": "3.34.1",
     "clsx": "2.1.1",
     "globals": "16.3.0",
