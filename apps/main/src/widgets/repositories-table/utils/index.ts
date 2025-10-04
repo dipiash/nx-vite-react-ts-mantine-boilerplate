@@ -1,4 +1,4 @@
-import { PageInfo } from '@nx-vite-react-ts-mantine-boilerplate/graphql'
+import { type PageInfo } from '@nx-vite-react-ts-mantine-boilerplate/graphql'
 
 export const enhancedFetchMore = ({
   cursorAfter,

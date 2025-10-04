@@ -3,7 +3,7 @@ import React from 'react'
 import { Group } from '@mantine/core'
 
 import { Button } from '../Button'
-import { PaginationPropertiesInterface } from './Pagination.types'
+import { type PaginationPropertiesInterface } from './Pagination.types'
 
 export const Pagination = ({
   isNextDisabled = false,

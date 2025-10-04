@@ -1,8 +1,8 @@
-import React, { PropsWithChildren } from 'react'
+import React, { type PropsWithChildren } from 'react'
 
 import { Box, LoadingOverlay, VisuallyHidden } from '@mantine/core'
 
-import { LoaderPropertiesInterface } from './Loader.types'
+import { type LoaderPropertiesInterface } from './Loader.types'
 
 export const Loader = ({ children, loading, ...rest }: PropsWithChildren<LoaderPropertiesInterface>) => (
   <Box pos="relative" {...rest}>
