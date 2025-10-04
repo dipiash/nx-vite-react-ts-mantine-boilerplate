@@ -1,15 +1,13 @@
 import React, { PropsWithChildren } from 'react'
 
-import { LoadingOverlay, VisuallyHidden } from '@mantine/core'
+import { Box, LoadingOverlay, VisuallyHidden } from '@mantine/core'
 
 import { LoaderPropertiesInterface } from './Loader.types'
 
-import classes from './Loader.module.css'
-
 export const Loader = ({ children, loading, ...rest }: PropsWithChildren<LoaderPropertiesInterface>) => (
-  <div className={classes.root} {...rest}>
-    <LoadingOverlay className={classes.overlay} visible={loading} />
+  <Box pos="relative" {...rest}>
+    <LoadingOverlay visible={loading} />
     <VisuallyHidden>Loading...</VisuallyHidden>
     {children}
-  </div>
+  </Box>
 )
