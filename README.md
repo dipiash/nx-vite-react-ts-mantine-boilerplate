@@ -1,9 +1,10 @@
 ![CI](https://github.com/dipiash/nx-vite-react-ts-mantine-boilerplate/actions/workflows/CheckPullRequest.yml/badge.svg?branch=main)
-[![Hits](https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fgithub.com%2Fdipiash%2Fnx-vite-react-ts-mantine-boilerplate&count_bg=%2379C83D&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=hits&edge_flat=false)](https://hits.seeyoufarm.com)
 
 # NX monorepo boilerplate with React + Vite + TypeScript + Mantine
 
 ## Getting Started
+
+Review the [Repository Guidelines](AGENTS.md) for project structure, commands and contribution expectations before you begin. For workflow details and disclosure steps, see the [Contributing Guide](CONTRIBUTING.md) and [Security Policy](SECURITY.md).
 
 ### Prerequisites
 
