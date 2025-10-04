@@ -1,4 +1,4 @@
-import { UseFormReturnType } from '@mantine/form'
+import { type UseFormReturnType } from '@mantine/form'
 
 export interface HeaderPropertiesInterface {
   form: UseFormReturnType<{

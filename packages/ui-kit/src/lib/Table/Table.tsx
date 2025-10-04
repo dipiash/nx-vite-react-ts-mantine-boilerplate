@@ -2,7 +2,7 @@ import React, { useMemo } from 'react'
 
 import { Box } from '@mantine/core'
 
-import { TablePropertiesInterface } from './Table.types'
+import { type TablePropertiesInterface } from './Table.types'
 
 import classes from './Table.module.css'
 

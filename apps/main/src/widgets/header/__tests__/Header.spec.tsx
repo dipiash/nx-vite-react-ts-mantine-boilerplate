@@ -1,4 +1,4 @@
-import { MockedProvider, MockedResponse } from '@apollo/react-testing'
+import { MockedProvider, type MockedResponse } from '@apollo/react-testing'
 import { ListLicensesDocument } from '@nx-vite-react-ts-mantine-boilerplate/graphql'
 import { ThemeProvider } from '@nx-vite-react-ts-mantine-boilerplate/ui-kit'
 import { act, fireEvent, render, renderHook, screen } from '@testing-library/react'

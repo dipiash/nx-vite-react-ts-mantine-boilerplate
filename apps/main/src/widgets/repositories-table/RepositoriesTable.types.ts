@@ -1,4 +1,4 @@
-import { Scalars } from '@nx-vite-react-ts-mantine-boilerplate/graphql'
+import { type Scalars } from '@nx-vite-react-ts-mantine-boilerplate/graphql'
 
 export interface RepositoriesTablePropertiesInterface {
   limit: number

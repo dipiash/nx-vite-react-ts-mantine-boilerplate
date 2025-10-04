@@ -4,7 +4,7 @@ import cx from 'clsx'
 
 import { LicenseSelect } from '../../features/LicenseSelect'
 import { SearchInput } from '../../features/SearchInput'
-import { HeaderPropertiesInterface } from './Header.types'
+import { type HeaderPropertiesInterface } from './Header.types'
 
 import classes from './Header.module.css'
 

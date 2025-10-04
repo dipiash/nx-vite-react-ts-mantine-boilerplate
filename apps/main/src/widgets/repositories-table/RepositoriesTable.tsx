@@ -1,8 +1,8 @@
-import { SearchResultItemEdge, useListRepositoriesQuery } from '@nx-vite-react-ts-mantine-boilerplate/graphql'
+import { type SearchResultItemEdge, useListRepositoriesQuery } from '@nx-vite-react-ts-mantine-boilerplate/graphql'
 import { ErrorBlock, Loader, Pagination, Space, Table } from '@nx-vite-react-ts-mantine-boilerplate/ui-kit'
 import React, { useMemo } from 'react'
 
-import { RepositoriesTablePropertiesInterface, RepositoryDataInterface } from './RepositoriesTable.types'
+import { type RepositoriesTablePropertiesInterface, type RepositoryDataInterface } from './RepositoriesTable.types'
 import { enhancedFetchMore, getPaginationParameters } from './utils'
 
 export const RepositoriesTable = ({ limit = 10, queryString }: RepositoriesTablePropertiesInterface) => {
