@@ -1,10 +1,10 @@
-import React, { FC, useMemo } from 'react'
+import React, { useMemo } from 'react'
 
 import { TablePropertiesInterface } from './Table.types'
 
 import classes from './Table.module.css'
 
-export const Table: FC<TablePropertiesInterface> = ({ columns = {}, data = [], error = false }) => {
+export const Table = ({ columns = {}, data = [], error = false }: TablePropertiesInterface) => {
   const columnKeys = useMemo(() => Object.keys(columns), [columns])
 
   return (

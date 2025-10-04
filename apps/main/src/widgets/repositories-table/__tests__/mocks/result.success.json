@@ -1,0 +1,54 @@
+{
+  "search": {
+    "edges": [
+      {
+        "cursor": "Y3Vyc29yOjE=",
+        "node": {
+          "createdAt": "2022-05-03T12:25:10Z",
+          "id": "R_kgDOHRlXnw",
+          "licenseInfo": null,
+          "name": "DeathNote",
+          "stargazers": { "totalCount": 52, "__typename": "StargazerConnection" },
+          "updatedAt": "2022-05-03T17:21:29Z",
+          "__typename": "Repository"
+        },
+        "__typename": "SearchResultItemEdge"
+      },
+      {
+        "cursor": "Y3Vyc29yOjI=",
+        "node": {
+          "createdAt": "2022-05-01T23:03:39Z",
+          "id": "R_kgDOHREfig",
+          "licenseInfo": null,
+          "name": "nextjs-lit-token-gating",
+          "stargazers": { "totalCount": 13, "__typename": "StargazerConnection" },
+          "updatedAt": "2022-05-03T00:25:42Z",
+          "__typename": "Repository"
+        },
+        "__typename": "SearchResultItemEdge"
+      },
+      {
+        "cursor": "Y3Vyc29yOjM=",
+        "node": {
+          "createdAt": "2022-05-02T15:36:14Z",
+          "id": "R_kgDOHRS9Aw",
+          "licenseInfo": null,
+          "name": "codetv",
+          "stargazers": { "totalCount": 8, "__typename": "StargazerConnection" },
+          "updatedAt": "2022-05-03T13:09:54Z",
+          "__typename": "Repository"
+        },
+        "__typename": "SearchResultItemEdge"
+      }
+    ],
+    "pageInfo": {
+      "endCursor": "Y3Vyc29yOjM=",
+      "hasNextPage": false,
+      "hasPreviousPage": false,
+      "startCursor": "Y3Vyc29yOjE=",
+      "__typename": "PageInfo"
+    },
+    "repositoryCount": 3,
+    "__typename": "SearchResultItemConnection"
+  }
+}
