@@ -1,5 +1,7 @@
 import React, { useMemo } from 'react'
 
+import { Box } from '@mantine/core'
+
 import { TablePropertiesInterface } from './Table.types'
 
 import classes from './Table.module.css'
@@ -8,29 +10,33 @@ export const Table = ({ columns = {}, data = [], error = false }: TablePropertie
   const columnKeys = useMemo(() => Object.keys(columns), [columns])
 
   return (
-    <div className={classes.root}>
-      <div className={classes.thead}>
-        <div className={classes.tr}>
+    <Box className={classes.root} role="table">
+      <Box className={classes.thead} role="rowgroup">
+        <Box className={classes.tr} role="row">
           {columnKeys.map((key) => (
-            <div key={key} className={classes.th}>
+            <Box key={key} className={classes.th} role="columnheader">
               {columns[key]}
-            </div>
+            </Box>
           ))}
-        </div>
-      </div>
-      <div className={classes.tbody}>
+        </Box>
+      </Box>
+      <Box className={classes.tbody} role="rowgroup">
         {error ?? undefined}
-        {!error && (!data || data.length === 0) && <div className={classes.empty}>No data</div>}
+        {!error && (!data || data.length === 0) && (
+          <Box aria-live="polite" className={classes.empty} role="row">
+            <Box role="cell">No data</Box>
+          </Box>
+        )}
         {data.map((item) => (
-          <div key={item.key} className={classes.tr}>
+          <Box key={item.key} className={classes.tr} role="row">
             {columnKeys.map((key) => (
-              <div key={key} data-label={columns[key]} className={classes.td}>
+              <Box key={key} data-label={columns[key]} className={classes.td} role="cell">
                 {item[key] || '---'}
-              </div>
+              </Box>
             ))}
-          </div>
+          </Box>
         ))}
-      </div>
-    </div>
+      </Box>
+    </Box>
   )
 }
