@@ -15,7 +15,7 @@
         "cwd": "./packages/graphql",
         "commands": [
           {
-            "command": "DOTENV_CONFIG_PATH=\"./.env.local\" graphql-codegen --require dotenv/config --config ./codegen.yml"
+            "command": "graphql-codegen --config ./codegen.ts"
           }
         ]
       }

@@ -8,5 +8,6 @@ build
 coverage
 node_modules
 .vercel
+packages/graphql/src/lib/generated
 
 /.nx/cache

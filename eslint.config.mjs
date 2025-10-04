@@ -6,7 +6,7 @@ import globals from 'globals'
 
 const config = [
   {
-    ignores: ['**/dist', '.husky', '.idea', '**/coverage', 'generated'],
+    ignores: ['**/dist', '.husky', '.idea', '**/coverage', '**/generated'],
   },
   { plugins: { '@nx': nxEslintPlugin } },
   {
