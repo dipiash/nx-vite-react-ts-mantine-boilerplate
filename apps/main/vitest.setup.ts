@@ -1,49 +1,31 @@
-import { vitest } from 'vitest'
+import { vi } from 'vitest'
 import '@testing-library/jest-dom'
 
 // eslint-disable-next-line @typescript-eslint/ban-ts-comment
 // @ts-ignore
 globalThis.IS_REACT_ACT_ENVIRONMENT = true
 
-globalThis.ResizeObserver =
-  globalThis.ResizeObserver =
-  globalThis.ResizeObserver =
-    globalThis.ResizeObserver ||
-    vitest.fn().mockImplementation(() => ({
-      disconnect: vitest.fn(),
-      observe: vitest.fn(),
-      unobserve: vitest.fn(),
-    }))
+class ResizeObserverMock implements ResizeObserver {
+  disconnect = vi.fn()
+  observe = vi.fn()
+  unobserve = vi.fn()
+  constructor() {}
+}
+
+globalThis.ResizeObserver = globalThis.ResizeObserver || ResizeObserverMock
 
 globalThis.matchMedia =
-  globalThis.matchMedia =
-  globalThis.matchMedia =
-    globalThis.matchMedia ||
-    vitest.fn().mockImplementation((query) => ({
-      addEventListener: vitest.fn(),
-      addListener: vitest.fn(),
-      dispatchEvent: vitest.fn(),
-      matches: false,
-      media: query,
-      onchange: null,
-      removeEventListener: vitest.fn(),
-      removeListener: vitest.fn(),
-    }))
-
-globalThis.matchMedia =
-  globalThis.matchMedia =
-  globalThis.matchMedia =
-    globalThis.matchMedia ||
-    vitest.fn().mockImplementation((query) => ({
-      addEventListener: vitest.fn(),
-      addListener: vitest.fn(),
-      dispatchEvent: vitest.fn(),
-      matches: false,
-      media: query,
-      onchange: null,
-      removeEventListener: vitest.fn(),
-      removeListener: vitest.fn(),
-    }))
+  globalThis.matchMedia ||
+  ((query: string) => ({
+    addEventListener: vi.fn(),
+    addListener: vi.fn(),
+    dispatchEvent: vi.fn(),
+    matches: false,
+    media: query,
+    onchange: null,
+    removeEventListener: vi.fn(),
+    removeListener: vi.fn(),
+  }))
 
 const { getComputedStyle } = globalThis
 

@@ -1,4 +1,5 @@
-import { MockedProvider, type MockedResponse } from '@apollo/react-testing'
+import { MockLink } from '@apollo/client/testing'
+import { MockedProvider } from '@apollo/client/testing/react'
 import { ListLicensesDocument } from '@nx-vite-react-ts-mantine-boilerplate/graphql'
 import { ThemeProvider } from '@nx-vite-react-ts-mantine-boilerplate/ui-kit'
 import { act, fireEvent, render, renderHook, screen } from '@testing-library/react'
@@ -11,9 +12,11 @@ import { describe, expect, it } from 'vitest'
 import { Header } from '../index'
 import licensesListMockDataSuccess from './mocks/result.success.json'
 
+type GraphqlMock = MockLink.MockedResponse
+
 const mocks: {
-  error: readonly MockedResponse[]
-  success: readonly MockedResponse[]
+  error: readonly GraphqlMock[]
+  success: readonly GraphqlMock[]
 } = {
   error: [
     {

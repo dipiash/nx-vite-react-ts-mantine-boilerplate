@@ -11,3 +11,5 @@ node_modules
 packages/graphql/src/lib/generated
 
 /.nx/cache
+
+/.nx/workspace-data

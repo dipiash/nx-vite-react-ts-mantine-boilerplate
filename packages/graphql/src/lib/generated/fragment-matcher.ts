@@ -13,6 +13,9 @@
       "Organization",
       "User"
     ],
+    "Agentic": [
+      "User"
+    ],
     "Assignable": [
       "Issue",
       "PullRequest"
@@ -150,6 +153,10 @@
       "CreatedRepositoryContribution",
       "RestrictedContribution"
     ],
+    "CustomPropertySource": [
+      "Enterprise",
+      "Organization"
+    ],
     "Deletable": [
       "CommitComment",
       "Discussion",
@@ -231,6 +238,7 @@
     ],
     "IssueTimelineItems": [
       "AddedToProjectEvent",
+      "AddedToProjectV2Event",
       "AssignedEvent",
       "BlockedByAddedEvent",
       "BlockedByRemovedEvent",
@@ -239,6 +247,7 @@
       "ClosedEvent",
       "CommentDeletedEvent",
       "ConnectedEvent",
+      "ConvertedFromDraftEvent",
       "ConvertedNoteToIssueEvent",
       "ConvertedToDiscussionEvent",
       "CrossReferencedEvent",
@@ -257,8 +266,10 @@
       "ParentIssueAddedEvent",
       "ParentIssueRemovedEvent",
       "PinnedEvent",
+      "ProjectV2ItemStatusChangedEvent",
       "ReferencedEvent",
       "RemovedFromProjectEvent",
+      "RemovedFromProjectV2Event",
       "RenamedTitleEvent",
       "ReopenedEvent",
       "SubIssueAddedEvent",
@@ -305,6 +316,7 @@
     "Node": [
       "AddedToMergeQueueEvent",
       "AddedToProjectEvent",
+      "AddedToProjectV2Event",
       "App",
       "AssignedEvent",
       "AutoMergeDisabledEvent",
@@ -337,6 +349,7 @@
       "Comparison",
       "ConnectedEvent",
       "ConvertToDraftEvent",
+      "ConvertedFromDraftEvent",
       "ConvertedNoteToIssueEvent",
       "ConvertedToDiscussionEvent",
       "CrossReferencedEvent",
@@ -458,6 +471,7 @@
       "ProjectV2ItemFieldNumberValue",
       "ProjectV2ItemFieldSingleSelectValue",
       "ProjectV2ItemFieldTextValue",
+      "ProjectV2ItemStatusChangedEvent",
       "ProjectV2IterationField",
       "ProjectV2SingleSelectField",
       "ProjectV2StatusUpdate",
@@ -482,6 +496,7 @@
       "ReleaseAsset",
       "RemovedFromMergeQueueEvent",
       "RemovedFromProjectEvent",
+      "RemovedFromProjectV2Event",
       "RenamedTitleEvent",
       "ReopenedEvent",
       "RepoAccessAuditEntry",
@@ -504,6 +519,7 @@
       "RepoRemoveMemberAuditEntry",
       "RepoRemoveTopicAuditEntry",
       "Repository",
+      "RepositoryCustomProperty",
       "RepositoryInvitation",
       "RepositoryMigration",
       "RepositoryRule",
@@ -734,6 +750,12 @@
       "Team",
       "User"
     ],
+    "ProjectV2Event": [
+      "AddedToProjectV2Event",
+      "ConvertedFromDraftEvent",
+      "ProjectV2ItemStatusChangedEvent",
+      "RemovedFromProjectV2Event"
+    ],
     "ProjectV2FieldCommon": [
       "ProjectV2Field",
       "ProjectV2IterationField",
@@ -818,6 +840,7 @@
     "PullRequestTimelineItems": [
       "AddedToMergeQueueEvent",
       "AddedToProjectEvent",
+      "AddedToProjectV2Event",
       "AssignedEvent",
       "AutoMergeDisabledEvent",
       "AutoMergeEnabledEvent",
@@ -836,6 +859,7 @@
       "CommentDeletedEvent",
       "ConnectedEvent",
       "ConvertToDraftEvent",
+      "ConvertedFromDraftEvent",
       "ConvertedNoteToIssueEvent",
       "ConvertedToDiscussionEvent",
       "CrossReferencedEvent",
@@ -860,6 +884,7 @@
       "ParentIssueAddedEvent",
       "ParentIssueRemovedEvent",
       "PinnedEvent",
+      "ProjectV2ItemStatusChangedEvent",
       "PullRequestCommit",
       "PullRequestCommitCommentThread",
       "PullRequestReview",
@@ -869,6 +894,7 @@
       "ReferencedEvent",
       "RemovedFromMergeQueueEvent",
       "RemovedFromProjectEvent",
+      "RemovedFromProjectV2Event",
       "RenamedTitleEvent",
       "ReopenedEvent",
       "ReviewDismissedEvent",
@@ -1136,6 +1162,9 @@
     "Votable": [
       "Discussion",
       "DiscussionComment"
+    ],
+    "_Entity": [
+      "Issue"
     ]
   }
 };

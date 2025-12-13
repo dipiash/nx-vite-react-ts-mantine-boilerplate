@@ -1,7 +1,7 @@
-import { MockedProvider } from '@apollo/client/testing'
+import { MockedProvider } from '@apollo/client/testing/react'
 import { ListRepositoriesDocument } from '@nx-vite-react-ts-mantine-boilerplate/graphql'
 import { ThemeProvider } from '@nx-vite-react-ts-mantine-boilerplate/ui-kit'
-import { act, render, screen } from '@testing-library/react'
+import { render, screen } from '@testing-library/react'
 import React from 'react'
 
 import { describe, expect, it } from 'vitest'
@@ -16,7 +16,7 @@ const queryString = [
   getLanguageCondition('JavaScript'),
   getDateCondition(),
   getLicenseCondition(),
-  getRepositoryNameCondition,
+  getRepositoryNameCondition(),
 ].join(' ')
 
 const limitItems = 10
@@ -41,6 +41,10 @@ const mocks = {
       error: new Error('An error occurred'),
       request: {
         query: ListRepositoriesDocument,
+        variables: {
+          first: limitItems,
+          queryString,
+        },
       },
     },
   ],
@@ -80,8 +84,7 @@ describe('RepositoriesTable', () => {
         </MockedProvider>
       </ThemeProvider>,
     )
-    await act(() => new Promise((resolve) => setTimeout(resolve, 0)))
-    expect(screen.getByText('No data')).toBeTruthy()
+    expect(await screen.findByText('No data')).toBeTruthy()
   })
 
   it('Render with success response', async () => {
@@ -92,8 +95,7 @@ describe('RepositoriesTable', () => {
         </MockedProvider>
       </ThemeProvider>,
     )
-    await act(() => new Promise((resolve) => setTimeout(resolve, 0)))
-    expect(screen.getByText('nextjs-lit-token-gating')).toBeTruthy()
+    expect(await screen.findByText('nextjs-lit-token-gating')).toBeTruthy()
   })
 
   it('Render error', async () => {
@@ -104,7 +106,6 @@ describe('RepositoriesTable', () => {
         </MockedProvider>
       </ThemeProvider>,
     )
-    await act(() => new Promise((resolve) => setTimeout(resolve, 0)))
-    expect(screen.getByText('Repositories list loading error.')).toBeTruthy()
+    expect(await screen.findByText('Repositories list loading error.')).toBeTruthy()
   })
 })

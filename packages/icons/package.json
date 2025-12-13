@@ -1,3 +1,4 @@
 {
-  "name": "@nx-vite-react-ts-mantine-boilerplate/icons"
+  "name": "@nx-vite-react-ts-mantine-boilerplate/icons",
+  "type": "module"
 }

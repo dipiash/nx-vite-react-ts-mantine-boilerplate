@@ -1,3 +1,4 @@
 {
-  "name": "@nx-vite-react-ts-mantine-boilerplate/graphql"
+  "name": "@nx-vite-react-ts-mantine-boilerplate/graphql",
+  "type": "module"
 }

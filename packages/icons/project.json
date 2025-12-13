@@ -9,7 +9,7 @@
       "executor": "nx:run-commands",
       "options": {
         "cwd": "./packages/icons",
-        "command": "npx @svgr/cli --typescript -d ./src/components -- ./src/icons"
+        "command": "svgr --out-dir ./src/components ./src/icons"
       }
     },
     "tsc": {
@@ -25,6 +25,10 @@
         "cwd": "./packages/icons",
         "command": "rm -rf ./src/components && nx run icons:svgr"
       }
+    },
+    "lint": {
+      "executor": "@nx/eslint:lint",
+      "outputs": ["{options.outputFile}"]
     }
   }
 }

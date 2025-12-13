@@ -61,10 +61,10 @@ npm run init-project
 
 ### Features
 
-- [Nx 21](https://nx.dev)
+- [Nx 22](https://nx.dev)
 - [React 19](https://reactjs.org)
 - [Mantine 8](https://mantine.dev/)
-- [Storybook 9](https://storybook.js.org/)
+- [Storybook 10](https://storybook.js.org/)
 - [TypeScript](https://www.typescriptlang.org/)
 - [Vite 7](https://vitejs.dev/)
 - [Vitest](https://vitest.dev/)

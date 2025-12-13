@@ -1,9 +1,6 @@
 import baseConfig from '../../eslint.config.mjs'
 
 const config = [
-  {
-    ignores: ['**/dist'],
-  },
   ...baseConfig,
   {
     files: ['**/*.ts', '**/*.tsx'],
@@ -16,7 +13,7 @@ const config = [
     rules: {},
   },
   {
-    ignores: ['**/*/generated.tsx', '**/*/schema.graphql'],
+    ignores: ['**/dist', '**/graphql/*.generated.ts', '**/generated/*.ts', '**/*/schema.graphql'],
   },
 ]
 

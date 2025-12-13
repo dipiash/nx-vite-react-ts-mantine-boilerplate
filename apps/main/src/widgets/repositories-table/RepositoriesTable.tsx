@@ -1,4 +1,5 @@
-import { type SearchResultItemEdge, useListRepositoriesQuery } from '@nx-vite-react-ts-mantine-boilerplate/graphql'
+import { useQuery } from '@apollo/client/react'
+import { ListRepositoriesDocument, type SearchResultItemEdge } from '@nx-vite-react-ts-mantine-boilerplate/graphql'
 import { ErrorBlock, Loader, Pagination, Space, Table } from '@nx-vite-react-ts-mantine-boilerplate/ui-kit'
 import React, { useMemo } from 'react'
 
@@ -6,7 +7,7 @@ import { type RepositoriesTablePropertiesInterface, type RepositoryDataInterface
 import { enhancedFetchMore, getPaginationParameters } from './utils'
 
 export const RepositoriesTable = ({ limit = 10, queryString }: RepositoriesTablePropertiesInterface) => {
-  const { data, error, fetchMore, loading } = useListRepositoriesQuery({
+  const { data, error, fetchMore, loading } = useQuery(ListRepositoriesDocument, {
     variables: {
       first: limit,
       queryString: queryString,
