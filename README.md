@@ -66,9 +66,8 @@ npm run init-project
 - [Mantine 8](https://mantine.dev/)
 - [Storybook 10](https://storybook.js.org/)
 - [TypeScript](https://www.typescriptlang.org/)
-- [Vite 7](https://vitejs.dev/)
+- [Vite 8](https://vitejs.dev/)
 - [Vitest](https://vitest.dev/)
-- [React Testing Library](https://testing-library.com/docs/react-testing-library/intro)
 - [ESLint](https://eslint.org/)
 - HMR (Hot Module Replacement)
 
