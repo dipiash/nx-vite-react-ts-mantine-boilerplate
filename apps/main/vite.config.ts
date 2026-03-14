@@ -1,10 +1,8 @@
-import react from '@vitejs/plugin-react-swc'
-
+import react from '@vitejs/plugin-react'
 import path from 'node:path'
 import analyze from 'rollup-plugin-analyzer'
 import visualizer from 'rollup-plugin-visualizer'
 import { defineConfig } from 'vite'
-import tsconfigPaths from 'vite-tsconfig-paths'
 
 const isDevelopment = Boolean(process.env.DEV ?? process.env.NODE_ENV === 'development')
 const isAnalyzeEnabled = Boolean(process.env.ANALYZE)
@@ -32,8 +30,8 @@ export default defineConfig({
         ? ([
             analyze(),
             visualizer({
-              filename: path.join(__dirname, 'dist/stats/stats.html'),
               brotliSize: true,
+              filename: path.join(__dirname, 'dist/stats/stats.html'),
               gzipSize: true,
               open: isDevelopment,
               projectRoot: path.join(__dirname),
@@ -43,12 +41,13 @@ export default defineConfig({
     },
     sourcemap: isSourceMapsEnabled,
   },
-  plugins: [tsconfigPaths(), react()],
+  plugins: [react()],
   resolve: {
     alias: {
       // /esm/icons/index.mjs only exports the icons statically, so no separate chunks are created
       '@tabler/icons-react': '@tabler/icons-react/dist/esm/icons/index.mjs',
     },
+    tsconfigPaths: true,
   },
   server: {
     host: false,

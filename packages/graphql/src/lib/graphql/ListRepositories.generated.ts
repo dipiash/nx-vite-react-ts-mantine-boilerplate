@@ -1,25 +1,170 @@
-import type * as Types from '../generated/graphql';
+import type { TypedDocumentNode as DocumentNode } from '@graphql-typed-document-node/core'
 
-import type { TypedDocumentNode as DocumentNode } from '@graphql-typed-document-node/core';
-export type ListRepositoriesQueryVariables = Types.Exact<{
-  cursorAfter?: Types.InputMaybe<Types.Scalars['String']['input']>;
-  cursorBefore?: Types.InputMaybe<Types.Scalars['String']['input']>;
-  first?: Types.InputMaybe<Types.Scalars['Int']['input']>;
-  last?: Types.InputMaybe<Types.Scalars['Int']['input']>;
-  queryString: Types.Scalars['String']['input'];
-}>;
+import type * as Types from '../generated/graphql'
 
-
-export type ListRepositoriesQuery = { search: { __typename: 'SearchResultItemConnection', repositoryCount: number, edges: Array<{ __typename: 'SearchResultItemEdge', cursor: string, node:
+export type ListRepositoriesQuery = {
+  search: {
+    __typename: 'SearchResultItemConnection'
+    edges: Array<null | {
+      __typename: 'SearchResultItemEdge'
+      cursor: string
+      node:
+        | null
         | { __typename: 'App' }
         | { __typename: 'Discussion' }
         | { __typename: 'Issue' }
         | { __typename: 'MarketplaceListing' }
         | { __typename: 'Organization' }
         | { __typename: 'PullRequest' }
-        | { __typename: 'Repository', createdAt: unknown, id: string, name: string, updatedAt: unknown, licenseInfo: { __typename: 'License', id: string, name: string } | null, stargazers: { __typename: 'StargazerConnection', totalCount: number } }
         | { __typename: 'User' }
-       | null } | null> | null, pageInfo: { __typename: 'PageInfo', endCursor: string | null, hasNextPage: boolean, hasPreviousPage: boolean, startCursor: string | null } } };
+        | {
+            id: string
+            name: string
+            __typename: 'Repository'
+            licenseInfo: null | { id: string; name: string; __typename: 'License' }
+            stargazers: { __typename: 'StargazerConnection'; totalCount: number }
+            createdAt: unknown
+            updatedAt: unknown
+          }
+    }> | null
+    pageInfo: { __typename: 'PageInfo'; endCursor: null | string; hasNextPage: boolean; hasPreviousPage: boolean; startCursor: null | string }
+    repositoryCount: number
+  }
+}
 
+export type ListRepositoriesQueryVariables = Types.Exact<{
+  cursorAfter?: Types.InputMaybe<Types.Scalars['String']['input']>
+  cursorBefore?: Types.InputMaybe<Types.Scalars['String']['input']>
+  first?: Types.InputMaybe<Types.Scalars['Int']['input']>
+  last?: Types.InputMaybe<Types.Scalars['Int']['input']>
+  queryString: Types.Scalars['String']['input']
+}>
 
-export const ListRepositoriesDocument = {"kind":"Document","definitions":[{"kind":"OperationDefinition","operation":"query","name":{"kind":"Name","value":"ListRepositories"},"variableDefinitions":[{"kind":"VariableDefinition","variable":{"kind":"Variable","name":{"kind":"Name","value":"cursorAfter"}},"type":{"kind":"NamedType","name":{"kind":"Name","value":"String"}}},{"kind":"VariableDefinition","variable":{"kind":"Variable","name":{"kind":"Name","value":"cursorBefore"}},"type":{"kind":"NamedType","name":{"kind":"Name","value":"String"}}},{"kind":"VariableDefinition","variable":{"kind":"Variable","name":{"kind":"Name","value":"first"}},"type":{"kind":"NamedType","name":{"kind":"Name","value":"Int"}}},{"kind":"VariableDefinition","variable":{"kind":"Variable","name":{"kind":"Name","value":"last"}},"type":{"kind":"NamedType","name":{"kind":"Name","value":"Int"}}},{"kind":"VariableDefinition","variable":{"kind":"Variable","name":{"kind":"Name","value":"queryString"}},"type":{"kind":"NonNullType","type":{"kind":"NamedType","name":{"kind":"Name","value":"String"}}}}],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"search"},"arguments":[{"kind":"Argument","name":{"kind":"Name","value":"after"},"value":{"kind":"Variable","name":{"kind":"Name","value":"cursorAfter"}}},{"kind":"Argument","name":{"kind":"Name","value":"before"},"value":{"kind":"Variable","name":{"kind":"Name","value":"cursorBefore"}}},{"kind":"Argument","name":{"kind":"Name","value":"first"},"value":{"kind":"Variable","name":{"kind":"Name","value":"first"}}},{"kind":"Argument","name":{"kind":"Name","value":"last"},"value":{"kind":"Variable","name":{"kind":"Name","value":"last"}}},{"kind":"Argument","name":{"kind":"Name","value":"query"},"value":{"kind":"Variable","name":{"kind":"Name","value":"queryString"}}},{"kind":"Argument","name":{"kind":"Name","value":"type"},"value":{"kind":"EnumValue","value":"REPOSITORY"}}],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"edges"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"cursor"}},{"kind":"Field","name":{"kind":"Name","value":"node"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"InlineFragment","typeCondition":{"kind":"NamedType","name":{"kind":"Name","value":"Repository"}},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"createdAt"}},{"kind":"Field","name":{"kind":"Name","value":"id"}},{"kind":"Field","name":{"kind":"Name","value":"licenseInfo"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"id"}},{"kind":"Field","name":{"kind":"Name","value":"name"}}]}},{"kind":"Field","name":{"kind":"Name","value":"name"}},{"kind":"Field","name":{"kind":"Name","value":"stargazers"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"totalCount"}}]}},{"kind":"Field","name":{"kind":"Name","value":"updatedAt"}}]}}]}}]}},{"kind":"Field","name":{"kind":"Name","value":"pageInfo"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"endCursor"}},{"kind":"Field","name":{"kind":"Name","value":"hasNextPage"}},{"kind":"Field","name":{"kind":"Name","value":"hasPreviousPage"}},{"kind":"Field","name":{"kind":"Name","value":"startCursor"}}]}},{"kind":"Field","name":{"kind":"Name","value":"repositoryCount"}}]}}]}}]} as unknown as DocumentNode<ListRepositoriesQuery, ListRepositoriesQueryVariables>;
+export const ListRepositoriesDocument = {
+  definitions: [
+    {
+      name: { kind: 'Name', value: 'ListRepositories' },
+      kind: 'OperationDefinition',
+      operation: 'query',
+      selectionSet: {
+        kind: 'SelectionSet',
+        selections: [
+          {
+            name: { kind: 'Name', value: 'search' },
+            arguments: [
+              { name: { kind: 'Name', value: 'after' }, kind: 'Argument', value: { name: { kind: 'Name', value: 'cursorAfter' }, kind: 'Variable' } },
+              {
+                name: { kind: 'Name', value: 'before' },
+                kind: 'Argument',
+                value: { name: { kind: 'Name', value: 'cursorBefore' }, kind: 'Variable' },
+              },
+              { name: { kind: 'Name', value: 'first' }, kind: 'Argument', value: { name: { kind: 'Name', value: 'first' }, kind: 'Variable' } },
+              { name: { kind: 'Name', value: 'last' }, kind: 'Argument', value: { name: { kind: 'Name', value: 'last' }, kind: 'Variable' } },
+              { name: { kind: 'Name', value: 'query' }, kind: 'Argument', value: { name: { kind: 'Name', value: 'queryString' }, kind: 'Variable' } },
+              { name: { kind: 'Name', value: 'type' }, kind: 'Argument', value: { kind: 'EnumValue', value: 'REPOSITORY' } },
+            ],
+            kind: 'Field',
+            selectionSet: {
+              kind: 'SelectionSet',
+              selections: [
+                {
+                  name: { kind: 'Name', value: 'edges' },
+                  kind: 'Field',
+                  selectionSet: {
+                    kind: 'SelectionSet',
+                    selections: [
+                      { name: { kind: 'Name', value: 'cursor' }, kind: 'Field' },
+                      {
+                        name: { kind: 'Name', value: 'node' },
+                        kind: 'Field',
+                        selectionSet: {
+                          kind: 'SelectionSet',
+                          selections: [
+                            {
+                              kind: 'InlineFragment',
+                              selectionSet: {
+                                kind: 'SelectionSet',
+                                selections: [
+                                  { name: { kind: 'Name', value: 'createdAt' }, kind: 'Field' },
+                                  { name: { kind: 'Name', value: 'id' }, kind: 'Field' },
+                                  {
+                                    name: { kind: 'Name', value: 'licenseInfo' },
+                                    kind: 'Field',
+                                    selectionSet: {
+                                      kind: 'SelectionSet',
+                                      selections: [
+                                        { name: { kind: 'Name', value: 'id' }, kind: 'Field' },
+                                        { name: { kind: 'Name', value: 'name' }, kind: 'Field' },
+                                      ],
+                                    },
+                                  },
+                                  { name: { kind: 'Name', value: 'name' }, kind: 'Field' },
+                                  {
+                                    name: { kind: 'Name', value: 'stargazers' },
+                                    kind: 'Field',
+                                    selectionSet: {
+                                      kind: 'SelectionSet',
+                                      selections: [{ name: { kind: 'Name', value: 'totalCount' }, kind: 'Field' }],
+                                    },
+                                  },
+                                  { name: { kind: 'Name', value: 'updatedAt' }, kind: 'Field' },
+                                ],
+                              },
+                              typeCondition: { name: { kind: 'Name', value: 'Repository' }, kind: 'NamedType' },
+                            },
+                          ],
+                        },
+                      },
+                    ],
+                  },
+                },
+                {
+                  name: { kind: 'Name', value: 'pageInfo' },
+                  kind: 'Field',
+                  selectionSet: {
+                    kind: 'SelectionSet',
+                    selections: [
+                      { name: { kind: 'Name', value: 'endCursor' }, kind: 'Field' },
+                      { name: { kind: 'Name', value: 'hasNextPage' }, kind: 'Field' },
+                      { name: { kind: 'Name', value: 'hasPreviousPage' }, kind: 'Field' },
+                      { name: { kind: 'Name', value: 'startCursor' }, kind: 'Field' },
+                    ],
+                  },
+                },
+                { name: { kind: 'Name', value: 'repositoryCount' }, kind: 'Field' },
+              ],
+            },
+          },
+        ],
+      },
+      variableDefinitions: [
+        {
+          kind: 'VariableDefinition',
+          type: { name: { kind: 'Name', value: 'String' }, kind: 'NamedType' },
+          variable: { name: { kind: 'Name', value: 'cursorAfter' }, kind: 'Variable' },
+        },
+        {
+          kind: 'VariableDefinition',
+          type: { name: { kind: 'Name', value: 'String' }, kind: 'NamedType' },
+          variable: { name: { kind: 'Name', value: 'cursorBefore' }, kind: 'Variable' },
+        },
+        {
+          kind: 'VariableDefinition',
+          type: { name: { kind: 'Name', value: 'Int' }, kind: 'NamedType' },
+          variable: { name: { kind: 'Name', value: 'first' }, kind: 'Variable' },
+        },
+        {
+          kind: 'VariableDefinition',
+          type: { name: { kind: 'Name', value: 'Int' }, kind: 'NamedType' },
+          variable: { name: { kind: 'Name', value: 'last' }, kind: 'Variable' },
+        },
+        {
+          kind: 'VariableDefinition',
+          type: { kind: 'NonNullType', type: { name: { kind: 'Name', value: 'String' }, kind: 'NamedType' } },
+          variable: { name: { kind: 'Name', value: 'queryString' }, kind: 'Variable' },
+        },
+      ],
+    },
+  ],
+  kind: 'Document',
+} as unknown as DocumentNode<ListRepositoriesQuery, ListRepositoriesQueryVariables>

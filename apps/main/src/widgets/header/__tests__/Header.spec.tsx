@@ -1,11 +1,11 @@
 import { MockLink } from '@apollo/client/testing'
 import { MockedProvider } from '@apollo/client/testing/react'
-import { ListLicensesDocument } from '@nx-vite-react-ts-mantine-boilerplate/graphql'
-import { ThemeProvider } from '@nx-vite-react-ts-mantine-boilerplate/ui-kit'
-import { act, fireEvent, render, renderHook, screen } from '@testing-library/react'
 import React from 'react'
 
 import { useForm } from '@mantine/form'
+import { ListLicensesDocument } from '@nx-vite-react-ts-mantine-boilerplate/graphql'
+import { ThemeProvider } from '@nx-vite-react-ts-mantine-boilerplate/ui-kit'
+import { act, fireEvent, render, renderHook, screen } from '@testing-library/react'
 import { userEvent } from '@testing-library/user-event'
 import { describe, expect, it } from 'vitest'
 

@@ -1,5 +1,4 @@
 import 'dotenv/config'
-
 import type { CodegenConfig } from '@graphql-codegen/cli'
 
 const endpoint = process.env.GITHUB_API_ENDPOINT || 'https://api.github.com/graphql'
@@ -36,8 +35,8 @@ const config: CodegenConfig = {
           field: true,
           inputValue: false,
         },
-        nonOptionalTypename: true,
         defaultScalarType: 'unknown',
+        nonOptionalTypename: true,
         skipTypeNameForRoot: true,
         useTypeImports: true,
       },

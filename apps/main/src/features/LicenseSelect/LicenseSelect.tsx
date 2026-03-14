@@ -1,7 +1,8 @@
 import { useQuery } from '@apollo/client/react'
+import React, { useMemo } from 'react'
+
 import { ListLicensesDocument } from '@nx-vite-react-ts-mantine-boilerplate/graphql'
 import { type ComboboxItem, ErrorBlock, Loader, Select } from '@nx-vite-react-ts-mantine-boilerplate/ui-kit'
-import React, { useMemo } from 'react'
 
 import { type LicenseSelectPropertiesInterface } from './LicenseSelect.types'
 
@@ -33,9 +34,9 @@ export const LicenseSelect = ({ ...rest }: LicenseSelectPropertiesInterface) => 
   return (
     <Loader data-testid="licenses-select-loading" loading={loading}>
       <Select
-        data-testid="licenses-select"
         label="License type"
         data={preparedLicenses}
+        data-testid="licenses-select"
         defaultValue=" "
         nothingFoundMessage="Nothing found"
         searchable

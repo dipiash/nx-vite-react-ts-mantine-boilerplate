@@ -4,7 +4,6 @@ import { fileURLToPath } from 'node:url'
 const getAbsolutePath = (value: string): string => dirname(fileURLToPath(import.meta.resolve(`${value}/package.json`)))
 
 export default {
-  addons: [getAbsolutePath('@chromatic-com/storybook'), getAbsolutePath('@storybook/addon-docs')],
   core: {
     disableTelemetry: true,
   },
@@ -16,4 +15,5 @@ export default {
   typescript: {
     reactDocgen: 'react-docgen-typescript',
   },
+  addons: [getAbsolutePath('@chromatic-com/storybook'), getAbsolutePath('@storybook/addon-docs')],
 }

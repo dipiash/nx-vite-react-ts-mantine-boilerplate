@@ -1,7 +1,8 @@
 import { useQuery } from '@apollo/client/react'
+import React, { useMemo } from 'react'
+
 import { ListRepositoriesDocument, type SearchResultItemEdge } from '@nx-vite-react-ts-mantine-boilerplate/graphql'
 import { ErrorBlock, Loader, Pagination, Space, Table } from '@nx-vite-react-ts-mantine-boilerplate/ui-kit'
-import React, { useMemo } from 'react'
 
 import { type RepositoriesTablePropertiesInterface, type RepositoryDataInterface } from './RepositoriesTable.types'
 import { enhancedFetchMore, getPaginationParameters } from './utils'
@@ -50,24 +51,24 @@ export const RepositoriesTable = ({ limit = 10, queryString }: RepositoriesTable
       <Table columns={tableColumns} data={tableData} error={tableError} />
       <Space h={10} />
       <Pagination
+        isNextDisabled={paginationParameters.isNextDisabled}
+        isPrevDisabled={paginationParameters.isPreviousDisabled}
         onNextClick={() =>
           enhancedFetchMore({
             cursorAfter: paginationParameters.cursorAfter,
-            fetchMore,
             limit,
             queryString,
+            fetchMore,
           })
         }
         onPrevClick={() =>
           enhancedFetchMore({
             cursorBefore: paginationParameters.cursorBefore,
-            fetchMore,
             limit,
             queryString,
+            fetchMore,
           })
         }
-        isNextDisabled={paginationParameters.isNextDisabled}
-        isPrevDisabled={paginationParameters.isPreviousDisabled}
       />
     </Loader>
   )

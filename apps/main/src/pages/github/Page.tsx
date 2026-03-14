@@ -1,8 +1,8 @@
-import { Button } from '@nx-vite-react-ts-mantine-boilerplate/ui-kit'
 import React from 'react'
 
 import { useForm } from '@mantine/form'
 import { useDebouncedValue } from '@mantine/hooks'
+import { Button } from '@nx-vite-react-ts-mantine-boilerplate/ui-kit'
 
 import { ApolloProvider } from '../../app/providers'
 import { useGitHubToken } from '../../shared/auth'
@@ -11,7 +11,7 @@ import { Header } from '../../widgets/header'
 import { RepositoriesTable } from '../../widgets/repositories-table'
 
 const Page = () => {
-  const { handleUpdateToken, isTokenExist } = useGitHubToken()
+  const { isTokenExist, handleUpdateToken } = useGitHubToken()
 
   const form = useForm({
     initialValues: {

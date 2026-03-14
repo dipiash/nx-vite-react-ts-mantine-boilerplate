@@ -17,11 +17,11 @@ globalThis.ResizeObserver = globalThis.ResizeObserver || ResizeObserverMock
 globalThis.matchMedia =
   globalThis.matchMedia ||
   ((query: string) => ({
-    addEventListener: vi.fn(),
-    addListener: vi.fn(),
     dispatchEvent: vi.fn(),
     matches: false,
     media: query,
+    addEventListener: vi.fn(),
+    addListener: vi.fn(),
     onchange: null,
     removeEventListener: vi.fn(),
     removeListener: vi.fn(),

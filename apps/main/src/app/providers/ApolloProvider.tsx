@@ -1,8 +1,9 @@
 import { ApolloClient, ApolloLink, HttpLink, InMemoryCache } from '@apollo/client'
 import { SetContextLink } from '@apollo/client/link/context'
 import { ApolloProvider as ApolloProviderBase } from '@apollo/client/react'
-import { introspectionResult } from '@nx-vite-react-ts-mantine-boilerplate/graphql'
 import React, { type PropsWithChildren } from 'react'
+
+import { introspectionResult } from '@nx-vite-react-ts-mantine-boilerplate/graphql'
 
 const httpLink = new HttpLink({ uri: import.meta.env.VITE_GITHUB_API_ENDPOINT })
 

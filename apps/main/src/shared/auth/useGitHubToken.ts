@@ -16,5 +16,5 @@ export const useGitHubToken = () => {
     handleUpdateToken()
   }
 
-  return { handleUpdateToken, isTokenExist }
+  return { isTokenExist, handleUpdateToken }
 }

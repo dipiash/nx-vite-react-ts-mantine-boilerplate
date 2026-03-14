@@ -30,7 +30,7 @@ export const Table = ({ columns = {}, data = [], error = false }: TablePropertie
         {data.map((item) => (
           <Box key={item.key} className={classes.tr} role="row">
             {columnKeys.map((key) => (
-              <Box key={key} data-label={columns[key]} className={classes.td} role="cell">
+              <Box key={key} className={classes.td} data-label={columns[key]} role="cell">
                 {item[key] || '---'}
               </Box>
             ))}

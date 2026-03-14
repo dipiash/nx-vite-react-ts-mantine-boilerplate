@@ -1,9 +1,9 @@
 import { MockedProvider } from '@apollo/client/testing/react'
+import React from 'react'
+
 import { ListRepositoriesDocument } from '@nx-vite-react-ts-mantine-boilerplate/graphql'
 import { ThemeProvider } from '@nx-vite-react-ts-mantine-boilerplate/ui-kit'
 import { render, screen } from '@testing-library/react'
-import React from 'react'
-
 import { describe, expect, it } from 'vitest'
 
 import { getDateCondition, getLanguageCondition, getLicenseCondition, getRepositoryNameCondition, getSortCondition } from '../../../shared/search'

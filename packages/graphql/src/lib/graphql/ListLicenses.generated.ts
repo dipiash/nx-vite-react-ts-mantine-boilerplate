@@ -1,10 +1,35 @@
-import type * as Types from '../generated/graphql';
+import type { TypedDocumentNode as DocumentNode } from '@graphql-typed-document-node/core'
 
-import type { TypedDocumentNode as DocumentNode } from '@graphql-typed-document-node/core';
-export type ListLicensesQueryVariables = Types.Exact<{ [key: string]: never; }>;
+import type * as Types from '../generated/graphql'
 
+export type ListLicensesQuery = { licenses: Array<null | { id: string; name: string; __typename: 'License'; key: string }> }
 
-export type ListLicensesQuery = { licenses: Array<{ __typename: 'License', id: string, key: string, name: string } | null> };
+export type ListLicensesQueryVariables = Types.Exact<{ [key: string]: never }>
 
-
-export const ListLicensesDocument = {"kind":"Document","definitions":[{"kind":"OperationDefinition","operation":"query","name":{"kind":"Name","value":"ListLicenses"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"licenses"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"id"}},{"kind":"Field","name":{"kind":"Name","value":"key"}},{"kind":"Field","name":{"kind":"Name","value":"name"}}]}}]}}]} as unknown as DocumentNode<ListLicensesQuery, ListLicensesQueryVariables>;
+export const ListLicensesDocument = {
+  definitions: [
+    {
+      name: { kind: 'Name', value: 'ListLicenses' },
+      kind: 'OperationDefinition',
+      operation: 'query',
+      selectionSet: {
+        kind: 'SelectionSet',
+        selections: [
+          {
+            name: { kind: 'Name', value: 'licenses' },
+            kind: 'Field',
+            selectionSet: {
+              kind: 'SelectionSet',
+              selections: [
+                { name: { kind: 'Name', value: 'id' }, kind: 'Field' },
+                { name: { kind: 'Name', value: 'key' }, kind: 'Field' },
+                { name: { kind: 'Name', value: 'name' }, kind: 'Field' },
+              ],
+            },
+          },
+        ],
+      },
+    },
+  ],
+  kind: 'Document',
+} as unknown as DocumentNode<ListLicensesQuery, ListLicensesQueryVariables>

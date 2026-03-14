@@ -1,7 +1,7 @@
-import { IconAlertCircle } from '@tabler/icons-react'
 import React, { memo } from 'react'
 
 import { Alert } from '@mantine/core'
+import { IconAlertCircle } from '@tabler/icons-react'
 
 import { type ErrorBlockPropertiesInterface } from './ErrorBlock.types'
 
