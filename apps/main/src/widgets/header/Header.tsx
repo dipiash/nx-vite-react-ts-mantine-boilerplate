@@ -8,13 +8,13 @@ import { type HeaderPropertiesInterface } from './Header.types'
 
 import classes from './Header.module.css'
 
-export const Header = memo(({ form }: HeaderPropertiesInterface) => (
+export const Header = memo(({ form, licenseSelectProps }: HeaderPropertiesInterface) => (
   <div className={classes.root}>
     <div className={cx(classes.headerItem, classes.headerItemLeft)}>
       <SearchInput className={classes.headerField} {...form.getInputProps('repositoryName')} />
     </div>
     <div className={cx(classes.headerItem, classes.headerItemRight)}>
-      <LicenseSelect name="license" className={classes.headerField} {...form.getInputProps('license')} />
+      <LicenseSelect name="license" className={classes.headerField} {...licenseSelectProps} {...form.getInputProps('license')} />
     </div>
   </div>
 ))

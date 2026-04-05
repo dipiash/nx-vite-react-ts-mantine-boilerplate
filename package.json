@@ -126,9 +126,9 @@
   },
   "dependencies": {
     "@eslint/js": "9.39.2",
-    "@mantine/core": "8.3.16",
-    "@mantine/form": "8.3.16",
-    "@mantine/hooks": "8.3.16",
+    "@mantine/core": "9.0.0",
+    "@mantine/form": "9.0.0",
+    "@mantine/hooks": "9.0.0",
     "@tabler/icons-react": "3.40.0",
     "@typescript-eslint/eslint-plugin": "8.57.0",
     "clsx": "2.1.1",

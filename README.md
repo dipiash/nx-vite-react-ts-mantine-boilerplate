@@ -63,7 +63,7 @@ npm run init-project
 
 - [Nx 22](https://nx.dev)
 - [React 19](https://reactjs.org)
-- [Mantine 8](https://mantine.dev/)
+- [Mantine 9](https://mantine.dev/)
 - [Storybook 10](https://storybook.js.org/)
 - [TypeScript](https://www.typescriptlang.org/)
 - [Vite 8](https://vitejs.dev/)

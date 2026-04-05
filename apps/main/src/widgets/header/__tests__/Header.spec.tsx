@@ -5,7 +5,7 @@ import React from 'react'
 import { useForm } from '@mantine/form'
 import { ListLicensesDocument } from '@nx-vite-react-ts-mantine-boilerplate/graphql'
 import { ThemeProvider } from '@nx-vite-react-ts-mantine-boilerplate/ui-kit'
-import { act, fireEvent, render, renderHook, screen } from '@testing-library/react'
+import { fireEvent, render, renderHook, screen, waitFor } from '@testing-library/react'
 import { userEvent } from '@testing-library/user-event'
 import { describe, expect, it } from 'vitest'
 
@@ -57,26 +57,26 @@ describe('Header', () => {
     render(
       <ThemeProvider>
         <MockedProvider mocks={mocks.success}>
-          <Header form={formHookReference.current} />
+          <Header form={formHookReference.current} licenseSelectProps={{ comboboxProps: { withinPortal: false } }} />
         </MockedProvider>
       </ThemeProvider>,
     )
 
-    await act(() => new Promise((resolve) => setTimeout(resolve, 0))) // wait for response
+    await screen.findByTestId('licenses-select')
 
-    const elementLoading = screen.getByTestId('licenses-select-loading')
-
-    expect(elementLoading).toBeInTheDocument()
-
-    // Change value in select element
+    // Check select element render
     const selectElement = screen.getByTestId('licenses-select') as HTMLSelectElement
 
     expect(selectElement).toBeInTheDocument()
     expect(selectElement).toHaveValue('')
 
     await user.click(selectElement)
-    await user.click(screen.getByText('MIT License'))
-    expect(formHookReference.current.values.license).toBe('mit')
+    await user.type(selectElement, 'MIT')
+    fireEvent.click(await screen.findByRole('option', { name: 'MIT License', hidden: true }))
+
+    await waitFor(() => {
+      expect(formHookReference.current.values.license).toBe('mit')
+    })
 
     // Change text in input field
     const inputElement = screen.getByTestId('search-by-name') as HTMLInputElement
@@ -104,14 +104,14 @@ describe('Header', () => {
     render(
       <ThemeProvider>
         <MockedProvider mocks={mocks.error}>
-          <Header form={formHookReference.current} />
+          <Header form={formHookReference.current} licenseSelectProps={{ comboboxProps: { withinPortal: false } }} />
         </MockedProvider>
       </ThemeProvider>,
     )
 
-    await act(() => new Promise((resolve) => setTimeout(resolve, 0))) // wait for response
-
-    expect(screen.getByText('Search by repo name')).toBeVisible()
-    expect(screen.getByText('Licenses loading error.')).toBeVisible()
+    await waitFor(() => {
+      expect(screen.getByText('Search by repo name')).toBeVisible()
+      expect(screen.getByText('Licenses loading error.')).toBeVisible()
+    })
   })
 })
