@@ -105,7 +105,7 @@
     "lint-staged": "16.3.3",
     "nx": "22.5.4",
     "nx-stylelint": "18.0.2",
-    "postcss": "8.5.8",
+    "postcss": "8.5.10",
     "postcss-preset-mantine": "1.18.0",
     "postcss-simple-vars": "7.0.1",
     "postcss-syntax": "0.36.2",
